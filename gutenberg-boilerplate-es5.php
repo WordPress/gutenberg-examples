@@ -38,6 +38,12 @@ function gutenberg_boilerplate_es5_enqueue_editor_assets() {
 		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'step-03/block.js' )
 	);
+	wp_enqueue_script(
+		'gutenberg-boilerplate-es5-step04',
+		plugins_url( 'step-04/block.js', __FILE__ ),
+		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'step-04/block.js' )
+	);
 
 	// Block styles for the editor.
 	wp_enqueue_style(
@@ -51,6 +57,12 @@ function gutenberg_boilerplate_es5_enqueue_editor_assets() {
 		plugins_url( 'step-03/editor.css', __FILE__ ),
 		array( 'wp-edit-blocks' ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'step-03/editor.css' )
+	);
+	wp_enqueue_style(
+		'gutenberg-boilerplate-es5-step04-editor',
+		plugins_url( 'step-04/editor.css', __FILE__ ),
+		array( 'wp-edit-blocks' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'step-04/editor.css' )
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'gutenberg_boilerplate_es5_enqueue_editor_assets' );
@@ -73,6 +85,12 @@ function gutenberg_boilerplate_es5_enqueue_common_assets() {
 		plugins_url( 'step-03/style.css', __FILE__ ),
 		array( 'wp-blocks' ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'step-03/style.css' )
+	);
+	wp_enqueue_style(
+		'gutenberg-boilerplate-es5-step04',
+		plugins_url( 'step-04/style.css', __FILE__ ),
+		array( 'wp-blocks' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'step-04/style.css' )
 	);
 }
 add_action( 'enqueue_block_assets', 'gutenberg_boilerplate_es5_enqueue_common_assets' );
