@@ -3,7 +3,7 @@
 	var query = blocks.query.query;
 	var children = blocks.query.children;
 
-	blocks.registerBlockType( 'gutenberg-boilerplate-es5/05-recipe-card', {
+	blocks.registerBlockType( 'gutenberg-examples/05-recipe-card', {
 		title: i18n.__( 'Example: Recipe Card' ),
 		icon: 'index-card',
 		category: 'layout',

@@ -11,8 +11,8 @@
 	var AlignmentToolbar = wp.blocks.AlignmentToolbar;
 	var BlockControls = wp.blocks.BlockControls;
 
-	blocks.registerBlockType( 'gutenberg-boilerplate-es5/04-controls', {
-		title: __( 'Example: Controls', 'gutenberg-boilerplate-es5' ),
+	blocks.registerBlockType( 'gutenberg-examples/04-controls', {
+		title: __( 'Example: Controls', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 
@@ -65,7 +65,7 @@
 			var saveProps = {};
 			if ( props.attributes.alignment ) {
 				saveProps.className =
-					'gutenberg-boilerplate-align-' + props.attributes.alignment;
+					'gutenberg-examples-align-' + props.attributes.alignment;
 			}
 			return el(
 				'p',

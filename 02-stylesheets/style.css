@@ -2,7 +2,7 @@
  * Note that these styles are loaded *before* editor styles, so that
  * editor-specific styles using the same selectors will take precedence.
  */
-.wp-block-gutenberg-boilerplate-es5-02-stylesheets {
+.wp-block-gutenberg-examples-02-stylesheets {
 	color: darkred;
 	background: #fcc;
 	border: 2px solid #c99;

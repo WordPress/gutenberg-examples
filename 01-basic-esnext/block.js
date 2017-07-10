@@ -7,7 +7,7 @@ const blockStyle = {
 	padding: '20px',
 };
 
-registerBlockType( 'gutenberg-boilerplate-es5/01-basic-esnext', {
+registerBlockType( 'gutenberg-examples/01-basic-esnext', {
 	title: __( 'Example: Basic (esnext)' ),
 	icon: 'universal-access-alt',
 	category: 'layout',

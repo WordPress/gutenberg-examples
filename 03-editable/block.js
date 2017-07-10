@@ -10,8 +10,8 @@
 	var Editable = blocks.Editable;
 	var children = blocks.query.children;
 
-	blocks.registerBlockType( 'gutenberg-boilerplate-es5/03-editable', {
-		title: __( 'Example: Editable', 'gutenberg-boilerplate-es5' ),
+	blocks.registerBlockType( 'gutenberg-examples/03-editable', {
+		title: __( 'Example: Editable', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 

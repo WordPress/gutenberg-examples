@@ -16,8 +16,8 @@
 		padding: '20px'
 	};
 
-	blocks.registerBlockType( 'gutenberg-boilerplate-es5/01-basic', {
-		title: __( 'Example: Basic', 'gutenberg-boilerplate-es5' ),
+	blocks.registerBlockType( 'gutenberg-examples/01-basic', {
+		title: __( 'Example: Basic', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 		edit: function() {

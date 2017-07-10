@@ -11,8 +11,8 @@
 	var el = element.createElement;
 	var __ = i18n.__;
 
-	blocks.registerBlockType( 'gutenberg-boilerplate-es5/02-stylesheets', {
-		title: __( 'Example: Stylesheets', 'gutenberg-boilerplate-es5' ),
+	blocks.registerBlockType( 'gutenberg-examples/02-stylesheets', {
+		title: __( 'Example: Stylesheets', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 		edit: function( props ) {
