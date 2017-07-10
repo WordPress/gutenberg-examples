@@ -11,8 +11,8 @@
 	var AlignmentToolbar = wp.blocks.AlignmentToolbar;
 	var BlockControls = wp.blocks.BlockControls;
 
-	blocks.registerBlockType( 'gutenberg-boilerplate-es5/hello-world-step-04', {
-		title: __( 'Hello World (step 4)', 'gutenberg-boilerplate-es5' ),
+	blocks.registerBlockType( 'gutenberg-boilerplate-es5/04-controls', {
+		title: __( 'Example: Controls', 'gutenberg-boilerplate-es5' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 

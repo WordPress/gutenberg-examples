@@ -16,8 +16,8 @@
 		padding: '20px'
 	};
 
-	blocks.registerBlockType( 'gutenberg-boilerplate-es5/hello-world-step-01', {
-		title: __( 'Hello World (step 1)', 'gutenberg-boilerplate-es5' ),
+	blocks.registerBlockType( 'gutenberg-boilerplate-es5/01-basic', {
+		title: __( 'Example: Basic', 'gutenberg-boilerplate-es5' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 		edit: function() {

@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-include 'step-01/index.php';
-include 'step-02/index.php';
-include 'step-03/index.php';
-include 'step-04/index.php';
+include '01-basic/index.php';
+include '02-stylesheets/index.php';
+include '03-editable/index.php';
+include '04-controls/index.php';
