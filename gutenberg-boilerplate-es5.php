@@ -15,3 +15,4 @@ include '01-basic/index.php';
 include '02-stylesheets/index.php';
 include '03-editable/index.php';
 include '04-controls/index.php';
+include '05-recipe-card/index.php';
