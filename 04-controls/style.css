@@ -1,0 +1,22 @@
+/**
+ * Note that these styles are loaded *before* editor styles, so that
+ * editor-specific styles using the same selectors will take precedence.
+ */
+.wp-block-gutenberg-examples-04-controls {
+	color: darkred;
+	background: #fcc;
+	border: 2px solid #c99;
+	padding: 20px;
+}
+
+.gutenberg-examples-align-left {
+	text-align: left;
+}
+
+.gutenberg-examples-align-center {
+	text-align: center;
+}
+
+.gutenberg-examples-align-right {
+	text-align: right;
+}
