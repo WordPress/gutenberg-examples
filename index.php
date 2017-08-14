@@ -17,5 +17,6 @@ include '01-basic-esnext/index.php';
 include '02-stylesheets/index.php';
 include '03-editable/index.php';
 include '04-controls/index.php';
+include '04-controls-esnext/index.php';
 include '05-recipe-card/index.php';
 include '05-recipe-card-esnext/index.php';
