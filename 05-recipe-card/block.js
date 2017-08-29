@@ -1,7 +1,7 @@
 ( function( blocks, i18n, element, _ ) {
 	var el = element.createElement;
-	var query = blocks.query.query;
-	var children = blocks.query.children;
+	var query = blocks.source.query;
+	var children = blocks.source.children;
 
 	blocks.registerBlockType( 'gutenberg-examples/05-recipe-card', {
 		title: i18n.__( 'Example: Recipe Card' ),
