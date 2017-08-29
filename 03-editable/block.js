@@ -8,7 +8,7 @@
 	var el = element.createElement;
 	var __ = i18n.__;
 	var Editable = blocks.Editable;
-	var children = blocks.query.children;
+	var children = blocks.source.children;
 
 	blocks.registerBlockType( 'gutenberg-examples/03-editable', {
 		title: __( 'Example: Editable', 'gutenberg-examples' ),

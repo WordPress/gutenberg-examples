@@ -1,5 +1,5 @@
 const { __ } = wp.i18n;
-const { registerBlockType, Editable, query: { children } } = wp.blocks;
+const { registerBlockType, Editable, source: { children } } = wp.blocks;
 
 registerBlockType( 'gutenberg-examples/03-editable-esnext', {
 	title: __( 'Example: Editable (esnext)' ),
