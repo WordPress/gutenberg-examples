@@ -7,7 +7,7 @@
 	var el = element.createElement;
 	var __ = i18n.__;
 	var Editable = blocks.Editable;
-	var children = blocks.query.children;
+	var children = blocks.source.children;
 	var AlignmentToolbar = wp.blocks.AlignmentToolbar;
 	var BlockControls = wp.blocks.BlockControls;
 
