@@ -2,7 +2,7 @@ const { __ } = wp.i18n;
 const {
 	registerBlockType,
 	Editable,
-	query: { children },
+	source: { children },
 	AlignmentToolbar,
 	BlockControls
 } = wp.blocks;

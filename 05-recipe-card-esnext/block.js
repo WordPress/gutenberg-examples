@@ -3,7 +3,7 @@ const {
 	registerBlockType,
 	Editable,
 	MediaUploadButton,
-	query: {
+	source: {
 		children
 	}
 } = wp.blocks;
