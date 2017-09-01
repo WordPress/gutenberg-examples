@@ -11,13 +11,6 @@ function gutenberg_examples_05_enqueue_block_editor_assets() {
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'underscore' ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'block.js' )
 	);
-
-	wp_enqueue_style(
-		'gutenberg-examples-05-editor',
-		plugins_url( 'editor.css', __FILE__ ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' )
-	);
 }
 
 add_action( 'enqueue_block_assets', 'gutenberg_examples_05_enqueue_block_assets' );

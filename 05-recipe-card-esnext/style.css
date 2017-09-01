@@ -8,8 +8,6 @@
 	width: 50%;
 	min-height: 100px;
 	text-align: center;
-	z-index: 1;
-	position: relative;
 }
 
 .wp-block-gutenberg-examples-05-recipe-card-esnext .recipe-image button {
@@ -19,6 +17,13 @@
 .wp-block-gutenberg-examples-05-recipe-card-esnext .recipe-image button.image-button {
 	margin: 0;
 	padding: 0;
+	display: block;
+}
+
+.wp-block-gutenberg-examples-05-recipe-card-esnext .recipe-image img {
+	display: block;
+	z-index: 1;
+	position: relative;
 }
 
 .wp-block-gutenberg-examples-05-recipe-card-esnext h2 {

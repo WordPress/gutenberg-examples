@@ -1,16 +1,32 @@
 ( function( blocks, i18n, element, _ ) {
 	var el = element.createElement;
-	var query = blocks.source.query;
 	var children = blocks.source.children;
+	var attr = blocks.source.attr;
 
 	blocks.registerBlockType( 'gutenberg-examples/05-recipe-card', {
 		title: i18n.__( 'Example: Recipe Card' ),
 		icon: 'index-card',
 		category: 'layout',
 		attributes: {
-			title: query( 'h2', children() ),
-			ingredients: query( 'ul', children() ),
-			instructions: query( 'div', children() ),
+			title: {
+				type: 'array',
+				source: children( 'h2' ),
+			},
+			mediaID: {
+				type: 'number',
+			},
+			mediaURL: {
+				type: 'string',
+				source: attr( 'img', 'src' ),
+			},
+			ingredients: {
+				type: 'array',
+				source: children( '.ingredients' ),
+			},
+			instructions: {
+				type: 'array',
+				source: children( '.steps' ),
+			},
 		},
 		edit: function( props ) {
 			var focusedEditable = props.focus ? props.focus.editable || 'title' : null;
@@ -18,7 +34,7 @@
 			var onSelectImage = ( media ) => {
 				props.setAttributes( {
 					mediaURL: media.url,
-					mediaId: media.id,
+					mediaID: media.id,
 				} );
 			};
 
@@ -40,15 +56,15 @@
 					el( 'div', { className: 'recipe-image' },
 						el( blocks.MediaUploadButton, {
 							buttonProps: {
-								className: attributes.mediaId
+								className: attributes.mediaID
 									? 'image-button'
 									: 'components-button button button-large',
 							},
 							onSelect: onSelectImage,
 							type: 'image',
-							value: attributes.mediaId,
+							value: attributes.mediaID,
 						},
-							attributes.mediaId
+							attributes.mediaID
 								? el( 'img', { src: attributes.mediaURL } )
 								: 'Upload Image'
 						),
@@ -56,8 +72,8 @@
 					el( 'h3', {}, i18n.__( 'Ingredients' ) ),
 					el( blocks.Editable, {
 						tagName: 'ul',
-						inline: true,
-						placeholder: i18n.__( 'Write a lits of ingredients…' ),
+						multiline: 'li',
+						placeholder: i18n.__( 'Write a list of ingredients…' ),
 						value: attributes.ingredients,
 						onChange: function( value ) {
 							props.setAttributes( { ingredients: value } );
@@ -66,6 +82,7 @@
 						onFocus: function( focus ) {
 							props.setFocus( _.extend( {}, focus, { editable: 'ingredients' } ) );
 						},
+						className: 'ingredients',
 					} ),
 					el( 'h3', {}, i18n.__( 'Instructions' ) ),
 					el( blocks.Editable, {
@@ -95,9 +112,9 @@
 							el( 'img', { src: attributes.mediaURL } ),
 						),
 					el( 'h3', {}, i18n.__( 'Ingredients' ) ),
-					el( 'ul', {}, attributes.ingredients ),
+					el( 'ul', { className: 'ingredients' }, attributes.ingredients ),
 					el( 'h3', {}, i18n.__( 'Instructions' ) ),
-					el( 'div', {}, attributes.instructions ),
+					el( 'div', { className: 'steps' }, attributes.instructions ),
 				)
 			);
 		},

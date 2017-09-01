@@ -4,6 +4,7 @@ const {
 	Editable,
 	MediaUploadButton,
 	source: {
+		attr,
 		children
 	}
 } = wp.blocks;
@@ -13,9 +14,25 @@ registerBlockType( 'gutenberg-examples/05-recipe-card-esnext', {
 	icon: 'index-card',
 	category: 'layout',
 	attributes: {
-		title: children( 'h2' ),
-		ingredients: children( 'ul' ),
-		instructions: children( 'div.steps' ),
+		title: {
+			type: 'array',
+			source: children( 'h2' ),
+		},
+		mediaID: {
+			type: 'number',
+		},
+		mediaURL: {
+			type: 'string',
+			source: attr( 'img', 'src' ),
+		},
+		ingredients: {
+			type: 'array',
+			source: children( '.ingredients' ),
+		},
+		instructions: {
+			type: 'array',
+			source: children( '.steps' ),
+		},
 	},
 	edit: props => {
 		const focusedEditable = props.focus ? props.focus.editable || 'title' : null;
@@ -29,7 +46,7 @@ registerBlockType( 'gutenberg-examples/05-recipe-card-esnext', {
 		const onSelectImage = media => {
 			props.setAttributes( {
 				mediaURL: media.url,
-				mediaId: media.id,
+				mediaID: media.id,
 			} );
 		};
 		const onChangeIngredients = value => {
@@ -54,36 +71,39 @@ registerBlockType( 'gutenberg-examples/05-recipe-card-esnext', {
 					onChange={ onChangeTitle }
 					focus={ focusedEditable === 'title' }
 					onFocus={ onFocusTitle }
-					/>
+				/>
 				<div className="recipe-image">
 					<MediaUploadButton
 						buttonProps={
 							{
-								className: attributes.mediaId
+								className: attributes.mediaID
 									? 'image-button'
 									: 'components-button button button-large',
 							}
 						}
 						onSelect={ onSelectImage }
 						type="image"
-						value={ attributes.mediaId }
+						value={ attributes.mediaID }
 						>
 						{
-							attributes.mediaId
+							attributes.mediaID
 								? <img src={ attributes.mediaURL } />
 								: __( 'Upload Image' )
 						}
 					</MediaUploadButton>
 				</div>
+				<h3>{ __( 'Ingredients' ) }</h3>
 				<Editable
 					tagName="ul"
 					multiline="li"
-					placeholder={ __( 'What are the ingredients?' ) }
+					placeholder={ __( 'Write a list of ingredients…' ) }
 					value={ attributes.ingredients }
 					onChange={ onChangeIngredients }
 					focus={ focusedEditable === 'ingredients' }
 					onFocus={ onFocusIngredients }
-					/>
+					className="ingredients"
+				/>
+				<h3>{ __( 'Instructions' ) }</h3>
 				<Editable
 					tagName="div"
 					multiline="p"
@@ -93,7 +113,7 @@ registerBlockType( 'gutenberg-examples/05-recipe-card-esnext', {
 					onChange={ onChangeInstructions }
 					focus={ focusedEditable === 'instructions' }
 					onFocus={ onFocusInstructions }
-					/>
+				/>
 			</div>
 		);
 	},
@@ -117,7 +137,7 @@ registerBlockType( 'gutenberg-examples/05-recipe-card-esnext', {
 						<img className="recipe-image" src={ mediaURL } />
 					)
 				}
-				<ul>
+				<ul className="ingredients">
 					{ ingredients }
 				</ul>
 				<div className="steps">
