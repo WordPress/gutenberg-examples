@@ -12,7 +12,10 @@ registerBlockType( 'gutenberg-examples/04-controls-esnext', {
 	icon: 'universal-access-alt',
 	category: 'layout',
 	attributes: {
-		content: children( 'p' ),
+		content: {
+			type: 'array',
+			source: children( 'p' ),
+		},
 	},
 	edit: props => {
 		const {

@@ -6,7 +6,10 @@ registerBlockType( 'gutenberg-examples/03-editable-esnext', {
 	icon: 'universal-access-alt',
 	category: 'layout',
 	attributes: {
-		content: children( 'p' ),
+		content: {
+			type: 'array',
+			source: children( 'p' ),
+		},
 	},
 	edit: props => {
 		const { attributes: { content }, focus, className, setFocus } = props;

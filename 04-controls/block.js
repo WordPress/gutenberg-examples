@@ -17,7 +17,10 @@
 		category: 'layout',
 
 		attributes: {
-			content: children( 'p' ),
+			content: {
+				type: 'array',
+				source: children( 'p' ),
+			},
 		},
 
 		edit: function( props ) {
