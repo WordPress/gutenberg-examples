@@ -5,4 +5,4 @@ Examples for extending
 with plugins which create blocks.
 
 See also:
-[Gutenberg developer documentation](http://gutenberg-devdoc.surge.sh/)
+[Gutenberg developer documentation](https://wordpress.org/gutenberg/handbook/)
