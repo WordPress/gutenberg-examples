@@ -3,7 +3,7 @@
 	var children = blocks.source.children;
 	var attr = blocks.source.attr;
 
-	blocks.registerBlockType( 'gutenberg-examples/05-recipe-card', {
+	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
 		title: i18n.__( 'Example: Recipe Card' ),
 		icon: 'index-card',
 		category: 'layout',

@@ -16,7 +16,7 @@
 		padding: '20px'
 	};
 
-	blocks.registerBlockType( 'gutenberg-examples/01-basic', {
+	blocks.registerBlockType( 'gutenberg-examples/example-01-basic', {
 		title: __( 'Example: Basic', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
