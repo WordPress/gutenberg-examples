@@ -7,7 +7,7 @@ const {
 	BlockControls
 } = wp.blocks;
 
-registerBlockType( 'gutenberg-examples/04-controls-esnext', {
+registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 	title: __( 'Example: Controls (esnext)' ),
 	icon: 'universal-access-alt',
 	category: 'layout',

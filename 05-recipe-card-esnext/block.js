@@ -9,7 +9,7 @@ const {
 	}
 } = wp.blocks;
 
-registerBlockType( 'gutenberg-examples/05-recipe-card-esnext', {
+registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 	title: __( 'Example: Recipe Card (esnext)' ),
 	icon: 'index-card',
 	category: 'layout',

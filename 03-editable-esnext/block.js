@@ -1,7 +1,7 @@
 const { __ } = wp.i18n;
 const { registerBlockType, Editable, source: { children } } = wp.blocks;
 
-registerBlockType( 'gutenberg-examples/03-editable-esnext', {
+registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 	title: __( 'Example: Editable (esnext)' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
