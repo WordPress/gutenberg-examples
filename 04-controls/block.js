@@ -11,7 +11,7 @@
 	var AlignmentToolbar = wp.blocks.AlignmentToolbar;
 	var BlockControls = wp.blocks.BlockControls;
 
-	blocks.registerBlockType( 'gutenberg-examples/04-controls', {
+	blocks.registerBlockType( 'gutenberg-examples/example-04-controls', {
 		title: __( 'Example: Controls', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
@@ -19,7 +19,8 @@
 		attributes: {
 			content: {
 				type: 'array',
-				source: children( 'p' ),
+				source: 'children',
+				selector: 'p',
 			},
 		},
 

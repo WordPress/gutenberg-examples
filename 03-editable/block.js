@@ -10,7 +10,7 @@
 	var Editable = blocks.Editable;
 	var children = blocks.source.children;
 
-	blocks.registerBlockType( 'gutenberg-examples/03-editable', {
+	blocks.registerBlockType( 'gutenberg-examples/example-03-editable', {
 		title: __( 'Example: Editable', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
@@ -18,7 +18,8 @@
 		attributes: {
 			content: {
 				type: 'array',
-				source: children( 'p' ),
+				source: 'children',
+				selector: 'p',
 			},
 		},
 

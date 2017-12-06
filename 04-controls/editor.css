@@ -2,9 +2,10 @@
  * Note that these styles are loaded *after* common styles, so that
  * editor-specific styles using the same selectors will take precedence.
  */
-.wp-block-gutenberg-boilerplate-es5-04-controls {
-	color: green;
-	background: #cfc;
-	border: 2px solid #9c9;
+.wp-block-gutenberg-examples-example-04-controls-esnext {
+	color: #fff;
+	background: #00a8db;
+	border: 2px solid #0D72B2;
 	padding: 20px;
+	font-family: sans-serif;
 }

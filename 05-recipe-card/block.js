@@ -3,29 +3,34 @@
 	var children = blocks.source.children;
 	var attr = blocks.source.attr;
 
-	blocks.registerBlockType( 'gutenberg-examples/05-recipe-card', {
+	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
 		title: i18n.__( 'Example: Recipe Card' ),
 		icon: 'index-card',
 		category: 'layout',
 		attributes: {
 			title: {
 				type: 'array',
-				source: children( 'h2' ),
+				source: 'children',
+				selector: 'h2',
 			},
 			mediaID: {
 				type: 'number',
 			},
 			mediaURL: {
 				type: 'string',
-				source: attr( 'img', 'src' ),
+				source: 'attribute',
+				selector: 'img',
+				attribute: 'src',
 			},
 			ingredients: {
 				type: 'array',
-				source: children( '.ingredients' ),
+				source: 'children',
+				selector: '.ingredients',
 			},
 			instructions: {
 				type: 'array',
-				source: children( '.steps' ),
+				source: 'children',
+				selector: '.steps',
 			},
 		},
 		edit: function( props ) {
