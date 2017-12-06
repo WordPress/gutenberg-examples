@@ -8,7 +8,8 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 	attributes: {
 		content: {
 			type: 'array',
-			source: children( 'p' ),
+			source: 'children',
+			selector: 'p',
 		},
 	},
 	edit: props => {

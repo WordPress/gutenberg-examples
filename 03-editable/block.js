@@ -18,7 +18,8 @@
 		attributes: {
 			content: {
 				type: 'array',
-				source: children( 'p' ),
+				source: 'children',
+				selector: 'p',
 			},
 		},
 

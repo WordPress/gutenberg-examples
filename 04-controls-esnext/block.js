@@ -14,7 +14,8 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 	attributes: {
 		content: {
 			type: 'array',
-			source: children( 'p' ),
+			source: 'children',
+			selector: 'p',
 		},
 	},
 	edit: props => {
