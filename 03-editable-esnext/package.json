@@ -1,6 +1,7 @@
 {
   "name": "03-editable-esnext",
   "version": "1.0.0",
+  "license": "GPL-2.0-or-later",
   "main": "block.js",
   "devDependencies": {
     "babel-core": "^6.25.0",
