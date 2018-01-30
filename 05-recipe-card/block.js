@@ -1,7 +1,5 @@
 ( function( blocks, components, i18n, element, _ ) {
 	var el = element.createElement;
-	var children = blocks.source.children;
-	var attr = blocks.source.attr;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
 		title: i18n.__( 'Example: Recipe Card' ),
@@ -36,8 +34,9 @@
 		edit: function( props ) {
 			var focusedEditable = props.focus ? props.focus.editable || 'title' : null;
 			var attributes = props.attributes;
-			var onSelectImage = ( media ) => {
-				props.setAttributes( {
+
+			var onSelectImage = function( media ) {
+				return props.setAttributes( {
 					mediaURL: media.url,
 					mediaID: media.id,
 				} );
