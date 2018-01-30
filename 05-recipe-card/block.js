@@ -1,4 +1,4 @@
-( function( blocks, i18n, element, _ ) {
+( function( blocks, components, i18n, element, _ ) {
 	var el = element.createElement;
 	var children = blocks.source.children;
 	var attr = blocks.source.attr;
@@ -59,20 +59,20 @@
 						},
 					} ),
 					el( 'div', { className: 'recipe-image' },
-						el( blocks.MediaUploadButton, {
-							buttonProps: {
-								className: attributes.mediaID
-									? 'image-button'
-									: 'components-button button button-large',
-							},
+						attributes.mediaID ? el( 'img', { src: attributes.mediaURL } ) : '',
+						el( blocks.MediaUpload, {
 							onSelect: onSelectImage,
 							type: 'image',
 							value: attributes.mediaID,
-						},
-							attributes.mediaID
-								? el( 'img', { src: attributes.mediaURL } )
-								: 'Upload Image'
-						),
+							render: function( obj ) {
+								return el( components.Button, {
+										className: attributes.mediaID ? 'image-button button button-large' : 'button button-large',
+										onClick: obj.open
+									},
+									! attributes.mediaID ? i18n.__( 'Upload Image' ) : i18n.__( 'Change Image' )
+								);
+							}
+						} )
 					),
 					el( 'h3', {}, i18n.__( 'Ingredients' ) ),
 					el( blocks.Editable, {
@@ -127,6 +127,7 @@
 
 } )(
 	window.wp.blocks,
+	window.wp.components,
 	window.wp.i18n,
 	window.wp.element,
 	window._,
