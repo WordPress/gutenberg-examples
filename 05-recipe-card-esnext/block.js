@@ -2,12 +2,13 @@ const { __ } = wp.i18n;
 const {
 	registerBlockType,
 	Editable,
-	MediaUploadButton,
+	MediaUpload,
 	source: {
 		attr,
 		children
 	}
 } = wp.blocks;
+const { Button } = wp.components;
 
 registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 	title: __( 'Example: Recipe Card (esnext)' ),
@@ -78,24 +79,16 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 					onFocus={ onFocusTitle }
 				/>
 				<div className="recipe-image">
-					<MediaUploadButton
-						buttonProps={
-							{
-								className: attributes.mediaID
-									? 'image-button'
-									: 'components-button button button-large',
-							}
-						}
+					<MediaUpload
 						onSelect={ onSelectImage }
 						type="image"
 						value={ attributes.mediaID }
-						>
-						{
-							attributes.mediaID
-								? <img src={ attributes.mediaURL } />
-								: __( 'Upload Image' )
-						}
-					</MediaUploadButton>
+						render={ ( { open } ) => (
+							<Button className={ attributes.mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
+								{ ! attributes.mediaID ? __( 'Upload Image' ) : <img src={ attributes.mediaURL } /> }
+							</Button>
+						) }
+					/>
 				</div>
 				<h3>{ __( 'Ingredients' ) }</h3>
 				<Editable

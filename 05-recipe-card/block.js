@@ -1,7 +1,5 @@
-( function( blocks, i18n, element, _ ) {
+( function( blocks, components, i18n, element, _ ) {
 	var el = element.createElement;
-	var children = blocks.source.children;
-	var attr = blocks.source.attr;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
 		title: i18n.__( 'Example: Recipe Card' ),
@@ -36,8 +34,9 @@
 		edit: function( props ) {
 			var focusedEditable = props.focus ? props.focus.editable || 'title' : null;
 			var attributes = props.attributes;
-			var onSelectImage = ( media ) => {
-				props.setAttributes( {
+
+			var onSelectImage = function( media ) {
+				return props.setAttributes( {
 					mediaURL: media.url,
 					mediaID: media.id,
 				} );
@@ -59,20 +58,19 @@
 						},
 					} ),
 					el( 'div', { className: 'recipe-image' },
-						el( blocks.MediaUploadButton, {
-							buttonProps: {
-								className: attributes.mediaID
-									? 'image-button'
-									: 'components-button button button-large',
-							},
+						el( blocks.MediaUpload, {
 							onSelect: onSelectImage,
 							type: 'image',
 							value: attributes.mediaID,
-						},
-							attributes.mediaID
-								? el( 'img', { src: attributes.mediaURL } )
-								: 'Upload Image'
-						),
+							render: function( obj ) {
+								return el( components.Button, {
+										className: attributes.mediaID ? 'image-button' : 'button button-large',
+										onClick: obj.open
+									},
+									! attributes.mediaID ? i18n.__( 'Upload Image' ) : el( 'img', { src: attributes.mediaURL } )
+								);
+							}
+						} )
 					),
 					el( 'h3', {}, i18n.__( 'Ingredients' ) ),
 					el( blocks.Editable, {
@@ -127,6 +125,7 @@
 
 } )(
 	window.wp.blocks,
+	window.wp.components,
 	window.wp.i18n,
 	window.wp.element,
 	window._,
