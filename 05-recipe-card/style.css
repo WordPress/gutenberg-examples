@@ -15,7 +15,8 @@
 }
 
 .wp-block-gutenberg-examples-example-05-recipe-card .recipe-image button.image-button {
-	margin: 10px auto;
+	margin: 0;
+	padding: 0;
 	display: block;
 }
 

@@ -58,7 +58,6 @@
 						},
 					} ),
 					el( 'div', { className: 'recipe-image' },
-						attributes.mediaID ? el( 'img', { src: attributes.mediaURL } ) : '',
 						el( blocks.MediaUpload, {
 							onSelect: onSelectImage,
 							type: 'image',
@@ -68,7 +67,7 @@
 										className: attributes.mediaID ? 'image-button button button-large' : 'button button-large',
 										onClick: obj.open
 									},
-									! attributes.mediaID ? i18n.__( 'Upload Image' ) : i18n.__( 'Change Image' )
+									! attributes.mediaID ? i18n.__( 'Upload Image' ) : el( 'img', { src: attributes.mediaURL } )
 								);
 							}
 						} )
