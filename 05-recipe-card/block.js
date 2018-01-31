@@ -64,7 +64,7 @@
 							value: attributes.mediaID,
 							render: function( obj ) {
 								return el( components.Button, {
-										className: attributes.mediaID ? 'image-button button button-large' : 'button button-large',
+										className: attributes.mediaID ? 'image-button' : 'button button-large',
 										onClick: obj.open
 									},
 									! attributes.mediaID ? i18n.__( 'Upload Image' ) : el( 'img', { src: attributes.mediaURL } )
