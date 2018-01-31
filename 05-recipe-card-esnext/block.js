@@ -79,18 +79,13 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 					onFocus={ onFocusTitle }
 				/>
 				<div className="recipe-image">
-					{
-						attributes.mediaID
-							? <img src={ attributes.mediaURL } />
-							: ''
-					}
 					<MediaUpload
 						onSelect={ onSelectImage }
 						type="image"
 						value={ attributes.mediaID }
 						render={ ( { open } ) => (
 							<Button className={ attributes.mediaID ? 'image-button button button-large' : 'button button-large' } onClick={ open }>
-								{ ! attributes.mediaID ? __( 'Upload Image' ) : __( 'Change Image' ) }
+								{ ! attributes.mediaID ? __( 'Upload Image' ) : <img src={ attributes.mediaURL } /> }
 							</Button>
 						) }
 					/>
