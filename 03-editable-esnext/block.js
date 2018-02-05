@@ -1,5 +1,5 @@
 const { __ } = wp.i18n;
-const { registerBlockType, Editable, source: { children } } = wp.blocks;
+const { registerBlockType, RichText, source: { children } } = wp.blocks;
 
 registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 	title: __( 'Example: Editable (esnext)' ),
@@ -18,7 +18,7 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 			props.setAttributes( { content: newContent } );
 		};
 		return (
-			<Editable
+			<RichText
 				className={ className }
 				onChange={ onChangeContent }
 				value={ content }

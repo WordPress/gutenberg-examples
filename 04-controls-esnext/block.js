@@ -1,7 +1,7 @@
 const { __ } = wp.i18n;
 const {
 	registerBlockType,
-	Editable,
+	RichText,
 	source: { children },
 	AlignmentToolbar,
 	BlockControls
@@ -49,7 +49,7 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 						</BlockControls>
 					)
 				}
-				<Editable
+				<RichText
 					className={ className }
 					style={ { textAlign: alignment } }
 					onChange={ onChangeContent }

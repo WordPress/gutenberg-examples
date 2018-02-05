@@ -44,7 +44,7 @@
 
 			return (
 				el( 'div', { className: props.className },
-					el( blocks.Editable, {
+					el( blocks.RichText, {
 						tagName: 'h2',
 						inline: true,
 						placeholder: i18n.__( 'Write Recipe title…' ),
@@ -73,7 +73,7 @@
 						} )
 					),
 					el( 'h3', {}, i18n.__( 'Ingredients' ) ),
-					el( blocks.Editable, {
+					el( blocks.RichText, {
 						tagName: 'ul',
 						multiline: 'li',
 						placeholder: i18n.__( 'Write a list of ingredients…' ),
@@ -88,7 +88,7 @@
 						className: 'ingredients',
 					} ),
 					el( 'h3', {}, i18n.__( 'Instructions' ) ),
-					el( blocks.Editable, {
+					el( blocks.RichText, {
 						tagName: 'div',
 						inline: false,
 						placeholder: i18n.__( 'Write instructions…' ),
