@@ -1,7 +1,7 @@
 const { __ } = wp.i18n;
 const {
 	registerBlockType,
-	Editable,
+	RichText,
 	MediaUpload,
 	source: {
 		attr,
@@ -70,7 +70,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 
 		return (
 			<div className={ props.className }>
-				<Editable
+				<RichText
 					tagName="h2"
 					placeholder={ __( 'Write Recipe title…' ) }
 					value={ attributes.title }
@@ -91,7 +91,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 					/>
 				</div>
 				<h3>{ __( 'Ingredients' ) }</h3>
-				<Editable
+				<RichText
 					tagName="ul"
 					multiline="li"
 					placeholder={ __( 'Write a list of ingredients…' ) }
@@ -102,7 +102,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 					className="ingredients"
 				/>
 				<h3>{ __( 'Instructions' ) }</h3>
-				<Editable
+				<RichText
 					tagName="div"
 					multiline="p"
 					className="steps"

@@ -2,12 +2,12 @@
  * Hello World: Step 3
  *
  * Editable "Hello World" text.  Introduces the concept of attributes and
- * extracting them, and the default text formatting added by Editable.
+ * extracting them, and the default text formatting added by RichText.
  */
 ( function( blocks, i18n, element ) {
 	var el = element.createElement;
 	var __ = i18n.__;
-	var Editable = blocks.Editable;
+	var RichText = blocks.RichText;
 	var children = blocks.source.children;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-03-editable', {
@@ -31,7 +31,7 @@
 			}
 
 			return el(
-				Editable,
+				RichText,
 				{
 					tagName: 'p',
 					className: props.className,
