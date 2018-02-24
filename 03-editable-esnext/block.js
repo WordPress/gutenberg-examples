@@ -13,25 +13,34 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 	title: __( 'Example: Editable (esnext)' ),
 	// this can be any of WordPress Dashicons, or a custom svg element.
 	icon: 'universal-access-alt',
-	// The category where the block will live in the block selector 
+	// The category where the block will live in the block insertor 
+	// Possible values can be found at https://wordpress.org/gutenberg/handbook/block-api/#category
 	category: 'layout',
-	// this blocks structrued data
+	// this blocks structured data
 	// See https://wordpress.org/gutenberg/handbook/block-api/attributes/
 	attributes: {
 		content: {
 			// the data type we are storing
+			// See http://json-schema.org/latest/json-schema-validation.html#rfc.section.6.1.1
 			type: 'array',
-			// source and selector combine to dictate how to get this content
+			// source dictates how to get this content
+			// HTML-based sources will have a selector
 			source: 'children',
 			selector: 'p',
 		},
 	},
-	// This uses arrow functions which inherit `this` from it's parent.
-	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
-	//
-	// The edit function describes the structure of your block in the context of the editor.
-	// see: https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/#edit
+
+	/**
+	 * The edit function describes the structure of your block in the context of the editor.
+	 * This represents what the editor will render when the block is used.
+	 * @see https://wordpress.org/gutenberg/handbook/block-edit-save/#edit
+	 *
+	 * @param {Object} [props] Properties passed from the editor.
+	 * @return {Element}       Element to render.
+	 */
 	edit: props => {
+	// The above uses arrow functions which inherit `this` from it's parent.
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 		const { attributes: { content }, focus, className, setFocus } = props;
 		const onChangeContent = newContent => {
 			props.setAttributes( { content: newContent } );
@@ -40,7 +49,7 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 		// Intro to JSX: https://reactjs.org/docs/introducing-jsx.html
 		return (
 			// see: https://wordpress.org/gutenberg/handbook/block-api/editable-api/
-			<Editable
+			<RichText
 				className={ className }
 				onChange={ onChangeContent }
 				value={ content }
@@ -49,8 +58,14 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 				/>
 		);
 	},
-	// The save function defines the way in which the different attributes should be combined into the final markup
-	// see: https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/#save
+	
+	/**
+	 * The save function defines the way in which the different attributes should be combined
+	 * into the final markup, which is then serialized by Gutenberg into `post_content`.
+	 * @see https://wordpress.org/gutenberg/handbook/block-edit-save/#save
+	 *
+	 * @return {Element}       Element to render.
+	 */	
 	save: props => (
 		<p>
 			{ props.attributes.content }
