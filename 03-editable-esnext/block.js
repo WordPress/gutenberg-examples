@@ -4,7 +4,7 @@
 // These are using Destructing Assignment which can be used to unpack properties from an object
 // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 const { __ } = wp.i18n;
-const { registerBlockType, Editable, source: { children } } = wp.blocks;
+const { registerBlockType, Editable } = wp.blocks;
 
 // registerBlockType is the base function for registering a block  
 // see: https://wordpress.org/gutenberg/handbook/block-api/#register-block-type
