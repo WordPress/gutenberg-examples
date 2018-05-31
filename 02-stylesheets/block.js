@@ -12,7 +12,7 @@
 	var __ = i18n.__;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-02-stylesheets', {
-		title: __( 'Example: Stylesheets', 'gutenberg-examples' ),
+		title: __( 'Example: Stylesheets' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 		edit: function( props ) {

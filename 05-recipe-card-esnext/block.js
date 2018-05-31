@@ -1,13 +1,11 @@
 const { __ } = wp.i18n;
 const {
-	registerBlockType,
-	RichText,
-	MediaUpload,
-	source: {
-		attr,
-		children
-	}
+	registerBlockType
 } = wp.blocks;
+const {
+	RichText,
+	MediaUpload
+} = wp.editor;
 const { Button } = wp.components;
 
 registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
@@ -40,43 +38,42 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			selector: '.steps',
 		},
 	},
-	edit: props => {
-		const focusedEditable = props.focus ? props.focus.editable || 'title' : null;
-		const attributes = props.attributes;
+	edit: (props) => {
+		const {
+			className,
+			attributes: {
+				title,
+				mediaURL,
+				ingredients,
+				instructions
+			},
+			setAttributes
+		} = props;
 		const onChangeTitle = value => {
-			props.setAttributes( { title: value } );
+			setAttributes( { title: value } );
 		};
-		const onFocusTitle = focus => {
-			props.setFocus( _.extend( {}, focus, { editable: 'title' } ) );
-		};
+		
 		const onSelectImage = media => {
-			props.setAttributes( {
+			setAttributes( {
 				mediaURL: media.url,
 				mediaID: media.id,
 			} );
 		};
 		const onChangeIngredients = value => {
-			props.setAttributes( { ingredients: value } );
+			setAttributes( { ingredients: value } );
 		};
-		const onFocusIngredients = focus => {
-			props.setFocus( _.extend( {}, focus, { editable: 'ingredients' } ) );
-		};
+
 		const onChangeInstructions = value => {
-			props.setAttributes( { instructions: value } );
-		};
-		const onFocusInstructions = focus => {
-			props.setFocus( _.extend( {}, focus, { editable: 'instructions' } ) );
+			setAttributes( { instructions: value } );
 		};
 
 		return (
-			<div className={ props.className }>
+			<div className={ className }>
 				<RichText
 					tagName="h2"
 					placeholder={ __( 'Write Recipe title…' ) }
 					value={ attributes.title }
 					onChange={ onChangeTitle }
-					focus={ focusedEditable === 'title' }
-					onFocus={ onFocusTitle }
 				/>
 				<div className="recipe-image">
 					<MediaUpload
@@ -97,8 +94,6 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 					placeholder={ __( 'Write a list of ingredients…' ) }
 					value={ attributes.ingredients }
 					onChange={ onChangeIngredients }
-					focus={ focusedEditable === 'ingredients' }
-					onFocus={ onFocusIngredients }
 					className="ingredients"
 				/>
 				<h3>{ __( 'Instructions' ) }</h3>
@@ -109,13 +104,11 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 					placeholder={ __( 'Write the instructions…' ) }
 					value={ attributes.instructions }
 					onChange={ onChangeInstructions }
-					focus={ focusedEditable === 'instructions' }
-					onFocus={ onFocusInstructions }
 				/>
 			</div>
 		);
 	},
-	save: props => {
+	save: (props) => {
 		const {
 			className,
 			attributes: {
@@ -127,20 +120,17 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 		} = props;
 		return (
 			<div className={ className }>
-				<h2>
-					{ title }
-				</h2>
+				<RichText.Content tagName="h2" value={ title } />
+
 				{
 					mediaURL && (
 						<img className="recipe-image" src={ mediaURL } />
 					)
 				}
-				<ul className="ingredients">
-					{ ingredients }
-				</ul>
-				<div className="steps">
-					{ instructions }
-				</div>
+
+				<RichText.Content tagName="h2" className="ingredients" value={ ingredients } />
+
+				<RichText.Content tagName="div" className="steps" value={ instructions } />
 			</div>
 		);
 	}

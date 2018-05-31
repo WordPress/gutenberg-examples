@@ -1,11 +1,13 @@
 const { __ } = wp.i18n;
 const {
 	registerBlockType,
+} = wp.blocks;
+
+const {
 	RichText,
-	source: { children },
 	AlignmentToolbar,
 	BlockControls
-} = wp.blocks;
+} = wp.editor;
 
 registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 	title: __( 'Example: Controls (esnext)' ),
@@ -17,6 +19,10 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 			source: 'children',
 			selector: 'p',
 		},
+		alignment: {
+			type: 'string',
+			default: 'none',
+		}
 	},
 	edit: props => {
 		const {
@@ -24,9 +30,7 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 				content,
 				alignment
 			},
-			focus,
 			className,
-			setFocus
 		} = props;
 
 		const onChangeContent = newContent => {
@@ -40,35 +44,30 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 		return (
 			<div>
 				{
-					!! focus && (
-						<BlockControls>
-							<AlignmentToolbar
-								value={ alignment }
-								onChange={ onChangeAlignment }
-							/>
-						</BlockControls>
-					)
+					<BlockControls>
+						<AlignmentToolbar
+							value={ alignment }
+							onChange={ onChangeAlignment }
+						/>
+					</BlockControls>
 				}
 				<RichText
 					className={ className }
-					style={ { textAlign: alignment } }
+					style= { { textAlign: alignment } }
+					tagName="p"
 					onChange={ onChangeContent }
 					value={ content }
-					focus={ focus }
-					onFocus={ setFocus }
 					/>
 			</div>
 		);
 	},
 	save: props => {
-		let classes = '';
-		if ( props.attributes.alignment ) {
-			classes = 'gutenberg-examples-align-' + props.attributes.alignment;
-		}
 		return (
-			<p className={ classes }>
-				{ props.attributes.content }
-			</p>
+			<RichText.Content 
+				classes={ `gutenberg-examples-align-${props.attributes.alignment}` } 
+				tagName="p" 
+				value={ props.attributes.content } 
+				/>
 		);
 	}
 } );

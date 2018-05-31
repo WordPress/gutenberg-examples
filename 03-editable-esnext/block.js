@@ -1,5 +1,6 @@
 const { __ } = wp.i18n;
-const { registerBlockType, RichText, source: { children } } = wp.blocks;
+const { registerBlockType } = wp.blocks;
+const { RichText } = wp.editor;
 
 registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 	title: __( 'Example: Editable (esnext)' ),
@@ -13,23 +14,20 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 		},
 	},
 	edit: props => {
-		const { attributes: { content }, focus, className, setFocus } = props;
+		const { attributes: { content }, setAttributes, className } = props;
 		const onChangeContent = newContent => {
-			props.setAttributes( { content: newContent } );
+			setAttributes( { content: newContent } );
 		};
 		return (
 			<RichText
+				tagName="p"
 				className={ className }
 				onChange={ onChangeContent }
 				value={ content }
-				focus={ focus }
-				onFocus={ setFocus }
 				/>
 		);
 	},
-	save: props => (
-		<p>
-			{ props.attributes.content }
-		</p>
-	)
+	save: props => {
+		return <RichText.Content tagName="p" value={ props.attributes.content } />;
+	}
 } );

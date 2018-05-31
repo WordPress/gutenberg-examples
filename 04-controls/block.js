@@ -3,16 +3,15 @@
  *
  * Adding extra controls: built-in alignment toolbar.
  */
-( function( blocks, i18n, element ) {
+( function( blocks, editor, i18n, element ) {
 	var el = element.createElement;
 	var __ = i18n.__;
-	var RichText = blocks.RichText;
-	var children = blocks.source.children;
-	var AlignmentToolbar = wp.blocks.AlignmentToolbar;
-	var BlockControls = wp.blocks.BlockControls;
+	var RichText = editor.RichText;
+	var AlignmentToolbar = editor.AlignmentToolbar;
+	var BlockControls = editor.BlockControls;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-04-controls', {
-		title: __( 'Example: Controls', 'gutenberg-examples' ),
+		title: __( 'Example: Controls' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 
@@ -22,12 +21,15 @@
 				source: 'children',
 				selector: 'p',
 			},
+			alignment: {
+				type: 'string',
+				default: 'none',
+			}
 		},
 
 		edit: function( props ) {
 			var content = props.attributes.content;
 			var alignment = props.attributes.alignment;
-			var focus = props.focus;
 
 			function onChangeContent( newContent ) {
 				props.setAttributes( { content: newContent } );
@@ -38,7 +40,7 @@
 			}
 
 			return [
-				!! focus && el(
+				el(
 					BlockControls,
 					{ key: 'controls' },
 					el(
@@ -52,34 +54,28 @@
 				el(
 					RichText,
 					{
-						key: 'editable',
+						key: 'richtext',
 						tagName: 'p',
-						className: props.className,
 						style: { textAlign: alignment },
+						className: props.className,
 						onChange: onChangeContent,
 						value: content,
-						focus: focus,
-						onFocus: props.setFocus
 					}
 				)
 			];
 		},
 
 		save: function( props ) {
-			var saveProps = {};
-			if ( props.attributes.alignment ) {
-				saveProps.className =
-					'gutenberg-examples-align-' + props.attributes.alignment;
-			}
-			return el(
-				'p',
-				saveProps,
-				props.attributes.content
-			);
+			return el( RichText.Content, {
+				tagName: 'p', 
+				className: 'gutenberg-examples-align-' + props.attributes.alignment,
+				value: props.attributes.content
+			} );
 		},
 	} );
 } )(
 	window.wp.blocks,
+	window.wp.editor,
 	window.wp.i18n,
 	window.wp.element
 );

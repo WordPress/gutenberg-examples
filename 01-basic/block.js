@@ -6,7 +6,7 @@
  * Using inline styles - no external stylesheet needed.  Not recommended
  * because all of these styles will appear in `post_content`.
  */
-( function( blocks, i18n, element ) {
+(function (blocks, i18n, element) {
 	var el = element.createElement;
 	var __ = i18n.__;
 
@@ -17,25 +17,25 @@
 	};
 
 	blocks.registerBlockType( 'gutenberg-examples/example-01-basic', {
-		title: __( 'Example: Basic', 'gutenberg-examples' ),
+		title: __( 'Example: Basic' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
-		edit: function() {
+		edit: function () {
 			return el(
 				'p',
 				{ style: blockStyle },
 				'Hello World, step 1 (from the editor).'
 			);
 		},
-		save: function() {
+		save: function () {
 			return el(
 				'p',
 				{ style: blockStyle },
 				'Hello World, step 1 (from the frontend).'
 			);
 		},
-	} );
-} )(
+	});
+})(
 	window.wp.blocks,
 	window.wp.i18n,
 	window.wp.element
