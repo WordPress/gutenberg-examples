@@ -5,7 +5,7 @@
  *
  * Using inline styles - no external stylesheet needed.  Not recommended
  * because all of these styles will appear in `post_content`.
- */
+ */ 
 (function (blocks, i18n, element) {
 	var el = element.createElement;
 	var __ = i18n.__;
@@ -16,8 +16,10 @@
 		padding: '20px'
 	};
 
+	i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
+
 	blocks.registerBlockType( 'gutenberg-examples/example-01-basic', {
-		title: __( 'Example: Basic' ),
+		title: __( 'Example: Basic', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 		edit: function () {

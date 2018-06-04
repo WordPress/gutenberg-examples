@@ -2,9 +2,10 @@
 	var el = element.createElement;
 	var RichText = editor.RichText;
 	var MediaUpload = editor.MediaUpload;
+	i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
 
 	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
-		title: i18n.__( 'Example: Recipe Card' ),
+		title: i18n.__( 'Example: Recipe Card', 'gutenberg-examples' ),
 		icon: 'index-card',
 		category: 'layout',
 		attributes: {
@@ -48,7 +49,7 @@
 					el( RichText, {
 						tagName: 'h2',
 						inline: true,
-						placeholder: i18n.__( 'Write Recipe title…' ),
+						placeholder: i18n.__( 'Write Recipe title…', 'gutenberg-examples' ),
 						value: attributes.title,
 						onChange: function( value ) {
 							props.setAttributes( { title: value } );
@@ -64,27 +65,27 @@
 										className: attributes.mediaID ? 'image-button' : 'button button-large',
 										onClick: obj.open
 									},
-									! attributes.mediaID ? i18n.__( 'Upload Image' ) : el( 'img', { src: attributes.mediaURL } )
+									! attributes.mediaID ? i18n.__( 'Upload Image', 'gutenberg-examples' ) : el( 'img', { src: attributes.mediaURL } )
 								);
 							}
 						} )
 					),
-					el( 'h3', {}, i18n.__( 'Ingredients' ) ),
+					el( 'h3', {}, i18n.__( 'Ingredients', 'gutenberg-examples' ) ),
 					el( RichText, {
 						tagName: 'ul',
 						multiline: 'li',
-						placeholder: i18n.__( 'Write a list of ingredients…' ),
+						placeholder: i18n.__( 'Write a list of ingredients…', 'gutenberg-examples' ),
 						value: attributes.ingredients,
 						onChange: function( value ) {
 							props.setAttributes( { ingredients: value } );
 						},
 						className: 'ingredients',
 					} ),
-					el( 'h3', {}, i18n.__( 'Instructions' ) ),
+					el( 'h3', {}, i18n.__( 'Instructions', 'gutenberg-examples' ) ),
 					el( RichText, {
 						tagName: 'div',
 						inline: false,
-						placeholder: i18n.__( 'Write instructions…' ),
+						placeholder: i18n.__( 'Write instructions…', 'gutenberg-examples' ),
 						value: attributes.instructions,
 						onChange: function( value ) {
 							props.setAttributes( { instructions: value } );
@@ -105,11 +106,11 @@
 						el( 'div', { className: 'recipe-image' },
 							el( 'img', { src: attributes.mediaURL } ),
 						),
-					el( 'h3', {}, i18n.__( 'Ingredients' ) ),
+					el( 'h3', {}, i18n.__( 'Ingredients', 'gutenberg-examples' ) ),
 					el( RichText.Content, {
 						tagName: 'ul', className: 'ingredients', value: attributes.ingredients
 					} ),
-					el( 'h3', {}, i18n.__( 'Instructions' ) ),
+					el( 'h3', {}, i18n.__( 'Instructions', 'gutenberg-examples' ) ),
 					el( RichText.Content, {
 						tagName: 'div', className: 'steps', value: attributes.instructions
 					} ),

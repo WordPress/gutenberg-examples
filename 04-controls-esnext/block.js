@@ -1,4 +1,4 @@
-const { __ } = wp.i18n;
+const { __, setLocaleData } = wp.i18n;
 const {
 	registerBlockType,
 } = wp.blocks;
@@ -9,8 +9,10 @@ const {
 	BlockControls
 } = wp.editor;
 
+setLocaleData( { '': {} }, 'gutenberg-examples' );
+
 registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
-	title: __( 'Example: Controls (esnext)' ),
+	title: __( 'Example: Controls (esnext)', 'gutenberg-examples' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
 	attributes: {

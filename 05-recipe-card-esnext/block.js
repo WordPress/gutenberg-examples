@@ -1,4 +1,4 @@
-const { __ } = wp.i18n;
+const { __, setLocaleData } = wp.i18n;
 const {
 	registerBlockType
 } = wp.blocks;
@@ -8,8 +8,10 @@ const {
 } = wp.editor;
 const { Button } = wp.components;
 
+setLocaleData( { '': {} }, 'gutenberg-examples' );
+
 registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
-	title: __( 'Example: Recipe Card (esnext)' ),
+	title: __( 'Example: Recipe Card (esnext)', 'gutenberg-examples' ),
 	icon: 'index-card',
 	category: 'layout',
 	attributes: {
@@ -43,6 +45,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			className,
 			attributes: {
 				title,
+				mediaID,
 				mediaURL,
 				ingredients,
 				instructions
@@ -71,38 +74,38 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			<div className={ className }>
 				<RichText
 					tagName="h2"
-					placeholder={ __( 'Write Recipe title…' ) }
-					value={ attributes.title }
+					placeholder={ __( 'Write Recipe title…', 'gutenberg-examples' ) }
+					value={ title }
 					onChange={ onChangeTitle }
 				/>
 				<div className="recipe-image">
 					<MediaUpload
 						onSelect={ onSelectImage }
 						type="image"
-						value={ attributes.mediaID }
+						value={ mediaID }
 						render={ ( { open } ) => (
-							<Button className={ attributes.mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
-								{ ! attributes.mediaID ? __( 'Upload Image' ) : <img src={ attributes.mediaURL } /> }
+							<Button className={ mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
+								{ ! mediaID ? __( 'Upload Image', 'gutenberg-examples' ) : <img src={ mediaURL } /> }
 							</Button>
 						) }
 					/>
 				</div>
-				<h3>{ __( 'Ingredients' ) }</h3>
+				<h3>{ __( 'Ingredients', 'gutenberg-examples' ) }</h3>
 				<RichText
 					tagName="ul"
 					multiline="li"
-					placeholder={ __( 'Write a list of ingredients…' ) }
-					value={ attributes.ingredients }
+					placeholder={ __( 'Write a list of ingredients…', 'gutenberg-examples' ) }
+					value={ ingredients }
 					onChange={ onChangeIngredients }
 					className="ingredients"
 				/>
-				<h3>{ __( 'Instructions' ) }</h3>
+				<h3>{ __( 'Instructions', 'gutenberg-examples' ) }</h3>
 				<RichText
 					tagName="div"
 					multiline="p"
 					className="steps"
-					placeholder={ __( 'Write the instructions…' ) }
-					value={ attributes.instructions }
+					placeholder={ __( 'Write the instructions…', 'gutenberg-examples' ) }
+					value={ instructions }
 					onChange={ onChangeInstructions }
 				/>
 			</div>

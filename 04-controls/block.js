@@ -10,8 +10,10 @@
 	var AlignmentToolbar = editor.AlignmentToolbar;
 	var BlockControls = editor.BlockControls;
 
+	i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
+
 	blocks.registerBlockType( 'gutenberg-examples/example-04-controls', {
-		title: __( 'Example: Controls' ),
+		title: __( 'Example: Controls', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 

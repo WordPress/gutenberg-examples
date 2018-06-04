@@ -9,8 +9,10 @@
 	var __ = i18n.__;
 	var RichText = editor.RichText;
 
+	wp.i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
+
 	blocks.registerBlockType( 'gutenberg-examples/example-03-editable', {
-		title: __( 'Example: Editable' ),
+		title: __( 'Example: Editable', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 
