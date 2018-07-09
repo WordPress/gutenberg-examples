@@ -11,7 +11,7 @@
 	var el = element.createElement;
 	var __ = i18n.__;
 
-	i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
+	i18n.setLocaleData({ '': {} }, 'gutenberg-examples' );
 
 	blocks.registerBlockType( 'gutenberg-examples/example-02-stylesheets', {
 		title: __( 'Example: Stylesheets', 'gutenberg-examples' ),
@@ -30,10 +30,10 @@
 				{},
 				'Hello World, step 2 (from the frontend, in red).'
 			);
-		},
-	} );
-} )(
+		}
+	});
+}(
 	window.wp.blocks,
 	window.wp.i18n,
 	window.wp.element
-);
+) );

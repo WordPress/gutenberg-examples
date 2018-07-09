@@ -9,7 +9,7 @@
 	var __ = i18n.__;
 	var RichText = editor.RichText;
 
-	wp.i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
+	wp.i18n.setLocaleData({ '': {} }, 'gutenberg-examples' );
 
 	blocks.registerBlockType( 'gutenberg-examples/example-03-editable', {
 		title: __( 'Example: Editable', 'gutenberg-examples' ),
@@ -20,15 +20,15 @@
 			content: {
 				type: 'array',
 				source: 'children',
-				selector: 'p',
-			},
+				selector: 'p'
+			}
 		},
 
 		edit: function( props ) {
 			var content = props.attributes.content;
 			var focus = props.focus;
 			function onChangeContent( newContent ) {
-				props.setAttributes( { content: newContent } );
+				props.setAttributes({ content: newContent });
 			}
 
 
@@ -38,7 +38,7 @@
 					tagName: 'p',
 					className: props.className,
 					onChange: onChangeContent,
-					value: content,
+					value: content
 				}
 			);
 		},
@@ -46,12 +46,12 @@
 		save: function( props ) {
 			return el( RichText.Content, {
 				tagName: 'p', value: props.attributes.content
-			} );
-		},
-	} );
-} )(
+			});
+		}
+	});
+}(
 	window.wp.blocks,
 	window.wp.editor,
 	window.wp.i18n,
 	window.wp.element
-);
+) );
