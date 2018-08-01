@@ -8,8 +8,8 @@
  * appropriate element with this class.
  */
 ( function( blocks, i18n, element ) {
-	var el = element.createElement;
-	var __ = i18n.__;
+	const el = element.createElement;
+	const __ = i18n.__;
 
 	i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
 
@@ -32,8 +32,8 @@
 			);
 		},
 	} );
-} )(
+}(
 	window.wp.blocks,
 	window.wp.i18n,
 	window.wp.element
-);
+) );

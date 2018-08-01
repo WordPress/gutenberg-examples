@@ -90,7 +90,7 @@
 						onChange: function( value ) {
 							props.setAttributes( { instructions: value } );
 						},
-					} ),
+					} )
 				)
 			);
 		},

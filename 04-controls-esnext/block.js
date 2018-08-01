@@ -6,7 +6,7 @@ const {
 const {
 	RichText,
 	AlignmentToolbar,
-	BlockControls
+	BlockControls,
 } = wp.editor;
 
 setLocaleData( { '': {} }, 'gutenberg-examples' );
@@ -24,22 +24,22 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 		alignment: {
 			type: 'string',
 			default: 'none',
-		}
+		},
 	},
-	edit: props => {
+	edit: ( props ) => {
 		const {
 			attributes: {
 				content,
-				alignment
+				alignment,
 			},
 			className,
 		} = props;
 
-		const onChangeContent = newContent => {
+		const onChangeContent = ( newContent ) => {
 			props.setAttributes( { content: newContent } );
 		};
 
-		const onChangeAlignment = newAlignment => {
+		const onChangeAlignment = ( newAlignment ) => {
 			props.setAttributes( { alignment: newAlignment } );
 		};
 
@@ -55,21 +55,21 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 				}
 				<RichText
 					className={ className }
-					style= { { textAlign: alignment } }
+					style={ { textAlign: alignment } }
 					tagName="p"
 					onChange={ onChangeContent }
 					value={ content }
-					/>
+				/>
 			</div>
 		);
 	},
-	save: props => {
+	save: ( props ) => {
 		return (
-			<RichText.Content 
-				classes={ `gutenberg-examples-align-${props.attributes.alignment}` } 
-				tagName="p" 
-				value={ props.attributes.content } 
-				/>
+			<RichText.Content
+				classes={ `gutenberg-examples-align-${ props.attributes.alignment }` }
+				tagName="p"
+				value={ props.attributes.content }
+			/>
 		);
-	}
+	},
 } );

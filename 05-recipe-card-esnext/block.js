@@ -1,10 +1,10 @@
 const { __, setLocaleData } = wp.i18n;
 const {
-	registerBlockType
+	registerBlockType,
 } = wp.blocks;
 const {
 	RichText,
-	MediaUpload
+	MediaUpload,
 } = wp.editor;
 const { Button } = wp.components;
 
@@ -40,7 +40,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			selector: '.steps',
 		},
 	},
-	edit: (props) => {
+	edit: ( props ) => {
 		const {
 			className,
 			attributes: {
@@ -48,25 +48,25 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 				mediaID,
 				mediaURL,
 				ingredients,
-				instructions
+				instructions,
 			},
-			setAttributes
+			setAttributes,
 		} = props;
-		const onChangeTitle = value => {
+		const onChangeTitle = ( value ) => {
 			setAttributes( { title: value } );
 		};
-		
-		const onSelectImage = media => {
+
+		const onSelectImage = ( media ) => {
 			setAttributes( {
 				mediaURL: media.url,
 				mediaID: media.id,
 			} );
 		};
-		const onChangeIngredients = value => {
+		const onChangeIngredients = ( value ) => {
 			setAttributes( { ingredients: value } );
 		};
 
-		const onChangeInstructions = value => {
+		const onChangeInstructions = ( value ) => {
 			setAttributes( { instructions: value } );
 		};
 
@@ -85,7 +85,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 						value={ mediaID }
 						render={ ( { open } ) => (
 							<Button className={ mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
-								{ ! mediaID ? __( 'Upload Image', 'gutenberg-examples' ) : <img src={ mediaURL } /> }
+								{ ! mediaID ? __( 'Upload Image', 'gutenberg-examples' ) : <img src={ mediaURL } alt={ __( 'Upload Recipe Image', 'gutenberg-examples' ) } /> }
 							</Button>
 						) }
 					/>
@@ -111,15 +111,15 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			</div>
 		);
 	},
-	save: (props) => {
+	save: ( props ) => {
 		const {
 			className,
 			attributes: {
 				title,
 				mediaURL,
 				ingredients,
-				instructions
-			}
+				instructions,
+			},
 		} = props;
 		return (
 			<div className={ className }>
@@ -127,7 +127,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 
 				{
 					mediaURL && (
-						<img className="recipe-image" src={ mediaURL } />
+						<img className="recipe-image" src={ mediaURL } alt={ __( 'Recipe Image', 'gutenberg-examples' ) } />
 					)
 				}
 
@@ -136,5 +136,5 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 				<RichText.Content tagName="div" className="steps" value={ instructions } />
 			</div>
 		);
-	}
+	},
 } );

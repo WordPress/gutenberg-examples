@@ -4,11 +4,11 @@
  * Adding extra controls: built-in alignment toolbar.
  */
 ( function( blocks, editor, i18n, element ) {
-	var el = element.createElement;
-	var __ = i18n.__;
-	var RichText = editor.RichText;
-	var AlignmentToolbar = editor.AlignmentToolbar;
-	var BlockControls = editor.BlockControls;
+	const el = element.createElement;
+	const __ = i18n.__;
+	const RichText = editor.RichText;
+	const AlignmentToolbar = editor.AlignmentToolbar;
+	const BlockControls = editor.BlockControls;
 
 	i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
 
@@ -26,12 +26,12 @@
 			alignment: {
 				type: 'string',
 				default: 'none',
-			}
+			},
 		},
 
 		edit: function( props ) {
-			var content = props.attributes.content;
-			var alignment = props.attributes.alignment;
+			const content = props.attributes.content;
+			const alignment = props.attributes.alignment;
 
 			function onChangeContent( newContent ) {
 				props.setAttributes( { content: newContent } );
@@ -49,7 +49,7 @@
 						AlignmentToolbar,
 						{
 							value: alignment,
-							onChange: onChangeAlignment
+							onChange: onChangeAlignment,
 						}
 					)
 				),
@@ -63,21 +63,21 @@
 						onChange: onChangeContent,
 						value: content,
 					}
-				)
+				),
 			];
 		},
 
 		save: function( props ) {
 			return el( RichText.Content, {
-				tagName: 'p', 
+				tagName: 'p',
 				className: 'gutenberg-examples-align-' + props.attributes.alignment,
-				value: props.attributes.content
+				value: props.attributes.content,
 			} );
 		},
 	} );
-} )(
+}(
 	window.wp.blocks,
 	window.wp.editor,
 	window.wp.i18n,
 	window.wp.element
-);
+) );

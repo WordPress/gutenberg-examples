@@ -5,9 +5,9 @@
  * extracting them, and the default text formatting added by RichText.
  */
 ( function( blocks, editor, i18n, element ) {
-	var el = element.createElement;
-	var __ = i18n.__;
-	var RichText = editor.RichText;
+	const el = element.createElement;
+	const __ = i18n.__;
+	const RichText = editor.RichText;
 
 	wp.i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
 
@@ -25,12 +25,10 @@
 		},
 
 		edit: function( props ) {
-			var content = props.attributes.content;
-			var focus = props.focus;
+			const content = props.attributes.content;
 			function onChangeContent( newContent ) {
 				props.setAttributes( { content: newContent } );
 			}
-
 
 			return el(
 				RichText,
@@ -45,13 +43,13 @@
 
 		save: function( props ) {
 			return el( RichText.Content, {
-				tagName: 'p', value: props.attributes.content
+				tagName: 'p', value: props.attributes.content,
 			} );
 		},
 	} );
-} )(
+}(
 	window.wp.blocks,
 	window.wp.editor,
 	window.wp.i18n,
 	window.wp.element
-);
+) );

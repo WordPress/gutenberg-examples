@@ -1,0 +1,25 @@
+{
+	"name": "gutenberg-examples",
+	"version": "3.4.0",
+	"private": true,
+	"description": "Gutenberg Examples",
+	"repository": "git+https://github.com/WordPress/gutenberg-examples.git",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"editor",
+		"Examples"
+	],
+	"scripts": {
+		"lint-js": "eslint .",
+		"lint-js:fix": "eslint . --fix"
+	},
+	"devDependencies": {
+		"eslint": "^5.2.0",
+		"eslint-config-wordpress": "^2.0.0",
+		"eslint-plugin-jsx-a11y": "^6.1.1",
+		"eslint-plugin-react": "^7.10.0",
+		"eslint-plugin-wordpress": "git://github.com/WordPress-Coding-Standards/eslint-plugin-wordpress.git#1774343f6226052a46b081e01db3fca8793cc9f1"
+	}
+}

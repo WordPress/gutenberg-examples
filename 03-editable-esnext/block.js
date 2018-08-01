@@ -15,9 +15,9 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 			selector: 'p',
 		},
 	},
-	edit: props => {
+	edit: ( props ) => {
 		const { attributes: { content }, setAttributes, className } = props;
-		const onChangeContent = newContent => {
+		const onChangeContent = ( newContent ) => {
 			setAttributes( { content: newContent } );
 		};
 		return (
@@ -26,10 +26,10 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 				className={ className }
 				onChange={ onChangeContent }
 				value={ content }
-				/>
+			/>
 		);
 	},
-	save: props => {
+	save: ( props ) => {
 		return <RichText.Content tagName="p" value={ props.attributes.content } />;
-	}
+	},
 } );
