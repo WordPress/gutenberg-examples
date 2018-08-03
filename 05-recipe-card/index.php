@@ -19,6 +19,11 @@ function gutenberg_examples_05_load_textdomain() {
  */
 function gutenberg_examples_05_register_block() {
 
+	if ( ! function_exists( 'register_block_type' ) ) {
+		// Gutenberg is not active.
+		return;
+	}
+	
 	wp_register_script(
 		'gutenberg-examples-05',
 		plugins_url( 'block.js', __FILE__ ),
@@ -32,11 +37,6 @@ function gutenberg_examples_05_register_block() {
 		array( ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )
 	);
-
-	if ( ! function_exists( 'register_block_type' ) ) {
-		// Gutenberg is not active.
-		return;
-	}
 
 	register_block_type( 'gutenberg-examples/example-05-recipe-card', array(
 		'style' => 'gutenberg-examples-05',

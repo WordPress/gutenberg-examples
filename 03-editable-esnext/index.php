@@ -19,6 +19,11 @@ function gutenberg_examples_03_esnext_load_textdomain() {
  */
 function gutenberg_examples_03_esnext_register_block() {
 
+	if ( ! function_exists( 'register_block_type' ) ) {
+		// Gutenberg is not active.
+		return;
+	}
+
 	wp_register_script(
 		'gutenberg-examples-03-esnext',
 		plugins_url( 'block.build.js', __FILE__ ),
@@ -39,11 +44,6 @@ function gutenberg_examples_03_esnext_register_block() {
 		array( ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )
 	);
-
-	if ( ! function_exists( 'register_block_type' ) ) {
-		// Gutenberg is not active.
-		return;
-	}
 
 	register_block_type( 'gutenberg-examples/example-03-editable-esnext', array(
 		'style' => 'gutenberg-examples-03-esnext',
