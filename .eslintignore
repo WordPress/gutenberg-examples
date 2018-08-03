@@ -1,8 +1,3 @@
-build
-build-module
-coverage
+
 node_modules
-packages/block-serialization-spec-parser
-vendor
 *.build.js
-webpack.config.js
