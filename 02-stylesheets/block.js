@@ -11,8 +11,6 @@
 	const el = element.createElement;
 	const __ = i18n.__;
 
-	i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
-
 	blocks.registerBlockType( 'gutenberg-examples/example-02-stylesheets', {
 		title: __( 'Example: Stylesheets', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',

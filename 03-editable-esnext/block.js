@@ -2,7 +2,7 @@ const { __, setLocaleData } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText } = wp.editor;
 
-setLocaleData( { '': {} }, 'gutenberg-examples' );
+setLocaleData( window.gutenberg_examples_03_esnext.localeData, 'gutenberg-examples' );
 
 registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 	title: __( 'Example: Editable (esnext)', 'gutenberg-examples' ),

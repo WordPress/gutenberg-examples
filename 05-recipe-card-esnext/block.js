@@ -8,7 +8,7 @@ const {
 } = wp.editor;
 const { Button } = wp.components;
 
-setLocaleData( { '': {} }, 'gutenberg-examples' );
+setLocaleData( window.gutenberg_examples_05_esnext.localeData, 'gutenberg-examples' );
 
 registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 	title: __( 'Example: Recipe Card (esnext)', 'gutenberg-examples' ),

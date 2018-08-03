@@ -10,7 +10,7 @@
 	const AlignmentToolbar = editor.AlignmentToolbar;
 	const BlockControls = editor.BlockControls;
 
-	i18n.setLocaleData( { '': {} }, 'gutenberg-examples' );
+	i18n.setLocaleData( window.gutenberg_examples_04.localeData, 'gutenberg-examples' );
 
 	blocks.registerBlockType( 'gutenberg-examples/example-04-controls', {
 		title: __( 'Example: Controls', 'gutenberg-examples' ),
