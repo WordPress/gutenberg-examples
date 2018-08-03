@@ -8,8 +8,8 @@
  * appropriate element with this class.
  */
 ( function( blocks, i18n, element ) {
-	const el = element.createElement;
-	const __ = i18n.__;
+	var el = element.createElement;
+	var __ = i18n.__;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-02-stylesheets', {
 		title: __( 'Example: Stylesheets', 'gutenberg-examples' ),

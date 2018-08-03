@@ -5,9 +5,9 @@
  * extracting them, and the default text formatting added by RichText.
  */
 ( function( blocks, editor, i18n, element ) {
-	const el = element.createElement;
-	const __ = i18n.__;
-	const RichText = editor.RichText;
+	var el = element.createElement;
+	var __ = i18n.__;
+	var RichText = editor.RichText;
 
 	i18n.setLocaleData( window.gutenberg_examples_03.localeData, 'gutenberg-examples' );
 
@@ -25,7 +25,7 @@
 		},
 
 		edit: function( props ) {
-			const content = props.attributes.content;
+			var content = props.attributes.content;
 			function onChangeContent( newContent ) {
 				props.setAttributes( { content: newContent } );
 			}

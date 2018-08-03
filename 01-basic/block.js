@@ -7,10 +7,10 @@
  * because all of these styles will appear in `post_content`.
  */
 ( function( blocks, i18n, element ) {
-	const el = element.createElement;
-	const __ = i18n.__;
+	var el = element.createElement;
+	var __ = i18n.__;
 
-	const blockStyle = {
+	var blockStyle = {
 		backgroundColor: '#900',
 		color: '#fff',
 		padding: '20px',

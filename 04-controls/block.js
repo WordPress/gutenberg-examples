@@ -4,11 +4,11 @@
  * Adding extra controls: built-in alignment toolbar.
  */
 ( function( blocks, editor, i18n, element ) {
-	const el = element.createElement;
-	const __ = i18n.__;
-	const RichText = editor.RichText;
-	const AlignmentToolbar = editor.AlignmentToolbar;
-	const BlockControls = editor.BlockControls;
+	var el = element.createElement;
+	var __ = i18n.__;
+	var RichText = editor.RichText;
+	var AlignmentToolbar = editor.AlignmentToolbar;
+	var BlockControls = editor.BlockControls;
 
 	i18n.setLocaleData( window.gutenberg_examples_04.localeData, 'gutenberg-examples' );
 
@@ -30,8 +30,8 @@
 		},
 
 		edit: function( props ) {
-			const content = props.attributes.content;
-			const alignment = props.attributes.alignment;
+			var content = props.attributes.content;
+			var alignment = props.attributes.alignment;
 
 			function onChangeContent( newContent ) {
 				props.setAttributes( { content: newContent } );
