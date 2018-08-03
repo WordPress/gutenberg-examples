@@ -40,7 +40,7 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 		};
 
 		const onChangeAlignment = ( newAlignment ) => {
-			props.setAttributes( { alignment: newAlignment } );
+			props.setAttributes( { alignment: newAlignment === undefined ? 'none' : newAlignment } );
 		};
 
 		return (

@@ -38,7 +38,7 @@
 			}
 
 			function onChangeAlignment( newAlignment ) {
-				props.setAttributes( { alignment: newAlignment } );
+				props.setAttributes( { alignment: newAlignment === undefined ? 'none' : newAlignment } );
 			}
 
 			return [
