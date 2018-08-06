@@ -7,7 +7,6 @@
 	var el = element.createElement;
 	var __ = i18n.__;
 	var RichText = blocks.RichText;
-	var children = blocks.source.children;
 	var AlignmentToolbar = wp.blocks.AlignmentToolbar;
 	var BlockControls = wp.blocks.BlockControls;
 
