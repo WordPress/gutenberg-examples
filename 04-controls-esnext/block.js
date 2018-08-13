@@ -66,7 +66,7 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 	save: ( props ) => {
 		return (
 			<RichText.Content
-				classes={ `gutenberg-examples-align-${ props.attributes.alignment }` }
+				className={ `gutenberg-examples-align-${ props.attributes.alignment }` }
 				tagName="p"
 				value={ props.attributes.content }
 			/>
