@@ -1,17 +1,17 @@
-const { __ } = wp.i18n;
+const { __, setLocaleData } = wp.i18n;
 const {
 	registerBlockType,
+} = wp.blocks;
+const {
 	RichText,
 	MediaUpload,
-	source: {
-		attr,
-		children
-	}
-} = wp.blocks;
+} = wp.editor;
 const { Button } = wp.components;
 
+setLocaleData( window.gutenberg_examples_05_esnext.localeData, 'gutenberg-examples' );
+
 registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
-	title: __( 'Example: Recipe Card (esnext)' ),
+	title: __( 'Example: Recipe Card (esnext)', 'gutenberg-examples' ),
 	icon: 'index-card',
 	category: 'layout',
 	attributes: {
@@ -40,108 +40,101 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			selector: '.steps',
 		},
 	},
-	edit: props => {
-		const focusedEditable = props.focus ? props.focus.editable || 'title' : null;
-		const attributes = props.attributes;
-		const onChangeTitle = value => {
-			props.setAttributes( { title: value } );
+	edit: ( props ) => {
+		const {
+			className,
+			attributes: {
+				title,
+				mediaID,
+				mediaURL,
+				ingredients,
+				instructions,
+			},
+			setAttributes,
+		} = props;
+		const onChangeTitle = ( value ) => {
+			setAttributes( { title: value } );
 		};
-		const onFocusTitle = focus => {
-			props.setFocus( _.extend( {}, focus, { editable: 'title' } ) );
-		};
-		const onSelectImage = media => {
-			props.setAttributes( {
+
+		const onSelectImage = ( media ) => {
+			setAttributes( {
 				mediaURL: media.url,
 				mediaID: media.id,
 			} );
 		};
-		const onChangeIngredients = value => {
-			props.setAttributes( { ingredients: value } );
+		const onChangeIngredients = ( value ) => {
+			setAttributes( { ingredients: value } );
 		};
-		const onFocusIngredients = focus => {
-			props.setFocus( _.extend( {}, focus, { editable: 'ingredients' } ) );
-		};
-		const onChangeInstructions = value => {
-			props.setAttributes( { instructions: value } );
-		};
-		const onFocusInstructions = focus => {
-			props.setFocus( _.extend( {}, focus, { editable: 'instructions' } ) );
+
+		const onChangeInstructions = ( value ) => {
+			setAttributes( { instructions: value } );
 		};
 
 		return (
-			<div className={ props.className }>
+			<div className={ className }>
 				<RichText
 					tagName="h2"
-					placeholder={ __( 'Write Recipe title…' ) }
-					value={ attributes.title }
+					placeholder={ __( 'Write Recipe title…', 'gutenberg-examples' ) }
+					value={ title }
 					onChange={ onChangeTitle }
-					focus={ focusedEditable === 'title' }
-					onFocus={ onFocusTitle }
 				/>
 				<div className="recipe-image">
 					<MediaUpload
 						onSelect={ onSelectImage }
 						type="image"
-						value={ attributes.mediaID }
+						value={ mediaID }
 						render={ ( { open } ) => (
-							<Button className={ attributes.mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
-								{ ! attributes.mediaID ? __( 'Upload Image' ) : <img src={ attributes.mediaURL } /> }
+							<Button className={ mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
+								{ ! mediaID ? __( 'Upload Image', 'gutenberg-examples' ) : <img src={ mediaURL } alt={ __( 'Upload Recipe Image', 'gutenberg-examples' ) } /> }
 							</Button>
 						) }
 					/>
 				</div>
-				<h3>{ __( 'Ingredients' ) }</h3>
+				<h3>{ __( 'Ingredients', 'gutenberg-examples' ) }</h3>
 				<RichText
 					tagName="ul"
 					multiline="li"
-					placeholder={ __( 'Write a list of ingredients…' ) }
-					value={ attributes.ingredients }
+					placeholder={ __( 'Write a list of ingredients…', 'gutenberg-examples' ) }
+					value={ ingredients }
 					onChange={ onChangeIngredients }
-					focus={ focusedEditable === 'ingredients' }
-					onFocus={ onFocusIngredients }
 					className="ingredients"
 				/>
-				<h3>{ __( 'Instructions' ) }</h3>
+				<h3>{ __( 'Instructions', 'gutenberg-examples' ) }</h3>
 				<RichText
 					tagName="div"
 					multiline="p"
 					className="steps"
-					placeholder={ __( 'Write the instructions…' ) }
-					value={ attributes.instructions }
+					placeholder={ __( 'Write the instructions…', 'gutenberg-examples' ) }
+					value={ instructions }
 					onChange={ onChangeInstructions }
-					focus={ focusedEditable === 'instructions' }
-					onFocus={ onFocusInstructions }
 				/>
 			</div>
 		);
 	},
-	save: props => {
+	save: ( props ) => {
 		const {
 			className,
 			attributes: {
 				title,
 				mediaURL,
 				ingredients,
-				instructions
-			}
+				instructions,
+			},
 		} = props;
 		return (
 			<div className={ className }>
-				<h2>
-					{ title }
-				</h2>
+				<RichText.Content tagName="h2" value={ title } />
+
 				{
 					mediaURL && (
-						<img className="recipe-image" src={ mediaURL } />
+						<img className="recipe-image" src={ mediaURL } alt={ __( 'Recipe Image', 'gutenberg-examples' ) } />
 					)
 				}
-				<ul className="ingredients">
-					{ ingredients }
-				</ul>
-				<div className="steps">
-					{ instructions }
-				</div>
+
+				<RichText.Content tagName="h2" className="ingredients" value={ ingredients } />
+
+				<RichText.Content tagName="div" className="steps" value={ instructions } />
 			</div>
 		);
-	}
+	},
 } );

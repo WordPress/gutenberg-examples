@@ -13,8 +13,10 @@
 	var blockStyle = {
 		backgroundColor: '#900',
 		color: '#fff',
-		padding: '20px'
+		padding: '20px',
 	};
+
+	i18n.setLocaleData( window.gutenberg_examples_01.localeData, 'gutenberg-examples' );
 
 	blocks.registerBlockType( 'gutenberg-examples/example-01-basic', {
 		title: __( 'Example: Basic', 'gutenberg-examples' ),
@@ -35,8 +37,8 @@
 			);
 		},
 	} );
-} )(
+}(
 	window.wp.blocks,
 	window.wp.i18n,
 	window.wp.element
-);
+) );

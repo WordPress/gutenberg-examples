@@ -1,4 +1,4 @@
-const { __ } = wp.i18n;
+const { __, setLocaleData } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
 const blockStyle = {
@@ -7,8 +7,10 @@ const blockStyle = {
 	padding: '20px',
 };
 
+setLocaleData( window.gutenberg_examples_01_esnext.localeData, 'gutenberg-examples' );
+
 registerBlockType( 'gutenberg-examples/example-01-basic-esnext', {
-	title: __( 'Example: Basic (esnext)' ),
+	title: __( 'Example: Basic (esnext)', 'gutenberg-examples' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
 	edit() {

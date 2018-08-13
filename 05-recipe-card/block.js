@@ -1,8 +1,12 @@
-( function( blocks, components, i18n, element, _ ) {
+( function( blocks, editor, i18n, element, components, _ ) {
 	var el = element.createElement;
+	var RichText = editor.RichText;
+	var MediaUpload = editor.MediaUpload;
+
+	i18n.setLocaleData( window.gutenberg_examples_05.localeData, 'gutenberg-examples' );
 
 	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
-		title: i18n.__( 'Example: Recipe Card' ),
+		title: i18n.__( 'Example: Recipe Card', 'gutenberg-examples' ),
 		icon: 'index-card',
 		category: 'layout',
 		attributes: {
@@ -32,7 +36,6 @@
 			},
 		},
 		edit: function( props ) {
-			var focusedEditable = props.focus ? props.focus.editable || 'title' : null;
 			var attributes = props.attributes;
 
 			var onSelectImage = function( media ) {
@@ -44,21 +47,17 @@
 
 			return (
 				el( 'div', { className: props.className },
-					el( blocks.RichText, {
+					el( RichText, {
 						tagName: 'h2',
 						inline: true,
-						placeholder: i18n.__( 'Write Recipe title…' ),
+						placeholder: i18n.__( 'Write Recipe title…', 'gutenberg-examples' ),
 						value: attributes.title,
 						onChange: function( value ) {
 							props.setAttributes( { title: value } );
 						},
-						focus: focusedEditable === 'title' ? focus : null,
-						onFocus: function( focus ) {
-							props.setFocus( _.extend( {}, focus, { editable: 'title' } ) );
-						},
 					} ),
 					el( 'div', { className: 'recipe-image' },
-						el( blocks.MediaUpload, {
+						el( MediaUpload, {
 							onSelect: onSelectImage,
 							type: 'image',
 							value: attributes.mediaID,
@@ -67,40 +66,32 @@
 										className: attributes.mediaID ? 'image-button' : 'button button-large',
 										onClick: obj.open
 									},
-									! attributes.mediaID ? i18n.__( 'Upload Image' ) : el( 'img', { src: attributes.mediaURL } )
+									! attributes.mediaID ? i18n.__( 'Upload Image', 'gutenberg-examples' ) : el( 'img', { src: attributes.mediaURL } )
 								);
 							}
 						} )
 					),
-					el( 'h3', {}, i18n.__( 'Ingredients' ) ),
-					el( blocks.RichText, {
+					el( 'h3', {}, i18n.__( 'Ingredients', 'gutenberg-examples' ) ),
+					el( RichText, {
 						tagName: 'ul',
 						multiline: 'li',
-						placeholder: i18n.__( 'Write a list of ingredients…' ),
+						placeholder: i18n.__( 'Write a list of ingredients…', 'gutenberg-examples' ),
 						value: attributes.ingredients,
 						onChange: function( value ) {
 							props.setAttributes( { ingredients: value } );
 						},
-						focus: focusedEditable === 'ingredients' ? focus : null,
-						onFocus: function( focus ) {
-							props.setFocus( _.extend( {}, focus, { editable: 'ingredients' } ) );
-						},
 						className: 'ingredients',
 					} ),
-					el( 'h3', {}, i18n.__( 'Instructions' ) ),
-					el( blocks.RichText, {
+					el( 'h3', {}, i18n.__( 'Instructions', 'gutenberg-examples' ) ),
+					el( RichText, {
 						tagName: 'div',
 						inline: false,
-						placeholder: i18n.__( 'Write instructions…' ),
+						placeholder: i18n.__( 'Write instructions…', 'gutenberg-examples' ),
 						value: attributes.instructions,
 						onChange: function( value ) {
 							props.setAttributes( { instructions: value } );
 						},
-						focus: focusedEditable === 'instructions' ? focus : null,
-						onFocus: function( focus ) {
-							props.setFocus( _.extend( {}, focus, { editable: 'instructions' } ) );
-						},
-					} ),
+					} )
 				)
 			);
 		},
@@ -109,15 +100,21 @@
 
 			return (
 				el( 'div', { className: props.className },
-					el( 'h2', {}, attributes.title ),
+					el( RichText.Content, {
+						tagName: 'h2', value: attributes.title
+					} ),
 					attributes.mediaURL &&
 						el( 'div', { className: 'recipe-image' },
 							el( 'img', { src: attributes.mediaURL } ),
 						),
-					el( 'h3', {}, i18n.__( 'Ingredients' ) ),
-					el( 'ul', { className: 'ingredients' }, attributes.ingredients ),
-					el( 'h3', {}, i18n.__( 'Instructions' ) ),
-					el( 'div', { className: 'steps' }, attributes.instructions ),
+					el( 'h3', {}, i18n.__( 'Ingredients', 'gutenberg-examples' ) ),
+					el( RichText.Content, {
+						tagName: 'ul', className: 'ingredients', value: attributes.ingredients
+					} ),
+					el( 'h3', {}, i18n.__( 'Instructions', 'gutenberg-examples' ) ),
+					el( RichText.Content, {
+						tagName: 'div', className: 'steps', value: attributes.instructions
+					} ),
 				)
 			);
 		},
@@ -125,8 +122,9 @@
 
 } )(
 	window.wp.blocks,
-	window.wp.components,
+	window.wp.editor,
 	window.wp.i18n,
 	window.wp.element,
+	window.wp.components,
 	window._,
 );

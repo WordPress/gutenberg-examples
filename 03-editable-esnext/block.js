@@ -1,8 +1,11 @@
-const { __ } = wp.i18n;
-const { registerBlockType, RichText, source: { children } } = wp.blocks;
+const { __, setLocaleData } = wp.i18n;
+const { registerBlockType } = wp.blocks;
+const { RichText } = wp.editor;
+
+setLocaleData( window.gutenberg_examples_03_esnext.localeData, 'gutenberg-examples' );
 
 registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
-	title: __( 'Example: Editable (esnext)' ),
+	title: __( 'Example: Editable (esnext)', 'gutenberg-examples' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
 	attributes: {
@@ -12,24 +15,21 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 			selector: 'p',
 		},
 	},
-	edit: props => {
-		const { attributes: { content }, focus, className, setFocus } = props;
-		const onChangeContent = newContent => {
-			props.setAttributes( { content: newContent } );
+	edit: ( props ) => {
+		const { attributes: { content }, setAttributes, className } = props;
+		const onChangeContent = ( newContent ) => {
+			setAttributes( { content: newContent } );
 		};
 		return (
 			<RichText
+				tagName="p"
 				className={ className }
 				onChange={ onChangeContent }
 				value={ content }
-				focus={ focus }
-				onFocus={ setFocus }
-				/>
+			/>
 		);
 	},
-	save: props => (
-		<p>
-			{ props.attributes.content }
-		</p>
-	)
+	save: ( props ) => {
+		return <RichText.Content tagName="p" value={ props.attributes.content } />;
+	},
 } );

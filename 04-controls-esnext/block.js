@@ -1,14 +1,18 @@
-const { __ } = wp.i18n;
+const { __, setLocaleData } = wp.i18n;
 const {
 	registerBlockType,
-	RichText,
-	source: { children },
-	AlignmentToolbar,
-	BlockControls
 } = wp.blocks;
 
+const {
+	RichText,
+	AlignmentToolbar,
+	BlockControls,
+} = wp.editor;
+
+setLocaleData( window.gutenberg_examples_04_esnext.localeData, 'gutenberg-examples' );
+
 registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
-	title: __( 'Example: Controls (esnext)' ),
+	title: __( 'Example: Controls (esnext)', 'gutenberg-examples' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
 	attributes: {
@@ -17,58 +21,55 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 			source: 'children',
 			selector: 'p',
 		},
+		alignment: {
+			type: 'string',
+			default: 'none',
+		},
 	},
-	edit: props => {
+	edit: ( props ) => {
 		const {
 			attributes: {
 				content,
-				alignment
+				alignment,
 			},
-			focus,
 			className,
-			setFocus
 		} = props;
 
-		const onChangeContent = newContent => {
+		const onChangeContent = ( newContent ) => {
 			props.setAttributes( { content: newContent } );
 		};
 
-		const onChangeAlignment = newAlignment => {
-			props.setAttributes( { alignment: newAlignment } );
+		const onChangeAlignment = ( newAlignment ) => {
+			props.setAttributes( { alignment: newAlignment === undefined ? 'none' : newAlignment } );
 		};
 
 		return (
 			<div>
 				{
-					!! focus && (
-						<BlockControls>
-							<AlignmentToolbar
-								value={ alignment }
-								onChange={ onChangeAlignment }
-							/>
-						</BlockControls>
-					)
+					<BlockControls>
+						<AlignmentToolbar
+							value={ alignment }
+							onChange={ onChangeAlignment }
+						/>
+					</BlockControls>
 				}
 				<RichText
 					className={ className }
 					style={ { textAlign: alignment } }
+					tagName="p"
 					onChange={ onChangeContent }
 					value={ content }
-					focus={ focus }
-					onFocus={ setFocus }
-					/>
+				/>
 			</div>
 		);
 	},
-	save: props => {
-		let classes = '';
-		if ( props.attributes.alignment ) {
-			classes = 'gutenberg-examples-align-' + props.attributes.alignment;
-		}
+	save: ( props ) => {
 		return (
-			<p className={ classes }>
-				{ props.attributes.content }
-			</p>
+			<RichText.Content
+				className={ `gutenberg-examples-align-${ props.attributes.alignment }` }
+				tagName="p"
+				value={ props.attributes.content }
+			/>
 		);
-	}
+	},
 } );
