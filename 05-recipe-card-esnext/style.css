@@ -33,3 +33,9 @@
 .wp-block-gutenberg-examples-example-05-recipe-card-esnext ul {
 	padding-left: 2.5em !important; /* Needs fix in Gutenberg. */
 }
+
+.wp-block-gutenberg-examples-example-05-recipe-card-esnext:after { 
+	content:""; 
+	clear:both; 
+	display: table; 
+}
