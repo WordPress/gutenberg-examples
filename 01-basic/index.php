@@ -44,7 +44,7 @@ function gutenberg_examples_01_register_block() {
 		'gutenberg-examples-01',
 		sprintf( 
 			'var gutenberg_examples_01 = { localeData: %s };', 
-			json_encode( gutenberg_get_jed_locale_data( 'gutenberg-examples' ) ) 
+			json_encode( ! function_exists( 'wp_get_jed_locale_data' ) ? gutenberg_get_jed_locale_data( 'gutenberg-examples' ) : wp_get_jed_locale_data( 'gutenberg-examples' ) )
 		),
 		'before'
 	);
