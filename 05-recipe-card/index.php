@@ -23,7 +23,7 @@ function gutenberg_examples_05_register_block() {
 		// Gutenberg is not active.
 		return;
 	}
-	
+
 	wp_register_script(
 		'gutenberg-examples-05',
 		plugins_url( 'block.js', __FILE__ ),
@@ -40,7 +40,7 @@ function gutenberg_examples_05_register_block() {
 
 	register_block_type( 'gutenberg-examples/example-05-recipe-card', array(
 		'style' => 'gutenberg-examples-05',
-		'script' => 'gutenberg-examples-05',
+		'editor_script' => 'gutenberg-examples-05',
 	) );
 
 	/*
@@ -50,12 +50,12 @@ function gutenberg_examples_05_register_block() {
 	 */
 	wp_add_inline_script(
 		'gutenberg-examples-05',
-		sprintf( 
-			'var gutenberg_examples_05 = { localeData: %s };', 
+		sprintf(
+			'var gutenberg_examples_05 = { localeData: %s };',
 			json_encode( ! function_exists( 'wp_get_jed_locale_data' ) ? gutenberg_get_jed_locale_data( 'gutenberg-examples' ) : wp_get_jed_locale_data( 'gutenberg-examples' ) )
 		),
 		'before'
 	);
 
-} 
+}
 add_action( 'init', 'gutenberg_examples_05_register_block' );

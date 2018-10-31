@@ -48,7 +48,7 @@ function gutenberg_examples_02_register_block() {
 	register_block_type( 'gutenberg-examples/example-02-stylesheets', array(
 		'style' => 'gutenberg-examples-02',
 		'editor_style' => 'gutenberg-examples-02-editor',
-		'script' => 'gutenberg-examples-02',
+		'editor_script' => 'gutenberg-examples-02',
 	) );
 
 	/*
@@ -62,5 +62,5 @@ function gutenberg_examples_02_register_block() {
 		'before'
 	);
 
-} 
+}
 add_action( 'init', 'gutenberg_examples_02_register_block' );

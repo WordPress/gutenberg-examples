@@ -23,7 +23,7 @@ function gutenberg_examples_04_esnext_register_block() {
 		// Gutenberg is not active.
 		return;
 	}
-	
+
 	wp_register_script(
 		'gutenberg-examples-04-esnext',
 		plugins_url( 'block.build.js', __FILE__ ),
@@ -48,7 +48,7 @@ function gutenberg_examples_04_esnext_register_block() {
 	register_block_type( 'gutenberg-examples/example-04-controls-esnext', array(
 		'style' => 'gutenberg-examples-04-esnext',
 		'editor_style' => 'gutenberg-examples-04-esnext-editor',
-		'script' => 'gutenberg-examples-04-esnext',
+		'editor_script' => 'gutenberg-examples-04-esnext',
 	) );
 
 	/*
@@ -58,12 +58,12 @@ function gutenberg_examples_04_esnext_register_block() {
 	 */
 	wp_add_inline_script(
 		'gutenberg-examples-04-esnext',
-		sprintf( 
-			'var gutenberg_examples_04_esnext = { localeData: %s };', 
+		sprintf(
+			'var gutenberg_examples_04_esnext = { localeData: %s };',
 			json_encode( ! function_exists( 'wp_get_jed_locale_data' ) ? gutenberg_get_jed_locale_data( 'gutenberg-examples' ) : wp_get_jed_locale_data( 'gutenberg-examples' ) )
 		),
 		'before'
 	);
 
-} 
+}
 add_action( 'init', 'gutenberg_examples_04_esnext_register_block' );

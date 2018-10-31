@@ -48,7 +48,7 @@ function gutenberg_examples_03_register_block() {
 	register_block_type( 'gutenberg-examples/example-03-editable', array(
 		'style' => 'gutenberg-examples-03',
 		'editor_style' => 'gutenberg-examples-03-editor',
-		'script' => 'gutenberg-examples-03',
+		'editor_script' => 'gutenberg-examples-03',
 	) );
 
 	/*
@@ -58,12 +58,12 @@ function gutenberg_examples_03_register_block() {
 	 */
 	wp_add_inline_script(
 		'gutenberg-examples-03',
-		sprintf( 
-			'var gutenberg_examples_03 = { localeData: %s };', 
+		sprintf(
+			'var gutenberg_examples_03 = { localeData: %s };',
 			json_encode( ! function_exists( 'wp_get_jed_locale_data' ) ? gutenberg_get_jed_locale_data( 'gutenberg-examples' ) : wp_get_jed_locale_data( 'gutenberg-examples' ) )
 		),
 		'before'
 	);
 
-} 
+}
 add_action( 'init', 'gutenberg_examples_03_register_block' );
