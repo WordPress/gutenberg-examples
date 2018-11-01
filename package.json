@@ -1,6 +1,6 @@
 {
 	"name": "gutenberg-examples",
-	"version": "3.4.0",
+	"version": "1.0",
 	"private": true,
 	"description": "Gutenberg Examples",
 	"repository": "git+https://github.com/WordPress/gutenberg-examples.git",
