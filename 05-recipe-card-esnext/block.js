@@ -81,7 +81,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 				<div className="recipe-image">
 					<MediaUpload
 						onSelect={ onSelectImage }
-						type="image"
+						allowedTypes="image"
 						value={ mediaID }
 						render={ ( { open } ) => (
 							<Button className={ mediaID ? 'image-button' : 'button button-large' } onClick={ open }>

@@ -59,7 +59,7 @@
 					el( 'div', { className: 'recipe-image' },
 						el( MediaUpload, {
 							onSelect: onSelectImage,
-							type: 'image',
+							allowedTypes: 'image',
 							value: attributes.mediaID,
 							render: function( obj ) {
 								return el( components.Button, {
