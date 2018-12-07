@@ -54,7 +54,7 @@ function gutenberg_examples_01_esnext_register_block() {
 		'gutenberg-examples-01-esnext',
 		sprintf(
 			'var gutenberg_examples_01_esnext = { localeData: %s };',
-			json_encode( ! function_exists( 'wp_get_jed_locale_data' ) ? gutenberg_get_jed_locale_data( 'gutenberg-examples' ) : wp_get_jed_locale_data( 'gutenberg-examples' ) )
+      json_encode( function_exists( 'wp_set_script_translations' ) { wp_set_script_translations( 'gutenberg-examples-01-esnext', 'gutenberg-examples' ) } )
 		),
 		'before'
 	);

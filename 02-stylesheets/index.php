@@ -66,11 +66,14 @@ function gutenberg_examples_02_register_block() {
 	 *
 	 * This happens _before_ our JavaScript runs, afterwards it's too late.
 	 */
-	wp_add_inline_script(
-		'gutenberg-examples-02',
-		'wp.i18n.setLocaleData( ' . json_encode( ! function_exists( 'wp_get_jed_locale_data' ) ? gutenberg_get_jed_locale_data( 'gutenberg-examples' ) : wp_get_jed_locale_data( 'gutenberg-examples' ) ) . ', "gutenberg-examples" );',
-		'before'
-	);
+  wp_add_inline_script(
+    'gutenberg-examples-02',
+    sprintf(
+      'var gutenberg_examples_02 = { localeData: %s };',
+      json_encode( function_exists( 'wp_set_script_translations' ) { wp_set_script_translations( 'gutenberg-examples-02', 'gutenberg-examples' ) } )
+    ),
+    'before'
+  );
 
 }
 add_action( 'init', 'gutenberg_examples_02_register_block' );

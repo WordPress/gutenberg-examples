@@ -70,7 +70,7 @@ function gutenberg_examples_03_register_block() {
 		'gutenberg-examples-03',
 		sprintf(
 			'var gutenberg_examples_03 = { localeData: %s };',
-			json_encode( ! function_exists( 'wp_get_jed_locale_data' ) ? gutenberg_get_jed_locale_data( 'gutenberg-examples' ) : wp_get_jed_locale_data( 'gutenberg-examples' ) )
+      json_encode( function_exists( 'wp_set_script_translations' ) { wp_set_script_translations( 'gutenberg-examples-03', 'gutenberg-examples' ) } )
 		),
 		'before'
 	);
