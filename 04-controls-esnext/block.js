@@ -9,8 +9,6 @@ const {
 	BlockControls,
 } = wp.editor;
 
-setLocaleData( window.gutenberg_examples_04_esnext.localeData, 'gutenberg-examples' );
-
 registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 	title: __( 'Example: Controls (esnext)', 'gutenberg-examples' ),
 	icon: 'universal-access-alt',

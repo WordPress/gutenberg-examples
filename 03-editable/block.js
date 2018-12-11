@@ -9,8 +9,6 @@
 	var __ = i18n.__;
 	var RichText = editor.RichText;
 
-	i18n.setLocaleData( window.gutenberg_examples_03.localeData, 'gutenberg-examples' );
-
 	blocks.registerBlockType( 'gutenberg-examples/example-03-editable', {
 		title: __( 'Example: Editable', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
