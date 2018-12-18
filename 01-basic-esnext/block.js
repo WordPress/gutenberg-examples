@@ -7,8 +7,6 @@ const blockStyle = {
 	padding: '20px',
 };
 
-setLocaleData( window.gutenberg_examples_01_esnext.localeData, 'gutenberg-examples' );
-
 registerBlockType( 'gutenberg-examples/example-01-basic-esnext', {
 	title: __( 'Example: Basic (esnext)', 'gutenberg-examples' ),
 	icon: 'universal-access-alt',

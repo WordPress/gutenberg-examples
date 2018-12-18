@@ -16,8 +16,6 @@
 		padding: '20px',
 	};
 
-	i18n.setLocaleData( window.gutenberg_examples_01.localeData, 'gutenberg-examples' );
-
 	blocks.registerBlockType( 'gutenberg-examples/example-01-basic', {
 		title: __( 'Example: Basic', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',

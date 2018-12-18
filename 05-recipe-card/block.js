@@ -3,8 +3,6 @@
 	var RichText = editor.RichText;
 	var MediaUpload = editor.MediaUpload;
 
-	i18n.setLocaleData( window.gutenberg_examples_05.localeData, 'gutenberg-examples' );
-
 	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
 		title: i18n.__( 'Example: Recipe Card', 'gutenberg-examples' ),
 		icon: 'index-card',
