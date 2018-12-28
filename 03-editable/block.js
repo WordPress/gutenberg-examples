@@ -16,8 +16,8 @@
 
 		attributes: {
 			content: {
-				type: 'array',
-				source: 'children',
+				type: 'string',
+				source: 'html',
 				selector: 'p',
 			},
 		},
