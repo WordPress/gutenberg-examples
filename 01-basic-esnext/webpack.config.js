@@ -5,12 +5,12 @@ module.exports = {
 		filename: 'block.build.js',
 	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /.js$/,
-				loader: 'babel-loader',
 				exclude: /node_modules/,
+				loader: 'babel-loader'
 			},
 		],
-	},
+	}
 };
