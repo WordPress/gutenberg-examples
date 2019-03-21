@@ -31,7 +31,7 @@ In the folder of your preference, clone this project and enter the working direc
 
 ```
 git clone git@github.com:WordPress/gutenberg-examples.git
-cd gutenberg-examples 
+cd gutenberg-examples
 ```
 
 To bring up this local WordPress instance run:
@@ -55,14 +55,14 @@ To install the node packages
 npm install
 ```
 
-To build the production version of the plugin 
+To build the production version of the plugin
 ```
 npm run build
 ```
 
 To build a development version of the plugin and watch changes for automatic rebuild
 ```
-npm run dev
+npm start
 ```
 
 <br/><br/><p align="center"><img src="https://s.w.org/style/images/codeispoetry.png?1" alt="Code is Poetry." /></p>

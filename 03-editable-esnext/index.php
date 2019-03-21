@@ -36,9 +36,9 @@ function gutenberg_examples_03_esnext_register_block() {
 
 	wp_register_script(
 		'gutenberg-examples-03-esnext',
-		plugins_url( 'block.build.js', __FILE__ ),
+		plugins_url( 'build/index.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'block.build.js' )
+		filemtime( plugin_dir_path( __FILE__ ) . 'build/index.js' )
 	);
 
 	wp_register_style(
