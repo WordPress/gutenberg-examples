@@ -62,7 +62,7 @@ npm run build
 
 To build a development version of the plugin and watch changes for automatic rebuild
 ```
-npm run start
+npm start
 ```
 
 <br/><br/><p align="center"><img src="https://s.w.org/style/images/codeispoetry.png?1" alt="Code is Poetry." /></p>
