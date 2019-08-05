@@ -12,19 +12,17 @@
 		"Examples"
 	],
 	"scripts": {
-		"lint-js": "eslint .",
-		"lint-js:fix": "eslint . --fix",
+		"lint-js": "wp-scripts lint-js ./01-basic-esnext ./03-editable-esnext ./04-controls-esnext ./05-recipe-card-esnext",
+		"lint-js:fix": "npm run lint-js -- --fix",
+		"env:start": "docker-compose up -d",
+		"env:stop": "docker-compose stop",
 		"build": "npm run build:01-basic && npm run build:03-editable && npm run build:04-controls && npm run build:05-recipe",
-		"build:01-basic": "cd 01-basic-esnext && npm run build",
-		"build:03-editable": "cd 03-editable-esnext && npm run build",
-		"build:04-controls": "cd 04-controls-esnext && npm run build",
-		"build:05-recipe": "cd 05-recipe-card-esnext && npm run build"
+		"build:01-basic": "wp-scripts build 01-basic-esnext/src/index.js --output-path=01-basic-esnext/build",
+		"build:03-editable": "wp-scripts build 03-editable-esnext/src/index.js --output-path=03-editable-esnext/build",
+		"build:04-controls": "wp-scripts build 04-controls-esnext/src/index.js --output-path=04-controls-esnext/build",
+		"build:05-recipe": "wp-scripts build 05-recipe-card-esnext/src/index.js --output-path=05-recipe-card-esnext/build"
 	},
 	"devDependencies": {
-		"eslint": "^5.2.0",
-		"eslint-config-wordpress": "^2.0.0",
-		"eslint-plugin-jsx-a11y": "^6.1.1",
-		"eslint-plugin-react": "^7.10.0",
-		"eslint-plugin-wordpress": "git://github.com/WordPress-Coding-Standards/eslint-plugin-wordpress.git#1774343f6226052a46b081e01db3fca8793cc9f1"
+		"@wordpress/scripts": "^3.4.0"
 	}
 }
