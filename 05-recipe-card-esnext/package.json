@@ -1,0 +1,14 @@
+{
+	"name": "05-recipe-card-esnext",
+	"version": "1.0.0",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"devDependencies": {
+		"@wordpress/scripts": "^3.4.0"
+	},
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build",
+		"lint-js": "wp-scripts lint-js"
+	}
+}
