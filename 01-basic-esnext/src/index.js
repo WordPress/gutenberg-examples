@@ -1,4 +1,5 @@
-const { __, setLocaleData } = wp.i18n;
+/* global wp */
+const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
 const blockStyle = {
@@ -8,13 +9,17 @@ const blockStyle = {
 };
 
 registerBlockType( 'gutenberg-examples/example-01-basic-esnext', {
-	title: __( 'Example: Basic (esnext)', 'gutenberg-examples' ),
+	title: __( 'Example: Basic (ESNext)', 'gutenberg-examples' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
 	edit() {
-		return <div style={ blockStyle }>Hello World, step 1 (from the editor).</div>;
+		return (
+			<div style={ blockStyle }>Hello World, step 1 (from the editor).</div>
+		);
 	},
 	save() {
-		return <div style={ blockStyle }>Hello World, step 1 (from the frontend).</div>;
+		return (
+			<div style={ blockStyle }>Hello World, step 1 (from the frontend).</div>
+		);
 	},
 } );

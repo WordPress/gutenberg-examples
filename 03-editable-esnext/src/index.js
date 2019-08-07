@@ -1,9 +1,10 @@
-const { __, setLocaleData } = wp.i18n;
+/* global wp */
+const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText } = wp.editor;
 
 registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
-	title: __( 'Example: Editable (esnext)', 'gutenberg-examples' ),
+	title: __( 'Example: Editable (ESNext)', 'gutenberg-examples' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
 	attributes: {

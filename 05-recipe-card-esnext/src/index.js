@@ -1,4 +1,5 @@
-const { __, setLocaleData } = wp.i18n;
+/* global wp */
+const { __ } = wp.i18n;
 const {
 	registerBlockType,
 } = wp.blocks;
@@ -9,7 +10,7 @@ const {
 const { Button } = wp.components;
 
 registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
-	title: __( 'Example: Recipe Card (esnext)', 'gutenberg-examples' ),
+	title: __( 'Example: Recipe Card (ESNext)', 'gutenberg-examples' ),
 	icon: 'index-card',
 	category: 'layout',
 	attributes: {
