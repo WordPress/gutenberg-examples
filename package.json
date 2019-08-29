@@ -24,7 +24,7 @@
 		"build:05-recipe": "wp-scripts build 05-recipe-card-esnext/src/index.js --output-path=05-recipe-card-esnext/build"
 	},
 	"devDependencies": {
-		"@wordpress/components": "^8.1.0",
-		"@wordpress/scripts": "^3.4.0"
+		"@wordpress/components": "^8.2.0",
+		"@wordpress/scripts": "^4.0.0"
 	}
 }
