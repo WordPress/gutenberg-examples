@@ -12,8 +12,9 @@
 		"Examples"
 	],
 	"scripts": {
-		"lint-js": "wp-scripts lint-js ./01-basic-esnext ./03-editable-esnext ./04-controls-esnext ./05-recipe-card-esnext",
+		"lint-js": "wp-scripts lint-js ./01-basic-esnext ./03-editable-esnext ./04-controls-esnext ./05-recipe-card-esnext ./test",
 		"lint-js:fix": "npm run lint-js -- --fix",
+		"test": "wp-scripts test-unit-js",
 		"env:start": "docker-compose up -d",
 		"env:stop": "docker-compose stop",
 		"build": "npm run build:01-basic && npm run build:03-editable && npm run build:04-controls && npm run build:05-recipe",
@@ -23,6 +24,7 @@
 		"build:05-recipe": "wp-scripts build 05-recipe-card-esnext/src/index.js --output-path=05-recipe-card-esnext/build"
 	},
 	"devDependencies": {
+		"@wordpress/components": "^8.1.0",
 		"@wordpress/scripts": "^3.4.0"
 	}
 }
