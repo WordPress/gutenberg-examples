@@ -4,7 +4,7 @@
  * Plugin Name: Gutenberg Examples Recipe Card EsNext
  * Plugin URI: https://github.com/WordPress/gutenberg-examples
  * Description: This is a plugin demonstrating how to register new blocks for the Gutenberg editor.
- * Version: 1.0.2
+ * Version: 1.1.0
  * Author: the Gutenberg Team
  *
  * @package gutenberg-examples
@@ -29,17 +29,14 @@ function gutenberg_examples_05_esnext_load_textdomain() {
  */
 function gutenberg_examples_05_esnext_register_block() {
 
-	// automatically load dependencies
-	$dependencies_file_path = plugin_dir_path( __FILE__ ) . 'build/index.deps.json';
-	$dependencies = file_exists( $dependencies_file_path )
-		? json_decode( file_get_contents( $dependencies_file_path ) )
-		: array();
+	// automatically load dependencies and version
+	$depver = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
 
 	wp_register_script(
 		'gutenberg-examples-05-esnext',
 		plugins_url( 'build/index.js', __FILE__ ),
-		$dependencies,
-		filemtime( plugin_dir_path( __FILE__ ) . 'build/index.js' )
+		$depver['dependencies'],
+		$depver['version']
 	);
 
 	wp_register_style(

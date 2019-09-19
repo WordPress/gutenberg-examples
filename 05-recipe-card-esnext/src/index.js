@@ -1,13 +1,13 @@
 /* global wp */
-const { __ } = wp.i18n;
-const {
+import { __ } from '@wordpress/i18n';
+import {
 	registerBlockType,
-} = wp.blocks;
-const {
+} from '@wordpress/blocks';
+import {
 	RichText,
 	MediaUpload,
-} = wp.editor;
-const { Button } = wp.components;
+} from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
 
 registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 	title: __( 'Example: Recipe Card (ESNext)', 'gutenberg-examples' ),
