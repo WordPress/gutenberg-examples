@@ -4,7 +4,7 @@
  * Plugin Name: Gutenberg Examples Controls EsNext
  * Plugin URI: https://github.com/WordPress/gutenberg-examples
  * Description: This is a plugin demonstrating how to register new blocks for the Gutenberg editor.
- * Version: 1.0.2
+ * Version: 1.1.0
  * Author: the Gutenberg Team
  *
  * @package gutenberg-examples
@@ -29,16 +29,14 @@ function gutenberg_examples_04_esnext_load_textdomain() {
  */
 function gutenberg_examples_04_esnext_register_block() {
 
-	if ( ! function_exists( 'register_block_type' ) ) {
-		// Gutenberg is not active.
-		return;
-	}
+	// automatically load dependencies and version
+	$depver = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
 
 	wp_register_script(
 		'gutenberg-examples-04-esnext',
 		plugins_url( 'build/index.js', __FILE__ ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'build/index.js' )
+		$depver['dependencies'],
+		$depver['version']
 	);
 
 	wp_register_style(

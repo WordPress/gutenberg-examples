@@ -1,14 +1,14 @@
-/* global wp */
-const { __ } = wp.i18n;
-const {
-	registerBlockType,
-} = wp.blocks;
 
-const {
+import { __ } from '@wordpress/i18n';
+import {
+	registerBlockType,
+} from '@wordpress/blocks';
+
+import {
 	RichText,
 	AlignmentToolbar,
 	BlockControls,
-} = wp.editor;
+} from '@wordpress/block-editor';
 
 registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 	title: __( 'Example: Controls (ESNext)', 'gutenberg-examples' ),

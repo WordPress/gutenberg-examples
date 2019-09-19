@@ -1,7 +1,7 @@
-/* global wp */
-const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
-const { RichText } = wp.editor;
+
+import { __ } from '@wordpress/i18n';
+import { registerBlockType } from '@wordpress/blocks';
+import { RichText } from '@wordpress/block-editor';
 
 registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 	title: __( 'Example: Editable (ESNext)', 'gutenberg-examples' ),
