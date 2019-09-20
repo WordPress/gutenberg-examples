@@ -30,13 +30,13 @@ function gutenberg_examples_05_esnext_load_textdomain() {
 function gutenberg_examples_05_esnext_register_block() {
 
 	// automatically load dependencies and version
-	$depver = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
+	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
 
 	wp_register_script(
 		'gutenberg-examples-05-esnext',
 		plugins_url( 'build/index.js', __FILE__ ),
-		$depver['dependencies'],
-		$depver['version']
+		$asset_file['dependencies'],
+		$asset_file['version']
 	);
 
 	wp_register_style(
