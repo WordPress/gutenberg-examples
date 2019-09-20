@@ -39,6 +39,15 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			selector: '.steps',
 		},
 	},
+	example: {
+		attributes: {
+			title: __( 'Chocolate Chip Cookies', 'gutenberg-examples' ),
+			mediaID: 1,
+			mediaURL: 'https://images.pexels.com/photos/1331979/pexels-photo-1331979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+			ingredients: [ 'flour', 'sugar', 'chocolate', '💖' ],
+			instructions: [ 'Mix', 'Bake', 'Enjoy' ],
+		},
+	},	
 	edit: ( props ) => {
 		const {
 			className,

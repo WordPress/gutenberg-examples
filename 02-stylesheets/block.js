@@ -15,6 +15,7 @@
 		title: __( 'Example: Stylesheets', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
+        example: {},
 		edit: function( props ) {
 			return el(
 				'p',
