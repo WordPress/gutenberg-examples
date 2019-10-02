@@ -38,10 +38,18 @@
 		example: {
 			attributes: {
 				title: __( 'Chocolate Chip Cookies', 'gutenberg-examples' ),
-				mediaID: 1,
-				mediaURL: 'https://images.pexels.com/photos/1331979/pexels-photo-1331979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-				ingredients: [ 'flour', 'sugar', 'chocolate', '💖' ],
-				instructions: [ 'Mix', 'Bake', 'Enjoy' ],
+				mediaURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg',
+				ingredients: [ 
+					__( 'flour', 'gutenberg-examples' ),
+					__( 'sugar', 'gutenberg-examples' ),
+					__( 'chocolate', 'gutenberg-examples' ),
+					'💖'
+				],
+				instructions: [
+					__( 'Mix', 'gutenberg-examples' ),
+					__( 'Bake', 'gutenberg-examples' ),
+					__( 'Enjoy', 'gutenberg-examples' ),
+				],
 			},
 		},
 

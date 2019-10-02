@@ -20,7 +20,7 @@
 		title: __( 'Example: Basic', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
-        example: {},
+		example: {},
 		edit: function() {
 			return el(
 				'p',

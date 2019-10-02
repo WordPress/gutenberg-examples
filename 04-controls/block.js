@@ -27,12 +27,12 @@
 			},
 		},
 
-        example: {
-            attributes: {
-                content: __( 'Hello world' ),
-                alignment: 'right',
-            },
-        },
+		example: {
+			attributes: {
+				content: __( 'Hello world' ),
+				alignment: 'right',
+			},
+		},
 
 		edit: function( props ) {
 			var content = props.attributes.content;

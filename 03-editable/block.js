@@ -22,11 +22,11 @@
 			},
 		},
 
-        example: {
-            attributes: {
-                content: __( 'Hello world' ),
-            },
-        },
+		example: {
+			attributes: {
+				content: __( 'Hello world' ),
+			},
+		},
 
 		edit: function( props ) {
 			var content = props.attributes.content;

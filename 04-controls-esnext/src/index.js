@@ -25,12 +25,12 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 			default: 'none',
 		},
 	},
-    example: {
-        attributes: {
-            content: __( 'Hello world' ),
-            alignment: 'right',
-        },
-    },
+	example: {
+		attributes: {
+			content: __( 'Hello world' ),
+			alignment: 'right',
+		},
+	},
 	edit: ( props ) => {
 		const {
 			attributes: {
