@@ -14,6 +14,11 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 			selector: 'p',
 		},
 	},
+	example: {
+		attributes: {
+			content: __( 'Hello world' )
+		},
+	},
 	edit: ( props ) => {
 		const { attributes: { content }, setAttributes, className } = props;
 		const onChangeContent = ( newContent ) => {

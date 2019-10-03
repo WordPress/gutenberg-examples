@@ -27,6 +27,13 @@
 			},
 		},
 
+		example: {
+			attributes: {
+				content: __( 'Hello world' ),
+				alignment: 'right',
+			},
+		},
+
 		edit: function( props ) {
 			var content = props.attributes.content;
 			var alignment = props.attributes.alignment;

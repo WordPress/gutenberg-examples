@@ -12,6 +12,7 @@ registerBlockType( 'gutenberg-examples/example-01-basic-esnext', {
 	title: __( 'Example: Basic (ESNext)', 'gutenberg-examples' ),
 	icon: 'universal-access-alt',
 	category: 'layout',
+	example: {},
 	edit() {
 		return (
 			<div style={ blockStyle }>Hello World, step 1 (from the editor).</div>

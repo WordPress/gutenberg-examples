@@ -39,6 +39,23 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			selector: '.steps',
 		},
 	},
+	example: {
+		attributes: {
+			title: __( 'Chocolate Chip Cookies', 'gutenberg-examples' ),
+			mediaURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg',
+			ingredients: [ 
+				__( 'flour', 'gutenberg-examples' ),
+				__( 'sugar', 'gutenberg-examples' ),
+				__( 'chocolate', 'gutenberg-examples' ),
+				'💖'
+			],
+			instructions: [
+				__( 'Mix', 'gutenberg-examples' ),
+				__( 'Bake', 'gutenberg-examples' ),
+				__( 'Enjoy', 'gutenberg-examples' ),
+			],
+		},
+	},
 	edit: ( props ) => {
 		const {
 			className,
