@@ -27,6 +27,8 @@ function gutenberg_examples_04_esnext_load_textdomain() {
  *
  * Passes translations to JavaScript.
  */
+add_action( 'init', 'gutenberg_examples_04_esnext_register_block' );
+
 function gutenberg_examples_04_esnext_register_block() {
 
 	// automatically load dependencies and version
@@ -69,4 +71,3 @@ function gutenberg_examples_04_esnext_register_block() {
   }
 
 }
-add_action( 'init', 'gutenberg_examples_04_esnext_register_block' );
