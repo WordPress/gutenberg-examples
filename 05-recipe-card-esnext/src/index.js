@@ -147,7 +147,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 					)
 				}
 
-				<RichText.Content tagName="h2" className="ingredients" value={ ingredients } />
+				<RichText.Content tagName="ul" className="ingredients" value={ ingredients } />
 
 				<RichText.Content tagName="div" className="steps" value={ instructions } />
 			</div>
