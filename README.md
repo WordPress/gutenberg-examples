@@ -47,6 +47,7 @@ To stop this local WordPress instance later run:
 ```
 docker-compose stop
 ```
+Now go to http://localhost:9999/wp-admin/plugins.php and __Activate__ Gutenberg-examples plugin. The docker script has mapped the gutenberg-examples folder to this now activated plugin. Every time you build an example, it is automaticaly updated in the running docker instance. Old block inserted are not updated, you need to add in your page again.
 
 For each of the examples that include an esnext example the following commands are required to build the plugins:
 
