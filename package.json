@@ -17,11 +17,12 @@
 		"test": "wp-scripts test-unit-js",
 		"env:start": "docker-compose up -d",
 		"env:stop": "docker-compose stop",
-		"build": "npm run build:01-basic && npm run build:03-editable && npm run build:04-controls && npm run build:05-recipe",
+		"build": "npm run build:01-basic && npm run build:03-editable && npm run build:04-controls && npm run build:05-recipe && npm run build:06-inner",
 		"build:01-basic": "wp-scripts build 01-basic-esnext/src/index.js --output-path=01-basic-esnext/build",
 		"build:03-editable": "wp-scripts build 03-editable-esnext/src/index.js --output-path=03-editable-esnext/build",
 		"build:04-controls": "wp-scripts build 04-controls-esnext/src/index.js --output-path=04-controls-esnext/build",
-		"build:05-recipe": "wp-scripts build 05-recipe-card-esnext/src/index.js --output-path=05-recipe-card-esnext/build"
+		"build:05-recipe": "wp-scripts build 05-recipe-card-esnext/src/index.js --output-path=05-recipe-card-esnext/build",
+		"build:06-inner": "wp-scripts build 06-inner-blocks-esnext/src/index.js --output-path=06-inner-blocks-esnext/build"
 	},
 	"devDependencies": {
 		"@wordpress/components": "^8.1.0",

@@ -22,3 +22,4 @@ include '04-controls-esnext/index.php';
 include '05-recipe-card/index.php';
 include '05-recipe-card-esnext/index.php';
 include '06-inner-blocks/index.php';
+include '06-inner-blocks-esnext/index.php';
