@@ -25,7 +25,7 @@
 		"build:06-inner": "wp-scripts build 06-inner-blocks-esnext/src/index.js --output-path=06-inner-blocks-esnext/build"
 	},
 	"devDependencies": {
-		"@wordpress/components": "^8.1.0",
-		"@wordpress/scripts": "^5.0.0"
+		"@wordpress/components": "^8.5.0",
+		"@wordpress/scripts": "^6.1.1"
 	}
 }

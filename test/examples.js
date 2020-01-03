@@ -1,4 +1,3 @@
-/* global test, expect */
 /**
  * External dependencies
  */

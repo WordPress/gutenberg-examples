@@ -16,7 +16,7 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 	},
 	example: {
 		attributes: {
-			content: __( 'Hello world' )
+			content: __( 'Hello world' ),
 		},
 	},
 	edit: ( props ) => {
