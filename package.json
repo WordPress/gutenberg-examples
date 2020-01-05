@@ -3,7 +3,6 @@
 	"version": "1.1.0",
 	"private": true,
 	"description": "Gutenberg Examples",
-	"repository": "git+https://github.com/WordPress/gutenberg-examples.git",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
@@ -11,9 +10,20 @@
 		"editor",
 		"Examples"
 	],
+	"homepage": "https://github.com/WordPress/gutenberg-examples/",
+	"repository": "git+https://github.com/WordPress/gutenberg-examples.git",
+	"bugs": {
+		"url": "https://github.com/WordPress/gutenberg-examples/issues"
+	},
+	"devDependencies": {
+		"@wordpress/components": "^8.5.0",
+		"@wordpress/scripts": "^6.1.1"
+	},
 	"scripts": {
 		"lint-js": "wp-scripts lint-js ./01-basic-esnext ./03-editable-esnext ./04-controls-esnext ./05-recipe-card-esnext ./test",
 		"lint-js:fix": "npm run lint-js -- --fix",
+		"lint-pkg-json": "wp-scripts lint-pkg-json ./package.json",
+		"pretest": "npm run lint-pkg-json",
 		"test": "wp-scripts test-unit-js",
 		"env:start": "docker-compose up -d",
 		"env:stop": "docker-compose stop",
@@ -23,9 +33,5 @@
 		"build:04-controls": "wp-scripts build 04-controls-esnext/src/index.js --output-path=04-controls-esnext/build",
 		"build:05-recipe": "wp-scripts build 05-recipe-card-esnext/src/index.js --output-path=05-recipe-card-esnext/build",
 		"build:06-inner": "wp-scripts build 06-inner-blocks-esnext/src/index.js --output-path=06-inner-blocks-esnext/build"
-	},
-	"devDependencies": {
-		"@wordpress/components": "^8.5.0",
-		"@wordpress/scripts": "^6.1.1"
 	}
 }
