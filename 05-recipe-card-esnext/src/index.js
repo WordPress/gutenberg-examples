@@ -1,12 +1,6 @@
-
 import { __ } from '@wordpress/i18n';
-import {
-	registerBlockType,
-} from '@wordpress/blocks';
-import {
-	RichText,
-	MediaUpload,
-} from '@wordpress/block-editor';
+import { registerBlockType } from '@wordpress/blocks';
+import { RichText, MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 
 registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
@@ -42,7 +36,8 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 	example: {
 		attributes: {
 			title: __( 'Chocolate Chip Cookies', 'gutenberg-examples' ),
-			mediaURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg',
+			mediaURL:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg',
 			ingredients: [
 				__( 'flour', 'gutenberg-examples' ),
 				__( 'sugar', 'gutenberg-examples' ),
@@ -59,13 +54,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 	edit: ( props ) => {
 		const {
 			className,
-			attributes: {
-				title,
-				mediaID,
-				mediaURL,
-				ingredients,
-				instructions,
-			},
+			attributes: { title, mediaID, mediaURL, ingredients, instructions },
 			setAttributes,
 		} = props;
 		const onChangeTitle = ( value ) => {
@@ -90,7 +79,10 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			<div className={ className }>
 				<RichText
 					tagName="h2"
-					placeholder={ __( 'Write Recipe title…', 'gutenberg-examples' ) }
+					placeholder={ __(
+						'Write Recipe title…',
+						'gutenberg-examples'
+					) }
 					value={ title }
 					onChange={ onChangeTitle }
 				/>
@@ -100,8 +92,25 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 						allowedTypes="image"
 						value={ mediaID }
 						render={ ( { open } ) => (
-							<Button className={ mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
-								{ ! mediaID ? __( 'Upload Image', 'gutenberg-examples' ) : <img src={ mediaURL } alt={ __( 'Upload Recipe Image', 'gutenberg-examples' ) } /> }
+							<Button
+								className={
+									mediaID
+										? 'image-button'
+										: 'button button-large'
+								}
+								onClick={ open }
+							>
+								{ ! mediaID ? (
+									__( 'Upload Image', 'gutenberg-examples' )
+								) : (
+									<img
+										src={ mediaURL }
+										alt={ __(
+											'Upload Recipe Image',
+											'gutenberg-examples'
+										) }
+									/>
+								) }
 							</Button>
 						) }
 					/>
@@ -110,7 +119,10 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 				<RichText
 					tagName="ul"
 					multiline="li"
-					placeholder={ __( 'Write a list of ingredients…', 'gutenberg-examples' ) }
+					placeholder={ __(
+						'Write a list of ingredients…',
+						'gutenberg-examples'
+					) }
 					value={ ingredients }
 					onChange={ onChangeIngredients }
 					className="ingredients"
@@ -120,7 +132,10 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 					tagName="div"
 					multiline="p"
 					className="steps"
-					placeholder={ __( 'Write the instructions…', 'gutenberg-examples' ) }
+					placeholder={ __(
+						'Write the instructions…',
+						'gutenberg-examples'
+					) }
 					value={ instructions }
 					onChange={ onChangeInstructions }
 				/>
@@ -130,28 +145,33 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 	save: ( props ) => {
 		const {
 			className,
-			attributes: {
-				title,
-				mediaURL,
-				ingredients,
-				instructions,
-			},
+			attributes: { title, mediaURL, ingredients, instructions },
 		} = props;
 		return (
 			<div className={ className }>
 				<RichText.Content tagName="h2" value={ title } />
 
-				{
-					mediaURL && (
-						<img className="recipe-image" src={ mediaURL } alt={ __( 'Recipe Image', 'gutenberg-examples' ) } />
-					)
-				}
+				{ mediaURL && (
+					<img
+						className="recipe-image"
+						src={ mediaURL }
+						alt={ __( 'Recipe Image', 'gutenberg-examples' ) }
+					/>
+				) }
 
 				<h3>{ __( 'Ingredients', 'gutenberg-examples' ) }</h3>
-				<RichText.Content tagName="ul" className="ingredients" value={ ingredients } />
+				<RichText.Content
+					tagName="ul"
+					className="ingredients"
+					value={ ingredients }
+				/>
 
 				<h3>{ __( 'Instructions', 'gutenberg-examples' ) }</h3>
-				<RichText.Content tagName="div" className="steps" value={ instructions } />
+				<RichText.Content
+					tagName="div"
+					className="steps"
+					value={ instructions }
+				/>
 			</div>
 		);
 	},

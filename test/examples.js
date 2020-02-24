@@ -19,9 +19,7 @@ test( 'adds 1 + 2 to equal 3', () => {
 
 // @see https://jestjs.io/docs/en/tutorial-react
 test( 'renders Button from WordPress components', () => {
-	const testRenderer = createTestRenderer(
-		<Button>Click Me!</Button>
-	);
+	const testRenderer = createTestRenderer( <Button>Click Me!</Button> );
 
 	expect( testRenderer.toJSON() ).toMatchSnapshot();
 } );

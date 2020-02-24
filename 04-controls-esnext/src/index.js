@@ -1,8 +1,5 @@
-
 import { __ } from '@wordpress/i18n';
-import {
-	registerBlockType,
-} from '@wordpress/blocks';
+import { registerBlockType } from '@wordpress/blocks';
 
 import {
 	RichText,
@@ -33,10 +30,7 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 	},
 	edit: ( props ) => {
 		const {
-			attributes: {
-				content,
-				alignment,
-			},
+			attributes: { content, alignment },
 			className,
 		} = props;
 
@@ -45,7 +39,9 @@ registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
 		};
 
 		const onChangeAlignment = ( newAlignment ) => {
-			props.setAttributes( { alignment: newAlignment === undefined ? 'none' : newAlignment } );
+			props.setAttributes( {
+				alignment: newAlignment === undefined ? 'none' : newAlignment,
+			} );
 		};
 
 		return (

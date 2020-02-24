@@ -31,8 +31,4 @@
 			);
 		},
 	} );
-}(
-	window.wp.blocks,
-	window.wp.i18n,
-	window.wp.element
-) );
+} )( window.wp.blocks, window.wp.i18n, window.wp.element );
