@@ -20,7 +20,8 @@ jobs:
     - name: npm install, build, and test
       run: |
         npm ci
-        npm run lint-js
+        npm run lint:js
+        npm run lint:pkg-json
         npm test
       env:
         CI: true

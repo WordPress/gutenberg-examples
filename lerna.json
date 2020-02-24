@@ -1,0 +1,10 @@
+{
+  "packages": [
+    "01-basic-esnext",
+    "03-editable-esnext",
+    "04-controls-esnext",
+    "05-recipe-card-esnext",
+    "06-inner-blocks-esnext"
+  ],
+  "version": "independent"
+}
