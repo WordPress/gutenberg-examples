@@ -1,14 +1,26 @@
 {
 	"name": "06-inner-blocks-esnext",
 	"version": "1.1.0",
+	"private": true,
+	"description": "Example: Inner Blocks (ESNext).",
+	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"WordPress",
+		"block"
+	],
+	"homepage": "https://github.com/WordPress/gutenberg-examples/",
+	"repository": "git+https://github.com/WordPress/gutenberg-examples.git",
+	"bugs": {
+		"url": "https://github.com/WordPress/gutenberg-examples/issues"
+	},
 	"main": "build/index.js",
 	"devDependencies": {
 		"@wordpress/scripts": "^6.1.1"
 	},
 	"scripts": {
-		"start": "wp-scripts start",
 		"build": "wp-scripts build",
-		"lint-js": "wp-scripts lint-js"
+		"lint:js": "wp-scripts lint-js",
+		"start": "wp-scripts start"
 	}
 }
