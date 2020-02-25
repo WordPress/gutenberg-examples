@@ -30,7 +30,7 @@ First, you need a WordPress Environment to run the plugin on. The quickest way t
 In the folder of your preference, clone this project and enter the working directory:
 
 ```
-git clone git@github.com:WordPress/gutenberg-examples.git
+git clone https://github.com/WordPress/gutenberg-examples.git
 cd gutenberg-examples
 ```
 
