@@ -13,7 +13,7 @@ registerBlockType( 'gutenberg-examples/example-06-esnext', {
 	},
 	save: ( { className } ) => {
 		return (
-			<div className={ className } >
+			<div className={ className }>
 				<InnerBlocks.Content />
 			</div>
 		);

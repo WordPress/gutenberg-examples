@@ -43,46 +43,39 @@
 			}
 
 			function onChangeAlignment( newAlignment ) {
-				props.setAttributes( { alignment: newAlignment === undefined ? 'none' : newAlignment } );
+				props.setAttributes( {
+					alignment:
+						newAlignment === undefined ? 'none' : newAlignment,
+				} );
 			}
 
 			return [
 				el(
 					BlockControls,
 					{ key: 'controls' },
-					el(
-						AlignmentToolbar,
-						{
-							value: alignment,
-							onChange: onChangeAlignment,
-						}
-					)
+					el( AlignmentToolbar, {
+						value: alignment,
+						onChange: onChangeAlignment,
+					} )
 				),
-				el(
-					RichText,
-					{
-						key: 'richtext',
-						tagName: 'p',
-						style: { textAlign: alignment },
-						className: props.className,
-						onChange: onChangeContent,
-						value: content,
-					}
-				),
+				el( RichText, {
+					key: 'richtext',
+					tagName: 'p',
+					style: { textAlign: alignment },
+					className: props.className,
+					onChange: onChangeContent,
+					value: content,
+				} ),
 			];
 		},
 
 		save: function( props ) {
 			return el( RichText.Content, {
 				tagName: 'p',
-				className: 'gutenberg-examples-align-' + props.attributes.alignment,
+				className:
+					'gutenberg-examples-align-' + props.attributes.alignment,
 				value: props.attributes.content,
 			} );
 		},
 	} );
-}(
-	window.wp.blocks,
-	window.wp.editor,
-	window.wp.i18n,
-	window.wp.element
-) );
+} )( window.wp.blocks, window.wp.editor, window.wp.i18n, window.wp.element );

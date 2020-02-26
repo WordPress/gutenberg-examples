@@ -1,4 +1,3 @@
-
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { RichText } from '@wordpress/block-editor';
@@ -20,7 +19,11 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 		},
 	},
 	edit: ( props ) => {
-		const { attributes: { content }, setAttributes, className } = props;
+		const {
+			attributes: { content },
+			setAttributes,
+			className,
+		} = props;
 		const onChangeContent = ( newContent ) => {
 			setAttributes( { content: newContent } );
 		};
@@ -34,6 +37,8 @@ registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
 		);
 	},
 	save: ( props ) => {
-		return <RichText.Content tagName="p" value={ props.attributes.content } />;
+		return (
+			<RichText.Content tagName="p" value={ props.attributes.content } />
+		);
 	},
 } );
