@@ -16,7 +16,7 @@
 	},
 	"main": "build/index.js",
 	"devDependencies": {
-		"@wordpress/scripts": "^7.1.1"
+		"@wordpress/scripts": "^7.2.0"
 	},
 	"scripts": {
 		"build": "wp-scripts build",
