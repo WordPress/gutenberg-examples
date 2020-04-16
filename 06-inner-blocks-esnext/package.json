@@ -16,12 +16,13 @@
 	},
 	"main": "build/index.js",
 	"devDependencies": {
-		"@wordpress/scripts": "^7.2.0"
+		"@wordpress/scripts": "^8.0.1"
 	},
 	"scripts": {
 		"build": "wp-scripts build",
 		"format:js": "wp-scripts format-js",
-		"lint:js": "wp-scripts lint-js",
+		"lint:js": "wp-scripts lint-js --rule '@wordpress/i18n-text-domain: 0'",
+		"packages-update": "wp-scripts packages-update",
 		"start": "wp-scripts start"
 	}
 }
