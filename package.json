@@ -16,8 +16,8 @@
 		"url": "https://github.com/WordPress/gutenberg-examples/issues"
 	},
 	"devDependencies": {
-		"@wordpress/components": "^9.4.1",
-		"@wordpress/scripts": "^8.0.1",
+		"@wordpress/components": "^9.5.0",
+		"@wordpress/scripts": "^9.0.0",
 		"lerna": "^3.20.2"
 	},
 	"scripts": {
@@ -29,6 +29,6 @@
 		"test": "wp-scripts test-unit-js",
 		"env:start": "docker-compose up -d",
 		"env:stop": "docker-compose stop",
-		"packages-update": "wp-scripts packages-update && lerna run packages-update"
+		"packages-update": "wp-scripts packages-update"
 	}
 }
