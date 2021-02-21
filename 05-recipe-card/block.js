@@ -38,7 +38,7 @@
 		example: {
 			attributes: {
 				title: __( 'Chocolate Chip Cookies', 'gutenberg-examples' ),
-                mediaID: 1,
+				mediaID: 1,
 				mediaURL:
 					'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg',
 				ingredients: [
