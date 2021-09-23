@@ -33,42 +33,16 @@ function gutenberg_examples_03_register_block() {
 		// Gutenberg is not active.
 		return;
 	}
+	register_block_type( __DIR__ );
 
-	wp_register_script(
-		'gutenberg-examples-03',
-		plugins_url( 'block.js', __FILE__ ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'block.js' )
-	);
-
-	wp_register_style(
-		'gutenberg-examples-03-editor',
-		plugins_url( 'editor.css', __FILE__ ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' )
-	);
-
-	wp_register_style(
-		'gutenberg-examples-03',
-		plugins_url( 'style.css', __FILE__ ),
-		array( ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )
-	);
-
-	register_block_type( 'gutenberg-examples/example-03-editable', array(
-		'style' => 'gutenberg-examples-03',
-		'editor_style' => 'gutenberg-examples-03-editor',
-		'editor_script' => 'gutenberg-examples-03',
-	) );
-
-  if ( function_exists( 'wp_set_script_translations' ) ) {
-    /**
-     * May be extended to wp_set_script_translations( 'my-handle', 'my-domain',
-     * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
-     * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
-     */
-    wp_set_script_translations( 'gutenberg-examples-03', 'gutenberg-examples' );
-  }
+	if ( function_exists( 'wp_set_script_translations' ) ) {
+		/**
+		 * May be extended to wp_set_script_translations( 'my-handle', 'my-domain',
+		 * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
+		 * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
+		 */
+		wp_set_script_translations( 'gutenberg-examples-03', 'gutenberg-examples' );
+	}
 
 }
 add_action( 'init', 'gutenberg_examples_03_register_block' );
