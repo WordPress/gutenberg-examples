@@ -1,27 +1,30 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
+import { useBlockProps } from '@wordpress/block-editor'
+
+import json from '../block.json';
+
+const { name, ...settings } = json;
 
 const blockStyle = {
 	backgroundColor: '#900',
 	color: '#fff',
 	padding: '20px',
 };
-
-registerBlockType( 'gutenberg-examples/example-01-basic-esnext', {
-	title: __( 'Example: Basic (ESNext)', 'gutenberg-examples' ),
-	icon: 'universal-access-alt',
-	category: 'layout',
-	example: {},
+registerBlockType( name, {
+	...settings,
 	edit() {
+		const blockProps = useBlockProps({ style: blockStyle });
 		return (
-			<div style={ blockStyle }>
+			<div {...blockProps}>
 				Hello World, step 1 (from the editor).
 			</div>
 		);
 	},
 	save() {
+		const blockProps = useBlockProps.save({ style: blockStyle });
 		return (
-			<div style={ blockStyle }>
+			<div {...blockProps}>
 				Hello World, step 1 (from the frontend).
 			</div>
 		);
