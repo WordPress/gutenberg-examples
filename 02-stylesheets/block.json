@@ -1,0 +1,11 @@
+{
+    "apiVersion": 2,
+    "name": "gutenberg-examples/example-02-stylesheets",
+    "title":"Example: Stylesheets",
+    "icon": "universal-access-alt",
+    "category": "layout",
+    "example": {},
+    "editorScript": "file:./block.js",
+    "editorStyle":"file:./editor.css",
+    "style": "file:./style.css"
+}
