@@ -1,32 +1,29 @@
-import { __ } from '@wordpress/i18n';
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType } from '@wordpress/blocks';
-import { useBlockProps } from '@wordpress/block-editor'
 
+/**
+ * Internal dependencies
+ */
 import json from '../block.json';
+import edit from './edit';
+import save from './save';
 
-const { name, ...settings } = json;
-
-const blockStyle = {
+// Export this so we can use it in the edit and save files
+export const blockStyle = {
 	backgroundColor: '#900',
 	color: '#fff',
 	padding: '20px',
 };
+
+// Destructure the json file to get the name and settings for the block
+// For more information on how this works, see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+const { name, ...settings } = json;
+
+// Register the block
 registerBlockType( name, {
 	...settings,
-	edit() {
-		const blockProps = useBlockProps({ style: blockStyle });
-		return (
-			<div {...blockProps}>
-				Hello World, step 1 (from the editor).
-			</div>
-		);
-	},
-	save() {
-		const blockProps = useBlockProps.save({ style: blockStyle });
-		return (
-			<div {...blockProps}>
-				Hello World, step 1 (from the frontend).
-			</div>
-		);
-	},
+	edit, // Object shorthand property - same as writing: edit: edit,
+	save, // Object shorthand property - same as writing: save: save,
 } );
