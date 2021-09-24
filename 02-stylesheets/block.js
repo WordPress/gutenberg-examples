@@ -21,7 +21,7 @@
 		edit: function( props ) {
 			return el(
 				'p',
-				useBlockProps({ className: props.className }),
+				useBlockProps( { className: props.className } ),
 				'Hello World, step 2 (from the editor, in green).'
 			);
 		},
@@ -33,4 +33,4 @@
 			);
 		},
 	} );
-} )( window.wp.blocks, window.wp.i18n, window.wp.element, window.wp.blockEditor );
+}( window.wp.blocks, window.wp.i18n, window.wp.element, window.wp.blockEditor ) );
