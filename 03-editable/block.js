@@ -8,7 +8,7 @@
 	var el = element.createElement;
 	var __ = i18n.__;
 	var RichText = editor.RichText;
-	var useBlockProps  = blockEditor.useBlockProps;
+	var useBlockProps = blockEditor.useBlockProps;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-03-editable', {
 		title: __( 'Example: Editable', 'gutenberg-examples' ),
@@ -35,19 +35,19 @@
 				props.setAttributes( { content: newContent } );
 			}
 
-			return el( RichText, useBlockProps({
+			return el( RichText, useBlockProps( {
 				tagName: 'p',
 				className: props.className,
 				onChange: onChangeContent,
 				value: content,
-			}) );
+			} ) );
 		},
 
 		save: function( props ) {
-			return el( RichText.Content, useBlockProps.save({
+			return el( RichText.Content, useBlockProps.save( {
 				tagName: 'p',
 				value: props.attributes.content,
-			}) );
+			} ) );
 		},
 	} );
-} )( window.wp.blocks, window.wp.editor, window.wp.i18n, window.wp.element, window.wp.blockEditor );
+}( window.wp.blocks, window.wp.editor, window.wp.i18n, window.wp.element, window.wp.blockEditor ) );
