@@ -22,6 +22,6 @@ jobs:
         npm ci
         # npm run lint:js
         npm run lint:pkg-json
-        npm test
+        # npm test
       env:
         CI: true
