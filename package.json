@@ -21,7 +21,7 @@
 	},
 	"scripts": {
 		"build": "lerna run build",
-		"lint:js": "wp-scripts lint-js ./01-basic-esnext ./03-editable-esnext ./04-controls-esnext ./05-recipe-card-esnext ./06-inner-blocks-esnext",
+		"lint:js": "lerna run lint:js",
 		"lint:pkg-json": "wp-scripts lint-pkg-json ./package.json ./*-esnext/package.json",
 		"format:js": "wp-scripts format-js",
 		"lint:js:fix": "npm run lint:js -- --fix",
