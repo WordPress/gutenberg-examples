@@ -16,8 +16,7 @@
 		"url": "https://github.com/WordPress/gutenberg-examples/issues"
 	},
 	"devDependencies": {
-		"@wordpress/components": "^9.5.0",
-		"@wordpress/scripts": "^9.0.0",
+		"@wordpress/scripts": "^18.0.1",
 		"lerna": "^3.20.2"
 	},
 	"scripts": {
