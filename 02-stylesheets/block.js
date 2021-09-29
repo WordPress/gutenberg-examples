@@ -7,9 +7,11 @@
  * `.wp-block-*` class for styling, plugin implementers must return an
  * appropriate element with this class.
  */
-( function( blocks, i18n, element ) {
+( function( blocks, i18n, element, blockEditor ) {
 	var el = element.createElement;
 	var __ = i18n.__;
+
+	var useBlockProps = blockEditor.useBlockProps;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-02-stylesheets', {
 		title: __( 'Example: Stylesheets', 'gutenberg-examples' ),
@@ -19,16 +21,16 @@
 		edit: function( props ) {
 			return el(
 				'p',
-				{ className: props.className },
+				useBlockProps( { className: props.className } ),
 				'Hello World, step 2 (from the editor, in green).'
 			);
 		},
 		save: function() {
 			return el(
 				'p',
-				{},
+				useBlockProps.save(),
 				'Hello World, step 2 (from the frontend, in red).'
 			);
 		},
 	} );
-} )( window.wp.blocks, window.wp.i18n, window.wp.element );
+}( window.wp.blocks, window.wp.i18n, window.wp.element, window.wp.blockEditor ) );
