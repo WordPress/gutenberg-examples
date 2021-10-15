@@ -1,0 +1,16 @@
+/*!****************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./editor.css ***!
+  \****************************************************************************************************************************************************************/
+/**
+ * Note that these styles are loaded *after* common styles, so that
+ * editor-specific styles using the same selectors will take precedence.
+ */
+.wp-block-gutenberg-examples-example-03-editable-esnext {
+	color: green;
+	background: #cfc;
+	border: 2px solid #9c9;
+	padding: 20px;
+}
+
+
+/*# sourceMappingURL=index.css.map*/
