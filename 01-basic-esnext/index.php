@@ -30,7 +30,7 @@ function gutenberg_examples_01_esnext_load_textdomain() {
 function gutenberg_examples_01_esnext_register_block() {
 
 	// Register the block by passing the location of block.json to register_block_type.
-	register_block_type( __DIR__);
+	register_block_type( __DIR__ );
 
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		/**
