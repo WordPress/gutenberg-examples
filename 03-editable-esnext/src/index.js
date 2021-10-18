@@ -1,44 +1,25 @@
-import { __ } from '@wordpress/i18n';
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType } from '@wordpress/blocks';
-import { RichText } from '@wordpress/block-editor';
 
-registerBlockType( 'gutenberg-examples/example-03-editable-esnext', {
-	title: __( 'Example: Editable (ESNext)', 'gutenberg-examples' ),
-	icon: 'universal-access-alt',
-	category: 'layout',
-	attributes: {
-		content: {
-			type: 'array',
-			source: 'children',
-			selector: 'p',
-		},
-	},
-	example: {
-		attributes: {
-			content: __( 'Hello world' ),
-		},
-	},
-	edit: ( props ) => {
-		const {
-			attributes: { content },
-			setAttributes,
-			className,
-		} = props;
-		const onChangeContent = ( newContent ) => {
-			setAttributes( { content: newContent } );
-		};
-		return (
-			<RichText
-				tagName="p"
-				className={ className }
-				onChange={ onChangeContent }
-				value={ content }
-			/>
-		);
-	},
-	save: ( props ) => {
-		return (
-			<RichText.Content tagName="p" value={ props.attributes.content } />
-		);
-	},
+/**
+ * Internal dependencies
+ */
+import json from '../block.json';
+import edit from './edit';
+import save from './save';
+
+import '../style.css';
+import '../editor.css';
+
+// Destructure the json file to get the name and settings for the block
+// For more information on how this works, see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+const { name, ...settings } = json;
+
+// Register the block
+registerBlockType( name, {
+	...settings,
+	edit, // Object shorthand property - same as writing: edit: edit,
+	save, // Object shorthand property - same as writing: save: save,
 } );
