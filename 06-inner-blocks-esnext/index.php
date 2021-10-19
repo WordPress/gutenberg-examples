@@ -23,23 +23,7 @@ function gutenberg_examples_06_esnext_register_block() {
 		return;
 	}
 
-	// automatically load dependencies and version
-	$asset_file = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
-
-	wp_register_script(
-		'gutenberg-examples-06-esnext',
-		plugins_url( 'build/index.js', __FILE__ ),
-		$asset_file['dependencies'],
-		$asset_file['version'],
-		true
-	);
-
-	register_block_type(
-		'gutenberg-examples/example-06-esnext',
-		[
-			'editor_script' => 'gutenberg-examples-06-esnext',
-		]
-	);
-
+	// Register the block by passing the location of block.json to register_block_type.
+	register_block_type( __DIR__ );
 }
 add_action( 'init', 'gutenberg_examples_06_esnext_register_block' );
