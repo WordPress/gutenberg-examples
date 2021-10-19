@@ -3,12 +3,13 @@
  *
  * Adding extra controls: built-in alignment toolbar.
  */
-( function( blocks, editor, i18n, element ) {
+( function( blocks, editor, i18n, element, blockEditor ) {
 	var el = element.createElement;
 	var __ = i18n.__;
 	var RichText = editor.RichText;
 	var AlignmentToolbar = editor.AlignmentToolbar;
 	var BlockControls = editor.BlockControls;
+	var useBlockProps = blockEditor.useBlockProps;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-04-controls', {
 		title: __( 'Example: Controls', 'gutenberg-examples' ),
@@ -58,24 +59,24 @@
 						onChange: onChangeAlignment,
 					} )
 				),
-				el( RichText, {
+				el( RichText, useBlockProps( {
 					key: 'richtext',
 					tagName: 'p',
 					style: { textAlign: alignment },
 					className: props.className,
 					onChange: onChangeContent,
 					value: content,
-				} ),
+				} ) ),
 			];
 		},
 
 		save: function( props ) {
-			return el( RichText.Content, {
+			return el( RichText.Content, useBlockProps.save( {
 				tagName: 'p',
 				className:
 					'gutenberg-examples-align-' + props.attributes.alignment,
 				value: props.attributes.content,
-			} );
+			} ) );
 		},
 	} );
-} )( window.wp.blocks, window.wp.editor, window.wp.i18n, window.wp.element );
+}( window.wp.blocks, window.wp.editor, window.wp.i18n, window.wp.element, window.wp.blockEditor ) );
