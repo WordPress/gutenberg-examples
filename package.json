@@ -19,6 +19,7 @@
 		"@wordpress/scripts": "^18.0.1",
 		"lerna": "^3.20.2"
 	},
+	"prettier": "@wordpress/prettier-config",
 	"scripts": {
 		"build": "lerna run build",
 		"lint:js": "lerna run lint:js",
