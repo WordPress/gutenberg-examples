@@ -31,35 +31,8 @@ add_action( 'init', 'gutenberg_examples_04_esnext_register_block' );
 
 function gutenberg_examples_04_esnext_register_block() {
 
-	// automatically load dependencies and version
-	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
-
-	wp_register_script(
-		'gutenberg-examples-04-esnext',
-		plugins_url( 'build/index.js', __FILE__ ),
-		$asset_file['dependencies'],
-		$asset_file['version']
-	);
-
-	wp_register_style(
-		'gutenberg-examples-04-esnext-editor',
-		plugins_url( 'editor.css', __FILE__ ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' )
-	);
-
-	wp_register_style(
-		'gutenberg-examples-04-esnext',
-		plugins_url( 'style.css', __FILE__ ),
-		array( ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )
-	);
-
-	register_block_type( 'gutenberg-examples/example-04-controls-esnext', array(
-		'style' => 'gutenberg-examples-04-esnext',
-		'editor_style' => 'gutenberg-examples-04-esnext-editor',
-		'editor_script' => 'gutenberg-examples-04-esnext',
-	) );
+	// Register the block by passing the location of block.json.
+	register_block_type( __DIR__ );
 
   if ( function_exists( 'wp_set_script_translations' ) ) {
     /**
