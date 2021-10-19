@@ -1,9 +1,9 @@
 {
-    "title": "Example: Basic",
-    "name":"gutenberg-examples/example-01-basic",
-    "category":"layout",
-    "icon": "universal-access-alt",
-    "textDomain": "gutenberg-examples",
-    "example":{},
-    "editorScript": "file:./block.js"
+	"title": "Example: Basic",
+	"name": "gutenberg-examples/example-01-basic",
+	"category": "layout",
+	"icon": "universal-access-alt",
+	"textDomain": "gutenberg-examples",
+	"example": {},
+	"editorScript": "file:./block.js"
 }

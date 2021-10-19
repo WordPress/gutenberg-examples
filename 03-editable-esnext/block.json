@@ -1,10 +1,10 @@
 {
-    "apiVersion": 2,
-    "name": "gutenberg-examples/example-03-editable-esnext",
-    "title":"Example: Editable (ESNext)",
-    "textdomain": "gutenberg-examples",
-    "icon": "universal-access-alt",
-    "category": "layout",
+	"apiVersion": 2,
+	"name": "gutenberg-examples/example-03-editable-esnext",
+	"title": "Example: Editable (ESNext)",
+	"textdomain": "gutenberg-examples",
+	"icon": "universal-access-alt",
+	"category": "layout",
 	"attributes": {
 		"content": {
 			"type": "array",
@@ -17,7 +17,7 @@
 			"content": "Hello world"
 		}
 	},
-    "editorScript": "file:./build/index.js",
+	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"
 }
