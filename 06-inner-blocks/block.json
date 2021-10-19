@@ -1,0 +1,10 @@
+{
+	"apiVersion": 2,
+	"name": "gutenberg-examples/example-06",
+	"title": "Example: Inner Blocks",
+	"category": "layout",
+	"icon": "universal-access-alt",
+	"textDomain": "gutenberg-examples",
+	"example": {},
+	"editorScript": "file:./block.js"
+}
