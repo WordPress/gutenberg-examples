@@ -1,76 +1,22 @@
-import { __ } from '@wordpress/i18n';
+/**
+ * WordPress dependencies
+ */
 import { registerBlockType } from '@wordpress/blocks';
 
-import {
-	RichText,
-	AlignmentToolbar,
-	BlockControls,
-} from '@wordpress/block-editor';
+/**
+ * Internal dependencies
+ */
+import json from '../block.json';
+import edit from './edit';
+import save from './save';
 
-registerBlockType( 'gutenberg-examples/example-04-controls-esnext', {
-	title: __( 'Example: Controls (ESNext)', 'gutenberg-examples' ),
-	icon: 'universal-access-alt',
-	category: 'layout',
-	attributes: {
-		content: {
-			type: 'array',
-			source: 'children',
-			selector: 'p',
-		},
-		alignment: {
-			type: 'string',
-			default: 'none',
-		},
-	},
-	example: {
-		attributes: {
-			content: __( 'Hello world' ),
-			alignment: 'right',
-		},
-	},
-	edit: ( props ) => {
-		const {
-			attributes: { content, alignment },
-			className,
-		} = props;
+import '../editor.css';
+import '../style.css';
 
-		const onChangeContent = ( newContent ) => {
-			props.setAttributes( { content: newContent } );
-		};
+const { name, ...settings } = json;
 
-		const onChangeAlignment = ( newAlignment ) => {
-			props.setAttributes( {
-				alignment: newAlignment === undefined ? 'none' : newAlignment,
-			} );
-		};
-
-		return (
-			<div>
-				{
-					<BlockControls>
-						<AlignmentToolbar
-							value={ alignment }
-							onChange={ onChangeAlignment }
-						/>
-					</BlockControls>
-				}
-				<RichText
-					className={ className }
-					style={ { textAlign: alignment } }
-					tagName="p"
-					onChange={ onChangeContent }
-					value={ content }
-				/>
-			</div>
-		);
-	},
-	save: ( props ) => {
-		return (
-			<RichText.Content
-				className={ `gutenberg-examples-align-${ props.attributes.alignment }` }
-				tagName="p"
-				value={ props.attributes.content }
-			/>
-		);
-	},
+registerBlockType( name, {
+	...settings,
+	edit,
+	save,
 } );
