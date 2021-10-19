@@ -34,32 +34,8 @@ function gutenberg_examples_04_register_block() {
 		return;
 	}
 
-	wp_register_script(
-		'gutenberg-examples-04',
-		plugins_url( 'block.js', __FILE__ ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'block.js' )
-	);
-
-	wp_register_style(
-		'gutenberg-examples-04-editor',
-		plugins_url( 'editor.css', __FILE__ ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' )
-	);
-
-	wp_register_style(
-		'gutenberg-examples-04',
-		plugins_url( 'style.css', __FILE__ ),
-		array( ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )
-	);
-
-	register_block_type( 'gutenberg-examples/example-04-controls', array(
-		'style' => 'gutenberg-examples-04',
-		'editor_style' => 'gutenberg-examples-04-editor',
-		'editor_script' => 'gutenberg-examples-04',
-	) );
+	// Register the block by passing the path to it's block.json file.
+	register_block_type( __DIR__ );
 
   if ( function_exists( 'wp_set_script_translations' ) ) {
     /**
