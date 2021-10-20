@@ -42,7 +42,10 @@
 				{ "type": "li", "props": { "children": [ "💖" ] } }
 			],
 			"instructions": [
-				{ "type": "p", "props": { "children": [ "Mix, Bake, Enjoy!" ] } }
+				{
+					"type": "p",
+					"props": { "children": [ "Mix, Bake, Enjoy!" ] }
+				}
 			]
 		}
 	},
