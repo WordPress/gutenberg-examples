@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
 	"name": "gutenberg-examples/example-04-controls-esnext",
 	"title": "Example: Controls (ESNext)",
@@ -7,8 +8,8 @@
 	"category": "layout",
 	"attributes": {
 		"content": {
-			"type": "array",
-			"source": "children",
+			"type": "string",
+			"source": "html",
 			"selector": "p"
 		},
 		"alignment": {

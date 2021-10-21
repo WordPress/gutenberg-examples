@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
 	"name": "gutenberg-examples/example-05-recipe-card",
 	"title": "Example: Recipe Card",
@@ -6,8 +7,8 @@
 	"category": "layout",
 	"attributes": {
 		"title": {
-			"type": "array",
-			"source": "children",
+			"type": "string",
+			"source": "html",
 			"selector": "h2"
 		},
 		"mediaID": {
@@ -20,13 +21,13 @@
 			"attribute": "src"
 		},
 		"ingredients": {
-			"type": "array",
-			"source": "children",
+			"type": "string",
+			"source": "html",
 			"selector": ".ingredients"
 		},
 		"instructions": {
-			"type": "array",
-			"source": "children",
+			"type": "string",
+			"source": "html",
 			"selector": ".steps"
 		}
 	},
@@ -34,8 +35,8 @@
 		"attributes": {
 			"title": "Chocolate Chip Cookies",
 			"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg",
-			"ingredients": [ "flour", "sugar", "chocolate", "💖" ],
-			"instructions": [ "Mix", "Bake", "Enjoy" ]
+			"ingredients": ["flour", "sugar", "chocolate", "💖"],
+			"instructions": ["Mix", "Bake", "Enjoy"]
 		}
 	},
 	"editorScript": "file:./block.js",

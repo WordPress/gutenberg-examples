@@ -1,4 +1,5 @@
 {
+	"$schema": "https://json.schemastore.org/block.json",
 	"apiVersion": 2,
 	"name": "gutenberg-examples/example-02-stylesheets",
 	"title": "Example: Stylesheets",
