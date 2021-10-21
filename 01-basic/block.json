@@ -1,9 +1,10 @@
 {
+	"$schema": "https://json.schemastore.org/block.json",
 	"title": "Example: Basic",
 	"name": "gutenberg-examples/example-01-basic",
 	"category": "layout",
 	"icon": "universal-access-alt",
-	"textDomain": "gutenberg-examples",
+	"textdomain": "gutenberg-examples",
 	"example": {},
 	"editorScript": "file:./block.js"
 }
