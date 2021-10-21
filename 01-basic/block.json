@@ -1,5 +1,6 @@
 {
 	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
 	"title": "Example: Basic",
 	"name": "gutenberg-examples/example-01-basic",
 	"category": "layout",
