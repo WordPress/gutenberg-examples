@@ -25,29 +25,36 @@ Gutenberg Examples are distributed as WordPress plugin.
 
 ## Development
 
-First, you need a WordPress Environment to run the plugin on. The quickest way to get up and running is to use the provided docker setup. Install [docker-ce](https://store.docker.com/search?type=edition&offering=community) and [docker-compose](https://docs.docker.com/compose/install/) by following the most recent instructions on the docker site.
+This project uses the [`@wordpress/env`](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/) package to provide a local development environment. Before you can use the development environment, you must install [Docker](https://docs.docker.com/get-docker/).
 
-In the folder of your preference, clone this project and enter the working directory:
+Once Docker is installed, clone this project and enter the working directory:
 
 ```
 git clone git@github.com:WordPress/gutenberg-examples.git
 cd gutenberg-examples
 ```
 
-To bring up this local WordPress instance run:
+Then, install the project dependencies:
 
 ```
-docker-compose up -d
+npm install
 ```
 
-The WordPress should be available at http://localhost:9999
+Once installed, start the local WordPress instance with one of two commands:
+
+1. `npm run env:start` - Starts the instance normally.
+2. `npm run env:start:debug` - Starts the instance with debugging enabled.
+
+The WordPress instance will be available at http://localhost:8888/. You can login with the username and password "admin" and the password "password" at http://localhost:8888/wp-login.php. The plugin should be automatically activated.
 
 To stop this local WordPress instance later run:
 
 ```
-docker-compose stop
+npm run env:stop
 ```
-Now go to http://localhost:9999/wp-admin/plugins.php and __Activate__ Gutenberg-examples plugin. The docker script has mapped the gutenberg-examples folder to this now activated plugin. Every time you build an example, it is automaticaly updated in the running docker instance. Old block inserted are not updated, you need to add in your page again.
+
+The block examples should be built and ready to use, however you can rebuild all of the ESNext examples by running `npm run build` from the project root.
+
 
 For each of the examples that include an esnext example the following commands are required to build the plugins:
 
@@ -61,7 +68,7 @@ To build the production version of the plugin
 npm run build
 ```
 
-To build a development version, change to the local directory of the block you are working on, and run `npm start` to watch for changes and automatically rebuild as you develop. 
+To build a development version, change to the local directory of the block you are working on, and run `npm start` to watch for changes and automatically rebuild as you develop.
 ```
 cd 01-basic-esnext/
 npm start
