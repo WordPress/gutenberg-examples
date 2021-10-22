@@ -29,7 +29,7 @@
 		"lint:js:fix": "npm run lint:js -- --fix",
 		"test": "wp-scripts test-unit-js",
 		"env:start": "wp-env start",
-		"env:start-xdebug": "wp-env start --xdebug",
+		"env:start:debug": "wp-env start --xdebug",
 		"env:stop": "wp-env stop",
 		"packages-update": "wp-scripts packages-update"
 	}
