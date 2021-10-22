@@ -22,12 +22,16 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
-var Edit = function Edit(props) {
-  var content = props.attributes.content,
-      setAttributes = props.setAttributes;
-  var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
+const Edit = props => {
+  const {
+    attributes: {
+      content
+    },
+    setAttributes
+  } = props;
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
 
-  var onChangeContent = function onChangeContent(newContent) {
+  const onChangeContent = newContent => {
     setAttributes({
       content: newContent
     });
@@ -74,11 +78,10 @@ __webpack_require__.r(__webpack_exports__);
 // For more information on how this works, see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 
 const {
-  name,
-  ...settings
+  name
 } = _block_json__WEBPACK_IMPORTED_MODULE_1__; // Register the block
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(name, { ...settings,
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(name, {
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
   // Object shorthand property - same as writing: edit: edit,
   save: _save__WEBPACK_IMPORTED_MODULE_3__["default"] // Object shorthand property - same as writing: save: save,
@@ -107,9 +110,13 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
-var Save = function Save(props) {
-  var content = props.attributes.content;
-  var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
+const Save = props => {
+  const {
+    attributes: {
+      content
+    }
+  } = props;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, blockProps, {
     tagName: "p",
     value: content
