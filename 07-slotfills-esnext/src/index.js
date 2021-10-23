@@ -1,3 +1,6 @@
+/**
+ * WordPress dependencies.
+ */
 import { TextControl } from '@wordpress/components';
 import { useEntityProp } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
@@ -21,7 +24,7 @@ const ExamplePluginDocumentSettingPanel = () => {
 	 * A helper function for getting post meta by key.
 	 *
 	 * @param {string} key - The meta key to read.
-	 * @returns {*} - Meta value.
+	 * @return {*} - Meta value.
 	 */
 	const getPostMeta = ( key ) => meta[ key ] || '';
 
@@ -31,13 +34,14 @@ const ExamplePluginDocumentSettingPanel = () => {
 	 *
 	 * Important! Don't forget to register_post_meta (see ../index.php).
 	 *
-	 * @param {string} key - The meta key to update.
-	 * @param {*} value - The meta value to update.
+	 * @param {string} key   - The meta key to update.
+	 * @param {*}      value - The meta value to update.
 	 */
-	const setPostMeta = ( key, value ) => setMeta( {
-		...meta,
-		[ key ]: value,
-	} );
+	const setPostMeta = ( key, value ) =>
+		setMeta( {
+			...meta,
+			[ key ]: value,
+		} );
 
 	return (
 		<PluginDocumentSettingPanel
@@ -47,8 +51,8 @@ const ExamplePluginDocumentSettingPanel = () => {
 		>
 			<TextControl
 				label="Example Meta Field"
-				value={getPostMeta( metaKey )}
-				onChange={( value ) => setPostMeta( metaKey, value )}
+				value={ getPostMeta( metaKey ) }
+				onChange={ ( value ) => setPostMeta( metaKey, value ) }
 			/>
 		</PluginDocumentSettingPanel>
 	);
