@@ -15,15 +15,9 @@ defined( 'ABSPATH' ) || exit;
  * Registers all block assets so that they can be enqueued through Gutenberg in
  * the corresponding context.
  */
-function gutenberg_examples_07_esnext_register_block() {
-
-	if ( ! function_exists( 'register_block_type' ) ) {
-		// Gutenberg is not active.
-		return;
-	}
-
-	// automatically load dependencies and version.
-	$asset_file = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
+function gutenberg_examples_07_esnext_register_dependencies() {
+	// Automatically load dependencies and version.
+	$asset_file = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
 
 	wp_register_script(
 		'gutenberg-examples-07-esnext',
@@ -31,13 +25,6 @@ function gutenberg_examples_07_esnext_register_block() {
 		$asset_file['dependencies'],
 		$asset_file['version'],
 		true
-	);
-
-	register_block_type(
-		'gutenberg-examples/example-07-esnext',
-		[
-			'editor_script' => 'gutenberg-examples-07-esnext',
-		]
 	);
 
 	// Register the post meta field the meta box will save to.
@@ -51,4 +38,12 @@ function gutenberg_examples_07_esnext_register_block() {
 		)
 	);
 }
-add_action( 'init', 'gutenberg_examples_07_esnext_register_block' );
+add_action( 'init', 'gutenberg_examples_07_esnext_register_dependencies' );
+
+/**
+ * Enqueue block editor assets for this example.
+ */
+function gutenberg_examples_07_esnext_enqueue_assets() {
+	wp_enqueue_script( 'gutenberg-examples-07-esnext' );
+}
+add_action( 'enqueue_block_editor_assets', 'gutenberg_examples_07_esnext_enqueue_assets' );
