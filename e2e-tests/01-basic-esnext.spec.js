@@ -7,18 +7,16 @@ import {
 	createNewPost,
 } from '@wordpress/e2e-test-utils';
 
-/**
- * Internal dependencies
- */
-import json from '../01-basic-esnext/block.json';
-const { title, name } = json;
-
-it( `Example: ${ title } block should be available`, async () => {
+it( `Example: Example: Basic (ESNext) block should be available`, async () => {
 	await createNewPost();
-	await insertBlock( title );
+	await insertBlock( 'Example: Basic (ESNext)' );
 
 	// Check if block was inserted
-	expect( await page.$( `[data-type="${ name }"]` ) ).not.toBeNull();
+	expect(
+		await page.$(
+			'[data-type="gutenberg-examples/example-01-basic-esnext"]'
+		)
+	).not.toBeNull();
 
 	expect( await getEditedPostContent() ).toMatchSnapshot();
 } );
