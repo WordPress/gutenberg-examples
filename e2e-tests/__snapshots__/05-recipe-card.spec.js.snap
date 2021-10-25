@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example: Example: Recipe Card block should be available 1`] = `
+"<!-- wp:gutenberg-examples/example-05-recipe-card -->
+<div class=\\"wp-block-gutenberg-examples-example-05-recipe-card\\"><h2></h2><h3>Ingredients</h3><ul class=\\"ingredients\\"></ul><h3>Instructions</h3><div class=\\"steps\\"></div></div>
+<!-- /wp:gutenberg-examples/example-05-recipe-card -->"
+`;
