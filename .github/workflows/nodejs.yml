@@ -23,7 +23,7 @@ jobs:
         # npm run lint:js
         npm run lint:pkg-json
         # npm test
-				npm run start:env
-				npm run test:e2e
+        npm run start:env
+        npm run test:e2e
       env:
         CI: true
