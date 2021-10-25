@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example: Example: Stylesheets block should be available 1`] = `
+"<!-- wp:gutenberg-examples/example-02-stylesheets -->
+<p class=\\"wp-block-gutenberg-examples-example-02-stylesheets\\">Hello World, step 2 (from the frontend, in red).</p>
+<!-- /wp:gutenberg-examples/example-02-stylesheets -->"
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example: Example: Editable (ESNext) block should be available 1`] = `
+"<!-- wp:gutenberg-examples/example-03-editable-esnext -->
+<p class=\\"wp-block-gutenberg-examples-example-03-editable-esnext\\"></p>
+<!-- /wp:gutenberg-examples/example-03-editable-esnext -->"
+`;
