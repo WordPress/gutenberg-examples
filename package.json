@@ -16,6 +16,7 @@
 		"url": "https://github.com/WordPress/gutenberg-examples/issues"
 	},
 	"devDependencies": {
+		"@wordpress/e2e-test-utils": "^5.4.5",
 		"@wordpress/env": "^4.1.2",
 		"@wordpress/scripts": "^18.0.1",
 		"lerna": "^3.20.2"
@@ -28,6 +29,7 @@
 		"format:js": "wp-scripts format-js",
 		"lint:js:fix": "npm run lint:js -- --fix",
 		"test": "wp-scripts test-unit-js",
+		"test:e2e": "wp-scripts test-e2e",
 		"env:start": "wp-env start",
 		"env:start:debug": "wp-env start --xdebug",
 		"env:stop": "wp-env stop",
