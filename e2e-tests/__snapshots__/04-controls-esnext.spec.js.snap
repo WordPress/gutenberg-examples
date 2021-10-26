@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Example: Example: Controls (ESNext) block should be available 1`] = `
-"<!-- wp:gutenberg-examples/example-04-controls-esnext -->
-<p class=\\"wp-block-gutenberg-examples-example-04-controls-esnext gutenberg-examples-align-none\\"></p>
-<!-- /wp:gutenberg-examples/example-04-controls-esnext -->"
-`;

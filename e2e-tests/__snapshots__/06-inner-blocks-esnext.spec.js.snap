@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Example: Example: Inner Blocks (ESNext) block should be available 1`] = `
-"<!-- wp:gutenberg-examples/example-06-esnext -->
-<div class=\\"wp-block-gutenberg-examples-example-06-esnext\\"></div>
-<!-- /wp:gutenberg-examples/example-06-esnext -->"
-`;

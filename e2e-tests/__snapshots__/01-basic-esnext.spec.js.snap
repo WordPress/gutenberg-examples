@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Example: Example: Basic (ESNext) block should be available 1`] = `
-"<!-- wp:gutenberg-examples/example-01-basic-esnext -->
-<div style=\\"background-color:#900;color:#fff;padding:20px\\" class=\\"wp-block-gutenberg-examples-example-01-basic-esnext\\">Hello World, step 1 (from the frontend).</div>
-<!-- /wp:gutenberg-examples/example-01-basic-esnext -->"
-`;
