@@ -10,7 +10,7 @@ import {
 /**
  * Internal dependencies
  */
-import json from '../03-editable-esnext/block.json';
+import json from '../block.json';
 const { title, name } = json;
 
 // Increase the timeout limit for this test.
@@ -24,8 +24,8 @@ it( `${ title } block should be available`, async () => {
 	expect( await page.$( `[data-type="${ name }"]` ) ).not.toBeNull();
 
 	expect( await getEditedPostContent() ).toMatchInlineSnapshot( `
-		"<!-- wp:gutenberg-examples/example-03-editable-esnext -->
-		<p class=\\"wp-block-gutenberg-examples-example-03-editable-esnext\\"></p>
-		<!-- /wp:gutenberg-examples/example-03-editable-esnext -->"
+		"<!-- wp:gutenberg-examples/example-06-esnext -->
+		<div class=\\"wp-block-gutenberg-examples-example-06-esnext\\"></div>
+		<!-- /wp:gutenberg-examples/example-06-esnext -->"
 	` );
 } );

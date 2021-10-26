@@ -10,7 +10,7 @@ import {
 /**
  * Internal dependencies
  */
-import json from '../02-stylesheets/block.json';
+import json from '../block.json';
 const { title, name } = json;
 
 // Increase the timeout limit for this test.
@@ -24,8 +24,8 @@ it( `${ title } block should be available`, async () => {
 	expect( await page.$( `[data-type="${ name }"]` ) ).not.toBeNull();
 
 	expect( await getEditedPostContent() ).toMatchInlineSnapshot( `
-		"<!-- wp:gutenberg-examples/example-02-stylesheets -->
-		<p class=\\"wp-block-gutenberg-examples-example-02-stylesheets\\">Hello World, step 2 (from the frontend, in red).</p>
-		<!-- /wp:gutenberg-examples/example-02-stylesheets -->"
+		"<!-- wp:gutenberg-examples/example-05-recipe-card -->
+		<div class=\\"wp-block-gutenberg-examples-example-05-recipe-card\\"><h2></h2><h3>Ingredients</h3><ul class=\\"ingredients\\"></ul><h3>Instructions</h3><div class=\\"steps\\"></div></div>
+		<!-- /wp:gutenberg-examples/example-05-recipe-card -->"
 	` );
 } );

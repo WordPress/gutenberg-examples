@@ -10,7 +10,7 @@ import {
 /**
  * Internal dependencies
  */
-import json from '../01-basic/block.json';
+import json from '../block.json';
 const { title, name } = json;
 
 // Increase the timeout limit for this test.
