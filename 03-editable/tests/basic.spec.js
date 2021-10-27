@@ -14,7 +14,7 @@ import json from '../block.json';
 const { title, name } = json;
 
 // Increase the timeout limit for this test.
-jest.setTimeout( 100000 );
+jest.setTimeout( 30000 );
 
 it( `${ title } block should be available`, async () => {
 	await createNewPost();
