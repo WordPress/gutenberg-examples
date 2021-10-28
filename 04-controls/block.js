@@ -30,7 +30,7 @@
 
 		example: {
 			attributes: {
-				content: __( 'Hello world' ),
+				content: __( 'Hello world', 'gutenberg-examples' ),
 				alignment: 'right',
 			},
 		},
