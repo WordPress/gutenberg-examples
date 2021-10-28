@@ -1,9 +1,10 @@
-( function( blocks, element, blockEditor ) {
+( function( blocks, i18n, element, blockEditor ) {
+	var __ = i18n.__;
 	var el = element.createElement;
 	var InnerBlocks = blockEditor.InnerBlocks;
 	var useBlockProps = blockEditor.useBlockProps;
 	blocks.registerBlockType( 'gutenberg-examples/example-06', {
-		title: 'Example: Inner Blocks',
+		title: __( 'Example: Inner Blocks', 'gutenberg-examples' ),
 		category: 'layout',
 		edit: function() {
 			return el(
