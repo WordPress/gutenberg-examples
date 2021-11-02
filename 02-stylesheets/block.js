@@ -22,14 +22,14 @@
 			return el(
 				'p',
 				useBlockProps( { className: props.className } ),
-				'Hello World, step 2 (from the editor, in green).'
+				__( 'Hello World, step 2 (from the editor, in green).', 'gutenberg-examples' )
 			);
 		},
 		save: function() {
 			return el(
 				'p',
 				useBlockProps.save(),
-				'Hello World, step 2 (from the frontend, in red).'
+				__( 'Hello World, step 2 (from the frontend, in red).', 'gutenberg-examples' )
 			);
 		},
 	} );
