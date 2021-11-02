@@ -1,6 +1,7 @@
 /**
  * WordPress dependencies.
  */
+import { __ } from '@wordpress/i18n';
 import { TextControl } from '@wordpress/components';
 import { useEntityProp } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
@@ -46,11 +47,11 @@ const ExamplePluginDocumentSettingPanel = () => {
 	return (
 		<PluginDocumentSettingPanel
 			name="example-07-slotfills-esnext"
-			title="Example Meta Box (ESNext)"
+			title= __( 'Example Meta Box (ESNext)', 'gutenberg-examples' )
 			className="example-07-slotfills-esnext"
 		>
 			<TextControl
-				label="Example Meta Field"
+				label= __( 'Example Meta Field', 'gutenberg-examples' )
 				value={ getPostMeta( metaKey ) }
 				onChange={ ( value ) => setPostMeta( metaKey, value ) }
 			/>
