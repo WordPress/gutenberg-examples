@@ -21,4 +21,4 @@
 			);
 		},
 	} );
-}( window.wp.blocks, window.wp.element, window.wp.blockEditor ) );
+}( window.wp.blocks, window.wp.i18n, window.wp.element, window.wp.blockEditor ) );
