@@ -1,6 +1,6 @@
 name: Static Linting
 
-on: [push]
+on: pull_request:
 
 jobs:
     linting:
