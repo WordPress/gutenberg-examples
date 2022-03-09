@@ -23,5 +23,10 @@
   "lint:js": "wp-scripts lint-js",
   "packages-update": "wp-scripts packages-update",
   "start": "wp-scripts start"
+ },
+ "dependencies": {
+  "@wordpress/block-editor": "^8.2.0",
+  "@wordpress/i18n": "^4.3.1",
+  "@wordpress/rich-text": "^5.1.2"
  }
 }

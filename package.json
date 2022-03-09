@@ -15,12 +15,16 @@
 	"bugs": {
 		"url": "https://github.com/WordPress/gutenberg-examples/issues"
 	},
+	"prettier": "@wordpress/prettier-config",
+	"dependencies": {
+		"@wordpress/block-editor": "^8.2.0",
+		"@wordpress/blocks": "^11.2.2"
+	},
 	"devDependencies": {
 		"@wordpress/env": "^4.1.2",
 		"@wordpress/scripts": "^18.0.1",
 		"lerna": "^3.20.2"
 	},
-	"prettier": "@wordpress/prettier-config",
 	"scripts": {
 		"build": "lerna run build",
 		"lint:js": "lerna run lint:js",

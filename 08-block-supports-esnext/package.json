@@ -15,6 +15,10 @@
 		"url": "https://github.com/WordPress/gutenberg-examples/issues"
 	},
 	"main": "build/index.js",
+	"dependencies": {
+		"@wordpress/block-editor": "^8.2.0",
+		"@wordpress/blocks": "^11.2.2"
+	},
 	"devDependencies": {
 		"@wordpress/scripts": "^18.0.1"
 	},
@@ -24,9 +28,5 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"start": "wp-scripts start"
-	},
-	"dependencies": {
-		"@wordpress/block-editor": "^8.2.0",
-		"@wordpress/blocks": "^11.2.2"
 	}
 }
