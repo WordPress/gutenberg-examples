@@ -18,7 +18,7 @@ import './style.scss';
  * Internal dependencies
  */
 import json from './block.json';
-import edit from './edit';
+import Edit from './edit';
 
 const { name } = json;
 
@@ -31,7 +31,7 @@ registerBlockType( name, {
 	/**
 	 * @see ./edit.js
 	 */
-	edit,
+	edit: Edit,
 
 	/**
 	 * @see ./save.js
