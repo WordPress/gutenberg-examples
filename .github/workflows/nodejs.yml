@@ -1,4 +1,4 @@
-name: Linting
+name: Static Linting
 
 on: [push]
 
