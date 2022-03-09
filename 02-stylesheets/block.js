@@ -7,7 +7,7 @@
  * `.wp-block-*` class for styling, plugin implementers must return an
  * appropriate element with this class.
  */
-( function( blocks, i18n, element, blockEditor ) {
+( function ( blocks, i18n, element, blockEditor ) {
 	var el = element.createElement;
 	var __ = i18n.__;
 
@@ -18,19 +18,30 @@
 		icon: 'universal-access-alt',
 		category: 'layout',
 		example: {},
-		edit: function( props ) {
+		edit: function ( props ) {
 			return el(
 				'p',
 				useBlockProps( { className: props.className } ),
-				__( 'Hello World, step 2 (from the editor, in green).', 'gutenberg-examples' )
+				__(
+					'Hello World, step 2 (from the editor, in green).',
+					'gutenberg-examples'
+				)
 			);
 		},
-		save: function() {
+		save: function () {
 			return el(
 				'p',
 				useBlockProps.save(),
-				__( 'Hello World, step 2 (from the frontend, in red).', 'gutenberg-examples' )
+				__(
+					'Hello World, step 2 (from the frontend, in red).',
+					'gutenberg-examples'
+				)
 			);
 		},
 	} );
-}( window.wp.blocks, window.wp.i18n, window.wp.element, window.wp.blockEditor ) );
+} )(
+	window.wp.blocks,
+	window.wp.i18n,
+	window.wp.element,
+	window.wp.blockEditor
+);

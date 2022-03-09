@@ -1,4 +1,4 @@
-( function( blocks, i18n, element, blockEditor ) {
+( function ( blocks, i18n, element, blockEditor ) {
 	var __ = i18n.__;
 	var el = element.createElement;
 	var InnerBlocks = blockEditor.InnerBlocks;
@@ -6,19 +6,16 @@
 	blocks.registerBlockType( 'gutenberg-examples/example-06', {
 		title: __( 'Example: Inner Blocks', 'gutenberg-examples' ),
 		category: 'layout',
-		edit: function() {
-			return el(
-				'div',
-				useBlockProps(),
-				el( InnerBlocks )
-			);
+		edit: function () {
+			return el( 'div', useBlockProps(), el( InnerBlocks ) );
 		},
-		save: function() {
-			return el(
-				'div',
-				useBlockProps.save(),
-				el( InnerBlocks.Content )
-			);
+		save: function () {
+			return el( 'div', useBlockProps.save(), el( InnerBlocks.Content ) );
 		},
 	} );
-}( window.wp.blocks, window.wp.i18n, window.wp.element, window.wp.blockEditor ) );
+} )(
+	window.wp.blocks,
+	window.wp.i18n,
+	window.wp.element,
+	window.wp.blockEditor
+);

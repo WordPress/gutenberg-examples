@@ -22,7 +22,7 @@ export const blockStyle = {
 const { name } = json;
 
 // Register the block
-registerBlockType(name, {
+registerBlockType( name, {
 	edit, // Object shorthand property - same as writing: edit: edit,
 	save, // Object shorthand property - same as writing: save: save,
-});
+} );

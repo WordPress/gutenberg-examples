@@ -1,4 +1,4 @@
-( function( blocks, editor, i18n, element, components, _, blockEditor ) {
+( function ( blocks, editor, i18n, element, components, _, blockEditor ) {
 	var __ = i18n.__;
 	var el = element.createElement;
 	var RichText = blockEditor.RichText;
@@ -54,10 +54,10 @@
 			},
 		},
 
-		edit: function( props ) {
+		edit: function ( props ) {
 			var attributes = props.attributes;
 
-			var onSelectImage = function( media ) {
+			var onSelectImage = function ( media ) {
 				return props.setAttributes( {
 					mediaURL: media.url,
 					mediaID: media.id,
@@ -75,7 +75,7 @@
 						'gutenberg-examples'
 					),
 					value: attributes.title,
-					onChange: function( value ) {
+					onChange: function ( value ) {
 						props.setAttributes( { title: value } );
 					},
 				} ),
@@ -86,7 +86,7 @@
 						onSelect: onSelectImage,
 						allowedTypes: 'image',
 						value: attributes.mediaID,
-						render: function( obj ) {
+						render: function ( obj ) {
 							return el(
 								components.Button,
 								{
@@ -111,7 +111,7 @@
 						'gutenberg-examples'
 					),
 					value: attributes.ingredients,
-					onChange: function( value ) {
+					onChange: function ( value ) {
 						props.setAttributes( { ingredients: value } );
 					},
 					className: 'ingredients',
@@ -124,13 +124,13 @@
 						'gutenberg-examples'
 					),
 					value: attributes.instructions,
-					onChange: function( value ) {
+					onChange: function ( value ) {
 						props.setAttributes( { instructions: value } );
 					},
 				} )
 			);
 		},
-		save: function( props ) {
+		save: function ( props ) {
 			var attributes = props.attributes;
 
 			return el(
@@ -161,7 +161,7 @@
 			);
 		},
 	} );
-}(
+} )(
 	window.wp.blocks,
 	window.wp.editor,
 	window.wp.i18n,
@@ -169,4 +169,4 @@
 	window.wp.components,
 	window._,
 	window.wp.blockEditor
-) );
+);
