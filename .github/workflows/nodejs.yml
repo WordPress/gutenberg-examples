@@ -1,4 +1,4 @@
-name: Node CI
+name: Linting
 
 on: [push]
 
@@ -21,5 +21,6 @@ jobs:
                   npm ci
                   npm run lint:pkg-json
                   npm run lint:js
+				  npm run lint:css
               env:
                   CI: true
