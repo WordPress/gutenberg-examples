@@ -21,6 +21,6 @@ jobs:
                   npm ci
                   npm run lint:pkg-json
                   npm run lint:js
-				  npm run lint:css
+                  npm run lint:css
               env:
                   CI: true
