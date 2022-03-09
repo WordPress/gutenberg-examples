@@ -26,6 +26,7 @@
 		"build": "wp-scripts build",
 		"format:js": "wp-scripts format-js",
 		"lint:js": "wp-scripts lint-js",
+		"lint:style": "wp-scripts lint-style",
 		"packages-update": "wp-scripts packages-update",
 		"start": "wp-scripts start"
 	}
