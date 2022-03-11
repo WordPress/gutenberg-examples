@@ -1,0 +1,29 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "gutenberg-examples/example-04-controls-esnext",
+	"title": "Example: Controls (ESNext)",
+	"textdomain": "gutenberg-examples",
+	"icon": "universal-access-alt",
+	"category": "layout",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		},
+		"alignment": {
+			"type": "string",
+			"default": "none"
+		}
+	},
+	"example": {
+		"attributes": {
+			"content": "Hello world",
+			"alignment": "right"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
