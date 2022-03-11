@@ -1,5 +1,5 @@
-const defaultConfig = require('@wordpress/scripts/config/webpack.config');
-const fs = require('fs');
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+const fs = require( 'fs' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
 // The directory where the non-block examples live.
@@ -13,27 +13,29 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		...defaultConfig.entry,
-		...fs.readdirSync(`./${otherFolder}`).reduce((acc, path) => {
-			acc[`${otherFolder}-${path}`] = `./${otherFolder}/${path}`;
-			return acc
-		}, {})
+		...fs.readdirSync( `./${ otherFolder }` ).reduce( ( acc, path ) => {
+			acc[
+				`${ otherFolder }-${ path }`
+			] = `./${ otherFolder }/${ path }`;
+			return acc;
+		}, {} ),
 	},
 	output: {
 		...defaultConfig.output,
 		filename: ( pathData ) => {
-
-			if (!pathData.chunk.name.match(otherFolder) ) {
-				return '[name].js'
-			} else {
-				const dirname = pathData.chunk.name.replace(`${otherFolder}-`, '');
-				return `${dirname}/index.js`
+			if ( ! pathData.chunk.name.match( otherFolder ) ) {
+				return '[name].js';
 			}
-
-		}
+			const dirname = pathData.chunk.name.replace(
+				`${ otherFolder }-`,
+				''
+			);
+			return `${ dirname }/index.js`;
+		},
 	},
 	plugins: [
 		...defaultConfig.plugins,
-		new CopyWebpackPlugin({
+		new CopyWebpackPlugin( {
 			patterns: [
 				{
 					from: copyWebPackPattens,
@@ -46,8 +48,6 @@ module.exports = {
 					noErrorOnMissing: true,
 				},
 			],
-		})
-	]
+		} ),
+	],
 };
-
-
