@@ -12,20 +12,21 @@
 
 defined( 'ABSPATH' ) || exit;
 
-include '01-basic/index.php';
-include '01-basic-esnext/index.php';
-include '02-stylesheets/index.php';
-include '03-editable/index.php';
-include '03-editable-esnext/index.php';
-include '04-controls/index.php';
-include '04-controls-esnext/index.php';
-include '05-recipe-card/index.php';
-include '05-recipe-card-esnext/index.php';
-include '06-inner-blocks/index.php';
-include '06-inner-blocks-esnext/index.php';
-include '07-slotfills-esnext/index.php';
-include '08-block-supports-esnext/index.php';
-include '09-code-data-basics-esnext/index.php';
-include 'format-api/index.php';
-include 'plugin-sidebar/plugin-sidebar.php';
-include 'meta-block/meta-block.php';
+
+require plugin_dir_path( __FILE__ ) . 'non-JSX-examples/01-basic/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/01-basic-esnext/index.php';
+require plugin_dir_path( __FILE__ ) . 'non-JSX-examples/02-stylesheets/index.php';
+require plugin_dir_path( __FILE__ ) . 'non-JSX-examples/03-editable/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/03-editable-esnext/index.php';
+require plugin_dir_path( __FILE__ ) . 'non-JSX-examples/04-controls/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/04-controls-esnext/index.php';
+require plugin_dir_path( __FILE__ ) . 'non-JSX-examples/05-recipe-card/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/05-recipe-card-esnext/index.php';
+require plugin_dir_path( __FILE__ ) . 'non-JSX-examples/06-inner-blocks/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/06-inner-blocks-esnext/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/07-slotfills-esnext/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/08-block-supports-esnext/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/09-code-data-basics-esnext/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/format-api/index.php';
+require plugin_dir_path( __FILE__ ) . 'non-JSX-examples/plugin-sidebar/plugin-sidebar.php';
+require plugin_dir_path( __FILE__ ) . 'build/meta-block/index.php';

@@ -1,0 +1,11 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "gutenberg-examples/example-06-esnext",
+	"title": "Example: Inner Blocks (ESNext)",
+	"category": "layout",
+	"icon": "universal-access-alt",
+	"textdomain": "gutenberg-examples",
+	"example": {},
+	"editorScript": "file:./index.js"
+}
