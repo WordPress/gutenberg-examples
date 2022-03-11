@@ -22,7 +22,7 @@
 	},
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
-		"start": "wp-scripts start",
+		"start": "wp-scripts start --webpack-copy-php",
 		"build": "lerna run build",
 		"lint:js": "lerna run lint:js",
 		"lint:pkg-json": "wp-scripts lint-pkg-json ./package.json ./*-esnext/package.json",
