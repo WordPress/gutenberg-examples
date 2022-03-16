@@ -8,14 +8,16 @@
 	"scripts": {
 		"build": "wp-scripts build",
 		"format": "wp-scripts format",
-		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"start": "wp-scripts start",
 		"packages-update": "wp-scripts packages-update"
 	},
 	"dependencies": {
-		"@wordpress/block-editor": "^8.0.12",
-		"@wordpress/blocks": "^11.1.5",
+		"@wordpress/block-editor": "^8.2.0",
+		"@wordpress/blocks": "^11.2.2",
+		"@wordpress/components": "^19.5.0",
+		"@wordpress/core-data": "^4.1.2",
+		"@wordpress/data": "^6.3.0",
 		"@wordpress/i18n": "^4.2.4"
 	},
 	"devDependencies": {

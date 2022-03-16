@@ -44,16 +44,16 @@ function PagesList( { hasResolved, pages } ) {
 	return (
 		<table className="wp-list-table widefat fixed striped table-view-list">
 			<thead>
-			<tr>
-				<td>Title</td>
-			</tr>
+				<tr>
+					<td>Title</td>
+				</tr>
 			</thead>
 			<tbody>
-			{ pages?.map( ( page ) => (
-				<tr key={ page.id }>
-					<td>{ page.title.rendered }</td>
-				</tr>
-			) ) }
+				{ pages?.map( ( page ) => (
+					<tr key={ page.id }>
+						<td>{ page.title.rendered }</td>
+					</tr>
+				) ) }
 			</tbody>
 		</table>
 	);
