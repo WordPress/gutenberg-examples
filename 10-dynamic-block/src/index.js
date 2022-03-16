@@ -34,7 +34,7 @@ registerBlockType( name, {
 	edit: Edit,
 
 	/**
-	 * @see ./save.js
+	 * Many examples use following for dynamic blocks: save: () => null
+	 * This is the default value in registerBlockType for the save property, so it has been omitted here.
 	 */
-	save: () => null,
 } );

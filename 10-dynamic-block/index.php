@@ -24,9 +24,9 @@ add_action( 'init', 'gutenberg_examples_dynamic_block_block_init' );
 /**
  * This function is called when the block is being rendered on the front end of the site
  *
- * @param array     $attributes     The array of attributes for this block.
- * @param string    $content        Rendered block output. ie. <InnerBlocks.Content />
- * @param WP_Block  $block_instance The instance of the WP_Block class that represents the block being rendered.
+ * @param array    $attributes     The array of attributes for this block.
+ * @param string   $content        Rendered block output. ie. <InnerBlocks.Content />.
+ * @param WP_Block $block_instance The instance of the WP_Block class that represents the block being rendered.
  */
 function gutenberg_examples_dynamic_block_render_callback( $attributes, $content, $block_instance ) {
 	ob_start();
