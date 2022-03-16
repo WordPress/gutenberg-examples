@@ -29,3 +29,4 @@ include '09-code-data-basics-esnext/index.php';
 include 'format-api/index.php';
 include 'plugin-sidebar/plugin-sidebar.php';
 include 'meta-block/meta-block.php';
+include '10-dynamic-block/index.php';
