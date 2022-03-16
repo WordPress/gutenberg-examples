@@ -27,6 +27,7 @@ require plugin_dir_path( __FILE__ ) . 'build/06-inner-blocks-esnext/index.php';
 require plugin_dir_path( __FILE__ ) . 'build/07-slotfills-esnext/index.php';
 require plugin_dir_path( __FILE__ ) . 'build/08-block-supports-esnext/index.php';
 require plugin_dir_path( __FILE__ ) . 'build/09-code-data-basics-esnext/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/10-dynamic-block/index.php';
 require plugin_dir_path( __FILE__ ) . 'build/format-api/index.php';
 require plugin_dir_path( __FILE__ ) . 'non-JSX-examples/plugin-sidebar/plugin-sidebar.php';
 require plugin_dir_path( __FILE__ ) . 'build/meta-block/index.php';
