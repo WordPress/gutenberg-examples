@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Gutenberg Examples Block Supports EsNext
  * Plugin URI: https://github.com/WordPress/gutenberg-examples
@@ -15,11 +14,10 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Load all translations for our plugin from the MO file.
  */
-add_action( 'init', 'gutenberg_examples_08_esnext_load_textdomain' );
-
 function gutenberg_examples_08_esnext_load_textdomain() {
 	load_plugin_textdomain( 'gutenberg-examples', false, basename( __DIR__ ) . '/languages' );
 }
+add_action( 'init', 'gutenberg_examples_08_esnext_load_textdomain' );
 
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in
