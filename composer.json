@@ -6,6 +6,6 @@
 		"wp-coding-standards/wpcs": "^2.3"
 	},
 	"scripts": {
-		"lint": "phpcs --standard=phpcs.xml"
+		"lint": "./vendor/bin/phpcs --standard=phpcs.xml"
 	}
 }
