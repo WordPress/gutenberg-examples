@@ -67,7 +67,7 @@ function load_custom_wp_admin_scripts( $hook ) {
 		'09-code-data-basics-esnext',
 		plugins_url( 'style.css', __FILE__ ),
 		null,
-		get_bloginfo( 'version' ),
+		$asset_file['version'],
 	);
 	wp_enqueue_style( '09-code-data-basics-esnext' );
 }

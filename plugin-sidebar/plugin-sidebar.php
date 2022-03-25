@@ -22,14 +22,14 @@ function sidebar_plugin_register() {
 			'wp-element',
 			'wp-components',
 		),
-		get_bloginfo( 'version' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'plugin-sidebar.js' ),
 		true,
 	);
 	wp_register_style(
 		'plugin-sidebar-css',
 		plugins_url( 'plugin-sidebar.css', __FILE__ ),
 		null,
-		get_bloginfo( 'version' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'plugin-sidebar.css' ),
 	);
 }
 add_action( 'init', 'sidebar_plugin_register' );
