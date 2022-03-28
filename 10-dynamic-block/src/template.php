@@ -16,6 +16,13 @@
 		 * @see https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/#escaping-securing-output
 		 */
 		echo wp_kses_post( $attributes['message'] );
+
+		// Append "on a blog with {number} published posts"
+		// where {number} is replaced dynamically with the number of published posts on this blog.
+		printf(
+			' <em>on a blog with %d published posts</em>',
+			intval( wp_count_posts()->publish )
+		);
 	}
 	?>
 </p>
