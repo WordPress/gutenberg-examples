@@ -16,8 +16,8 @@
 		"url": "https://github.com/WordPress/gutenberg-examples/issues"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^4.1.2",
-		"@wordpress/scripts": "^18.0.1",
+		"@wordpress/env": "^4.4.0",
+		"@wordpress/scripts": "^22.3.0",
 		"lerna": "^3.20.2"
 	},
 	"prettier": "@wordpress/prettier-config",
