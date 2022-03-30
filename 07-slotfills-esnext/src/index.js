@@ -47,11 +47,11 @@ const ExamplePluginDocumentSettingPanel = () => {
 	return (
 		<PluginDocumentSettingPanel
 			name="example-07-slotfills-esnext"
-			title= __( 'Example Meta Box (ESNext)', 'gutenberg-examples' )
+			title={ __( 'Example Meta Box (ESNext)', 'gutenberg-examples' ) }
 			className="example-07-slotfills-esnext"
 		>
 			<TextControl
-				label= __( 'Example Meta Field', 'gutenberg-examples' )
+				label={ __( 'Example Meta Field', 'gutenberg-examples' ) }
 				value={ getPostMeta( metaKey ) }
 				onChange={ ( value ) => setPostMeta( metaKey, value ) }
 			/>
