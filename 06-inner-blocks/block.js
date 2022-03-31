@@ -1,22 +1,24 @@
-( function( blocks, element, blockEditor ) {
+( function( blocks, i18n, element, blockEditor ) {
+	var __ = i18n.__;
 	var el = element.createElement;
 	var InnerBlocks = blockEditor.InnerBlocks;
+	var useBlockProps = blockEditor.useBlockProps;
 	blocks.registerBlockType( 'gutenberg-examples/example-06', {
-		title: 'Example: Inner Blocks',
+		title: __( 'Example: Inner Blocks', 'gutenberg-examples' ),
 		category: 'layout',
-		edit: function( props ) {
+		edit: function() {
 			return el(
 				'div',
-				{ className: props.className },
+				useBlockProps(),
 				el( InnerBlocks )
 			);
 		},
-		save: function( props ) {
+		save: function() {
 			return el(
 				'div',
-				{ className: props.className },
+				useBlockProps.save(),
 				el( InnerBlocks.Content )
 			);
 		},
 	} );
-} )( window.wp.blocks, window.wp.element, window.wp.blockEditor );
+}( window.wp.blocks, window.wp.i18n, window.wp.element, window.wp.blockEditor ) );

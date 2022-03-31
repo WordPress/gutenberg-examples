@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Gutenberg Examples Controls
  * Plugin URI: https://github.com/WordPress/gutenberg-examples
@@ -14,12 +13,11 @@ defined( 'ABSPATH' ) || exit;
 
 /**
  * Load all translations for our plugin from the MO file.
-*/
-add_action( 'init', 'gutenberg_examples_04_load_textdomain' );
-
+ */
 function gutenberg_examples_04_load_textdomain() {
 	load_plugin_textdomain( 'gutenberg-examples', false, basename( __DIR__ ) . '/languages' );
 }
+add_action( 'init', 'gutenberg_examples_04_load_textdomain' );
 
 /**
  * Registers all block assets so that they can be enqueued through Gutenberg in
@@ -34,41 +32,17 @@ function gutenberg_examples_04_register_block() {
 		return;
 	}
 
-	wp_register_script(
-		'gutenberg-examples-04',
-		plugins_url( 'block.js', __FILE__ ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'block.js' )
-	);
+	// Register the block by passing the path to it's block.json file.
+	register_block_type( __DIR__ );
 
-	wp_register_style(
-		'gutenberg-examples-04-editor',
-		plugins_url( 'editor.css', __FILE__ ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' )
-	);
-
-	wp_register_style(
-		'gutenberg-examples-04',
-		plugins_url( 'style.css', __FILE__ ),
-		array( ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'style.css' )
-	);
-
-	register_block_type( 'gutenberg-examples/example-04-controls', array(
-		'style' => 'gutenberg-examples-04',
-		'editor_style' => 'gutenberg-examples-04-editor',
-		'editor_script' => 'gutenberg-examples-04',
-	) );
-
-  if ( function_exists( 'wp_set_script_translations' ) ) {
-    /**
-     * May be extended to wp_set_script_translations( 'my-handle', 'my-domain',
-     * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
-     * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
-     */
-    wp_set_script_translations( 'gutenberg-examples-04', 'gutenberg-examples' );
-  }
+	if ( function_exists( 'wp_set_script_translations' ) ) {
+		/**
+		 * May be extended to wp_set_script_translations( 'my-handle', 'my-domain',
+		 * plugin_dir_path( MY_PLUGIN ) . 'languages' ) ). For details see
+		 * https://make.wordpress.org/core/2018/11/09/new-javascript-i18n-support-in-wordpress/
+		 */
+		wp_set_script_translations( 'gutenberg-examples-04', 'gutenberg-examples' );
+	}
 
 }
 add_action( 'init', 'gutenberg_examples_04_register_block' );

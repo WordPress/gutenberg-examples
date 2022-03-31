@@ -4,7 +4,10 @@
     "03-editable-esnext",
     "04-controls-esnext",
     "05-recipe-card-esnext",
-    "06-inner-blocks-esnext"
+    "06-inner-blocks-esnext",
+    "08-block-supports-esnext",
+    "09-code-data-basics-esnext",
+    "format-api"
   ],
   "version": "independent"
 }

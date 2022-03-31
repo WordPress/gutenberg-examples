@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "gutenberg-examples/example-04-controls",
+	"title": "Example: Controls",
+	"icon": "universal-access-alt",
+	"category": "layout",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		},
+		"alignment": {
+			"type": "string",
+			"default": "none"
+		}
+	},
+	"example": {
+		"attributes": {
+			"content": "Hello world",
+			"alignment": "right"
+		}
+	},
+	"editorScript": "file:./block.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./style.css"
+}

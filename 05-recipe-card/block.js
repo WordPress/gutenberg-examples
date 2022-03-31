@@ -1,8 +1,9 @@
-( function( blocks, editor, i18n, element, components, _ ) {
+( function( blocks, editor, i18n, element, components, _, blockEditor ) {
 	var __ = i18n.__;
 	var el = element.createElement;
-	var RichText = editor.RichText;
-	var MediaUpload = editor.MediaUpload;
+	var RichText = blockEditor.RichText;
+	var MediaUpload = blockEditor.MediaUpload;
+	var useBlockProps = blockEditor.useBlockProps;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
 		title: __( 'Example: Recipe Card', 'gutenberg-examples' ),
@@ -38,18 +39,17 @@
 		example: {
 			attributes: {
 				title: __( 'Chocolate Chip Cookies', 'gutenberg-examples' ),
+				mediaID: 1,
 				mediaURL:
 					'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg',
 				ingredients: [
-					__( 'flour', 'gutenberg-examples' ),
-					__( 'sugar', 'gutenberg-examples' ),
-					__( 'chocolate', 'gutenberg-examples' ),
-					'💖',
+					{ type: 'li', props: { children: [ 'flour' ] } },
+					{ type: 'li', props: { children: [ 'sugar' ] } },
+					{ type: 'li', props: { children: [ 'chocolate' ] } },
+					{ type: 'li', props: { children: [ '💖' ] } },
 				],
 				instructions: [
-					__( 'Mix', 'gutenberg-examples' ),
-					__( 'Bake', 'gutenberg-examples' ),
-					__( 'Enjoy', 'gutenberg-examples' ),
+					__( 'Mix, Bake, Enjoy!', 'gutenberg-examples' ),
 				],
 			},
 		},
@@ -66,10 +66,10 @@
 
 			return el(
 				'div',
-				{ className: props.className },
+				useBlockProps( { className: props.className } ),
 				el( RichText, {
 					tagName: 'h2',
-					inline: true,
+
 					placeholder: __(
 						'Write Recipe title…',
 						'gutenberg-examples'
@@ -119,7 +119,6 @@
 				el( 'h3', {}, i18n.__( 'Instructions', 'gutenberg-examples' ) ),
 				el( RichText, {
 					tagName: 'div',
-					inline: false,
 					placeholder: i18n.__(
 						'Write instructions…',
 						'gutenberg-examples'
@@ -136,7 +135,7 @@
 
 			return el(
 				'div',
-				{ className: props.className },
+				useBlockProps.save( { className: props.className } ),
 				el( RichText.Content, {
 					tagName: 'h2',
 					value: attributes.title,
@@ -162,11 +161,12 @@
 			);
 		},
 	} );
-} )(
+}(
 	window.wp.blocks,
 	window.wp.editor,
 	window.wp.i18n,
 	window.wp.element,
 	window.wp.components,
-	window._
-);
+	window._,
+	window.wp.blockEditor
+) );
