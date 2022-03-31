@@ -46,6 +46,7 @@ registerBlockType('gutenberg-examples/example-11-tab-esnext', {
 	title: 'Example: Tab (ESNext)',
 	parent: ['gutenberg-examples/example-11-tabs-esnext'],
 	category: 'layout',
+	example: '',
 	attributes: DEFAULT_ATTRIBUTES,
 	edit: TabEdit,
 	save: TabSave,

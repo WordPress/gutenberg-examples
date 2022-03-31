@@ -7,6 +7,8 @@
     "06-inner-blocks-esnext",
     "08-block-supports-esnext",
     "09-code-data-basics-esnext",
+    "10-dynamic-block",
+    "11-tabs-esnext",
     "format-api"
   ],
   "version": "independent"

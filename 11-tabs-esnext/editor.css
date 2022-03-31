@@ -15,3 +15,13 @@
   border-bottom: 0;
   opacity: 1;
 }
+.wp-block-gutenberg-examples-example-11-tabs-esnext__tabs > button.components-button {
+    background-color: green;
+    color: white;
+}
+.wp-block-gutenberg-examples-example-11-tabs-esnext__tab 
+.components-accessible-toolbar.block-editor-block-contextual-toolbar.has-parent {
+    position: relative;
+    left: 5vw;
+    bottom: 5vw;
+}

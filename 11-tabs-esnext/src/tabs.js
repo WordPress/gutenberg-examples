@@ -121,6 +121,8 @@ const TabsSave = ({ attributes }) => {
 registerBlockType('gutenberg-examples/example-11-tabs-esnext', {
 	title: 'Example: Tabs (ESNext)',
 	category: 'layout',
+	icon: 'universal-access-alt',
+	example: '',
 	attributes: DEFAULT_ATTRIBUTES,
 	edit: compose(
 		withDispatch((dispatch, ownProps, { select }) => {
