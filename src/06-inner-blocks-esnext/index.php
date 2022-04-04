@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Gutenberg Examples Inner Blocks ESNext
  * Plugin URI: https://github.com/WordPress/gutenberg-examples

@@ -31,6 +31,9 @@ add_action( 'init', function() {
 /**
  * Enqueue block editor assets for this example.
  */
-add_action( 'enqueue_block_editor_assets', function() {
-	wp_enqueue_script( 'gutenberg-examples-format-api' );
-} );
+add_action(
+	'enqueue_block_editor_assets',
+	function() {
+		wp_enqueue_script( 'gutenberg-examples-format-api' );
+	}
+);

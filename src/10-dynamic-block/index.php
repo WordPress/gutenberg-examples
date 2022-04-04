@@ -9,6 +9,10 @@
  * @package gutenberg-examples
  */
 
+/**
+ * Registers all block assets so that they can be enqueued through Gutenberg in
+ * the corresponding context.
+ */
 function gutenberg_examples_dynamic_block_block_init() {
 
 	register_block_type(

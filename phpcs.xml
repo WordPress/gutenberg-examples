@@ -5,5 +5,10 @@
 	<file>.</file>
 	<!-- Exclude Vendor directory -->
 	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<!-- Exclude Build directory -->
 	<exclude-pattern>*/build/*</exclude-pattern>
+	<!-- Exclude node_modules directory -->
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<!-- Exclude block.asset.php file -->
+	<exclude-pattern>*/**/block.asset.php</exclude-pattern>
 </ruleset>

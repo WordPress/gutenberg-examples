@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Gutenberg Examples
  * Plugin URI: https://github.com/WordPress/gutenberg-examples

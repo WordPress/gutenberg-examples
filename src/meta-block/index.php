@@ -25,12 +25,18 @@ function myguten_myguten_meta_block_block_init() {
 }
 add_action( 'init', 'myguten_myguten_meta_block_block_init' );
 
-// Register custom post meta field.
+/**
+ * Register custom post meta field.
+ */
 function myguten_register_post_meta() {
-    register_post_meta( 'post', 'myguten_meta_block_field', array(
-        'show_in_rest' => true,
-        'single' => true,
-        'type' => 'string',
-    ) );
+	register_post_meta(
+		'post',
+		'myguten_meta_block_field',
+		array(
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'string',
+		)
+	);
 }
 add_action( 'init', 'myguten_register_post_meta' );

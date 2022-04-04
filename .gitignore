@@ -10,4 +10,5 @@ vendor
 /yarn.lock
 .vscode
 
-
+/vendor/
+build
