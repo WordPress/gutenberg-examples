@@ -10,13 +10,10 @@ import { useBlockProps } from '@wordpress/block-editor';
 import { blockStyle } from './index';
 
 const Edit = () => {
-	const blockProps = useBlockProps( { style: blockStyle } );
+	const blockProps = useBlockProps({ style: blockStyle });
 	return (
-		<div { ...blockProps }>
-			{ __(
-				'Hello World, step 1 (from the editor).',
-				'gutenberg-examples'
-			) }
+		<div {...blockProps}>
+			{__('Hello World, step 1 (from the editor).', 'gutenberg-examples')}
 		</div>
 	);
 };

@@ -14,7 +14,7 @@ import save from './save';
 const { name } = json;
 
 // Register the block
-registerBlockType( name, {
+registerBlockType(name, {
 	edit: Edit,
 	save, // Object shorthand property - same as writing: save: save,
-} );
+});

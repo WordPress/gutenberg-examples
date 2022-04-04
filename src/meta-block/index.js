@@ -10,29 +10,29 @@ import { useBlockProps } from '@wordpress/block-editor';
 const Edit = () => {
 	const blockProps = useBlockProps();
 	const postType = useSelect(
-		( select ) => select( 'core/editor' ).getCurrentPostType(),
+		(select) => select('core/editor').getCurrentPostType(),
 		[]
 	);
 
-	const [ meta, setMeta ] = useEntityProp( 'postType', postType, 'meta' );
+	const [meta, setMeta] = useEntityProp('postType', postType, 'meta');
 
 	const metaFieldValue = meta.myguten_meta_block_field;
-	const updateMetaValue = ( newValue ) => {
-		setMeta( { ...meta, myguten_meta_block_field: newValue } );
+	const updateMetaValue = (newValue) => {
+		setMeta({ ...meta, myguten_meta_block_field: newValue });
 	};
 
 	return (
-		<div { ...blockProps }>
+		<div {...blockProps}>
 			<TextControl
 				label="Meta Block Field"
-				value={ metaFieldValue }
-				onChange={ updateMetaValue }
+				value={metaFieldValue}
+				onChange={updateMetaValue}
 			/>
 		</div>
 	);
 };
 
-registerBlockType( 'myguten/meta-block', {
+registerBlockType('myguten/meta-block', {
 	edit: Edit,
 
 	// No information saved to the block.
@@ -40,4 +40,4 @@ registerBlockType( 'myguten/meta-block', {
 	save: () => {
 		return null;
 	},
-} );
+});

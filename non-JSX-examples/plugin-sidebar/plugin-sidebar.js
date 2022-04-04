@@ -1,4 +1,4 @@
-( function ( wp ) {
+(function (wp) {
 	var registerPlugin = wp.plugins.registerPlugin;
 	var PluginSidebar = wp.editPost.PluginSidebar;
 	var el = wp.element.createElement;
@@ -6,27 +6,27 @@
 	var useSelect = wp.data.useSelect;
 	var useDispatch = wp.data.useDispatch;
 
-	var MetaBlockField = function ( props ) {
-		var metaFieldValue = useSelect( function ( select ) {
-			return select( 'core/editor' ).getEditedPostAttribute(
+	var MetaBlockField = function (props) {
+		var metaFieldValue = useSelect(function (select) {
+			return select('core/editor').getEditedPostAttribute(
 				'meta'
-			)[ 'sidebar_plugin_meta_block_field' ];
-		}, [] );
+			)['sidebar_plugin_meta_block_field'];
+		}, []);
 
-		var editPost = useDispatch( 'core/editor' ).editPost;
+		var editPost = useDispatch('core/editor').editPost;
 
-		return el( TextControl, {
+		return el(TextControl, {
 			label: 'Meta Block Field',
 			value: metaFieldValue,
-			onChange: function ( content ) {
-				editPost( {
+			onChange: function (content) {
+				editPost({
 					meta: { sidebar_plugin_meta_block_field: content },
-				} );
+				});
 			},
-		} );
+		});
 	};
 
-	registerPlugin( 'my-plugin-sidebar', {
+	registerPlugin('my-plugin-sidebar', {
 		render: function () {
 			return el(
 				PluginSidebar,
@@ -38,10 +38,9 @@
 				el(
 					'div',
 					{ className: 'plugin-sidebar-content' },
-					el( MetaBlockField )
+					el(MetaBlockField)
 				)
 			);
 		},
-	} );
-} )( window.wp );
-
+	});
+})(window.wp);

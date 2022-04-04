@@ -4,40 +4,38 @@ import { useSelect } from '@wordpress/data';
 import { store as coreDataStore } from '@wordpress/core-data';
 
 function MyFirstApp() {
-	const [ searchTerm, setSearchTerm ] = useState( '' );
+	const [searchTerm, setSearchTerm] = useState('');
 	const { pages, hasResolved } = useSelect(
-		( select ) => {
+		(select) => {
 			const query = {};
-			if ( searchTerm ) {
+			if (searchTerm) {
 				query.search = searchTerm;
 			}
-			const selectorArgs = [ 'postType', 'page', query ];
+			const selectorArgs = ['postType', 'page', query];
 			return {
-				pages: select( coreDataStore ).getEntityRecords(
-					...selectorArgs
-				),
-				hasResolved: select( coreDataStore ).hasFinishedResolution(
+				pages: select(coreDataStore).getEntityRecords(...selectorArgs),
+				hasResolved: select(coreDataStore).hasFinishedResolution(
 					'getEntityRecords',
 					selectorArgs
 				),
 			};
 		},
-		[ searchTerm ]
+		[searchTerm]
 	);
 
 	return (
 		<div>
-			<SearchControl onChange={ setSearchTerm } value={ searchTerm } />
-			<PagesList hasResolved={ hasResolved } pages={ pages } />
+			<SearchControl onChange={setSearchTerm} value={searchTerm} />
+			<PagesList hasResolved={hasResolved} pages={pages} />
 		</div>
 	);
 }
 
-function PagesList( { hasResolved, pages } ) {
-	if ( ! hasResolved ) {
+function PagesList({ hasResolved, pages }) {
+	if (!hasResolved) {
 		return <Spinner />;
 	}
-	if ( ! pages?.length ) {
+	if (!pages?.length) {
 		return <div>No results</div>;
 	}
 
@@ -49,11 +47,11 @@ function PagesList( { hasResolved, pages } ) {
 				</tr>
 			</thead>
 			<tbody>
-				{ pages?.map( ( page ) => (
-					<tr key={ page.id }>
-						<td>{ page.title.rendered }</td>
+				{pages?.map((page) => (
+					<tr key={page.id}>
+						<td>{page.title.rendered}</td>
 					</tr>
-				) ) }
+				))}
 			</tbody>
 		</table>
 	);
@@ -64,7 +62,7 @@ window.addEventListener(
 	function () {
 		render(
 			<MyFirstApp />,
-			document.querySelector( '#my-first-gutenberg-app' )
+			document.querySelector('#my-first-gutenberg-app')
 		);
 	},
 	false
