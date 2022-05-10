@@ -22,8 +22,7 @@
 	},
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
-		"start": "wp-scripts start --webpack-copy-php --webpack-src-dir=blocks-jsx --output-path=build/blocks-jsx",
-		"start:non-block": "wp-scripts start --output-path=build/non-block-examples --config=./non-block-examples.webpack.config.js",
+		"start": "wp-scripts start --webpack-copy-php --webpack-src-dir=blocks-jsx",
 		"build": "wp-scripts build --webpack-copy-php --webpack-src-dir=blocks-jsx",
 		"lint:js": "wp-scripts lint-js",
 		"lint:style": "wp-scripts lint-style",
