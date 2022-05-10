@@ -11,12 +11,12 @@ import { registerPlugin } from '@wordpress/plugins';
 const ExamplePluginDocumentSettingPanel = () => {
 	// Get post type.
 	const postType = useSelect(
-		(select) => select('core/editor').getCurrentPostType(),
+		( select ) => select( 'core/editor' ).getCurrentPostType(),
 		[]
 	);
 
 	// Get the value of meta and a function for updating meta from useEntityProp.
-	const [meta, setMeta] = useEntityProp('postType', postType, 'meta');
+	const [ meta, setMeta ] = useEntityProp( 'postType', postType, 'meta' );
 
 	// Define which post meta key to read from/save to.
 	const metaKey = 'example_meta_field';
@@ -27,7 +27,7 @@ const ExamplePluginDocumentSettingPanel = () => {
 	 * @param {string} key - The meta key to read.
 	 * @return {*} - Meta value.
 	 */
-	const getPostMeta = (key) => meta[key] || '';
+	const getPostMeta = ( key ) => meta[ key ] || '';
 
 	/**
 	 * A helper function for updating post meta that accepts a meta key and meta
@@ -38,26 +38,26 @@ const ExamplePluginDocumentSettingPanel = () => {
 	 * @param {string} key   - The meta key to update.
 	 * @param {*}      value - The meta value to update.
 	 */
-	const setPostMeta = (key, value) =>
-		setMeta({
+	const setPostMeta = ( key, value ) =>
+		setMeta( {
 			...meta,
-			[key]: value,
-		});
+			[ key ]: value,
+		} );
 
 	return (
 		<PluginDocumentSettingPanel
 			name="example-07-slotfills-esnext"
-			title={__('Example Meta Box (ESNext)', 'gutenberg-examples')}
+			title={ __( 'Example Meta Box (ESNext)', 'gutenberg-examples' ) }
 			className="example-07-slotfills-esnext"
 		>
 			<TextControl
-				label={__('Example Meta Field', 'gutenberg-examples')}
-				value={getPostMeta(metaKey)}
-				onChange={(value) => setPostMeta(metaKey, value)}
+				label={ __( 'Example Meta Field', 'gutenberg-examples' ) }
+				value={ getPostMeta( metaKey ) }
+				onChange={ ( value ) => setPostMeta( metaKey, value ) }
 			/>
 		</PluginDocumentSettingPanel>
 	);
 };
-registerPlugin('example-07-slotfills-esnext', {
+registerPlugin( 'example-07-slotfills-esnext', {
 	render: ExamplePluginDocumentSettingPanel,
-});
+} );

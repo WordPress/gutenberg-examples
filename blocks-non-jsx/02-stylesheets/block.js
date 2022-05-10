@@ -7,21 +7,21 @@
  * `.wp-block-*` class for styling, plugin implementers must return an
  * appropriate element with this class.
  */
-(function (blocks, i18n, element, blockEditor) {
+( function ( blocks, i18n, element, blockEditor ) {
 	var el = element.createElement;
 	var __ = i18n.__;
 
 	var useBlockProps = blockEditor.useBlockProps;
 
-	blocks.registerBlockType('gutenberg-examples/example-02-stylesheets', {
-		title: __('Example: Stylesheets', 'gutenberg-examples'),
+	blocks.registerBlockType( 'gutenberg-examples/example-02-stylesheets', {
+		title: __( 'Example: Stylesheets', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 		example: {},
-		edit: function (props) {
+		edit: function ( props ) {
 			return el(
 				'p',
-				useBlockProps({ className: props.className }),
+				useBlockProps( { className: props.className } ),
 				__(
 					'Hello World, step 2 (from the editor, in green).',
 					'gutenberg-examples'
@@ -38,5 +38,10 @@
 				)
 			);
 		},
-	});
-})(window.wp.blocks, window.wp.i18n, window.wp.element, window.wp.blockEditor);
+	} );
+} )(
+	window.wp.blocks,
+	window.wp.i18n,
+	window.wp.element,
+	window.wp.blockEditor
+);

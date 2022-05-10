@@ -4,7 +4,7 @@
 
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
-const Edit = (props) => {
+const Edit = ( props ) => {
 	const {
 		attributes: { content },
 		setAttributes,
@@ -12,15 +12,15 @@ const Edit = (props) => {
 
 	const blockProps = useBlockProps();
 
-	const onChangeContent = (newContent) => {
-		setAttributes({ content: newContent });
+	const onChangeContent = ( newContent ) => {
+		setAttributes( { content: newContent } );
 	};
 	return (
 		<RichText
-			{...blockProps}
+			{ ...blockProps }
 			tagName="p"
-			onChange={onChangeContent}
-			value={content}
+			onChange={ onChangeContent }
+			value={ content }
 		/>
 	);
 };

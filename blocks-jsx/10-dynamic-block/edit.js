@@ -30,13 +30,15 @@ import './editor.scss';
  * @param {Function} param0.setAttributes
  * @return {WPElement} Element to render.
  */
-export default function Edit({ attributes: { message }, setAttributes }) {
+export default function Edit( { attributes: { message }, setAttributes } ) {
 	return (
 		<RichText
-			{...useBlockProps()}
+			{ ...useBlockProps() }
 			tagName="p"
-			value={message}
-			onChange={(newMessage) => setAttributes({ message: newMessage })}
+			value={ message }
+			onChange={ ( newMessage ) =>
+				setAttributes( { message: newMessage } )
+			}
 		/>
 	);
 }

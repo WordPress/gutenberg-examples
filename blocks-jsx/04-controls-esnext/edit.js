@@ -8,39 +8,39 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 
-const Edit = (props) => {
+const Edit = ( props ) => {
 	const blockProps = useBlockProps();
 	const {
 		attributes: { content, alignment },
 		className,
 	} = props;
 
-	const onChangeContent = (newContent) => {
-		props.setAttributes({ content: newContent });
+	const onChangeContent = ( newContent ) => {
+		props.setAttributes( { content: newContent } );
 	};
 
-	const onChangeAlignment = (newAlignment) => {
-		props.setAttributes({
+	const onChangeAlignment = ( newAlignment ) => {
+		props.setAttributes( {
 			alignment: newAlignment === undefined ? 'none' : newAlignment,
-		});
+		} );
 	};
 
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			{
 				<BlockControls>
 					<AlignmentToolbar
-						value={alignment}
-						onChange={onChangeAlignment}
+						value={ alignment }
+						onChange={ onChangeAlignment }
 					/>
 				</BlockControls>
 			}
 			<RichText
-				className={className}
-				style={{ textAlign: alignment }}
+				className={ className }
+				style={ { textAlign: alignment } }
 				tagName="p"
-				onChange={onChangeContent}
-				value={content}
+				onChange={ onChangeContent }
+				value={ content }
 			/>
 		</div>
 	);

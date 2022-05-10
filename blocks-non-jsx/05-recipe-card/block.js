@@ -1,12 +1,12 @@
-(function (blocks, editor, i18n, element, components, _, blockEditor) {
+( function ( blocks, editor, i18n, element, components, _, blockEditor ) {
 	var __ = i18n.__;
 	var el = element.createElement;
 	var RichText = blockEditor.RichText;
 	var MediaUpload = blockEditor.MediaUpload;
 	var useBlockProps = blockEditor.useBlockProps;
 
-	blocks.registerBlockType('gutenberg-examples/example-05-recipe-card', {
-		title: __('Example: Recipe Card', 'gutenberg-examples'),
+	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
+		title: __( 'Example: Recipe Card', 'gutenberg-examples' ),
 		icon: 'index-card',
 		category: 'layout',
 		attributes: {
@@ -38,34 +38,36 @@
 
 		example: {
 			attributes: {
-				title: __('Chocolate Chip Cookies', 'gutenberg-examples'),
+				title: __( 'Chocolate Chip Cookies', 'gutenberg-examples' ),
 				mediaID: 1,
 				mediaURL:
 					'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg',
 				ingredients: [
-					{ type: 'li', props: { children: ['flour'] } },
-					{ type: 'li', props: { children: ['sugar'] } },
-					{ type: 'li', props: { children: ['chocolate'] } },
-					{ type: 'li', props: { children: ['💖'] } },
+					{ type: 'li', props: { children: [ 'flour' ] } },
+					{ type: 'li', props: { children: [ 'sugar' ] } },
+					{ type: 'li', props: { children: [ 'chocolate' ] } },
+					{ type: 'li', props: { children: [ '💖' ] } },
 				],
-				instructions: [__('Mix, Bake, Enjoy!', 'gutenberg-examples')],
+				instructions: [
+					__( 'Mix, Bake, Enjoy!', 'gutenberg-examples' ),
+				],
 			},
 		},
 
-		edit: function (props) {
+		edit: function ( props ) {
 			var attributes = props.attributes;
 
-			var onSelectImage = function (media) {
-				return props.setAttributes({
+			var onSelectImage = function ( media ) {
+				return props.setAttributes( {
 					mediaURL: media.url,
 					mediaID: media.id,
-				});
+				} );
 			};
 
 			return el(
 				'div',
-				useBlockProps({ className: props.className }),
-				el(RichText, {
+				useBlockProps( { className: props.className } ),
+				el( RichText, {
 					tagName: 'h2',
 
 					placeholder: __(
@@ -73,18 +75,18 @@
 						'gutenberg-examples'
 					),
 					value: attributes.title,
-					onChange: function (value) {
-						props.setAttributes({ title: value });
+					onChange: function ( value ) {
+						props.setAttributes( { title: value } );
 					},
-				}),
+				} ),
 				el(
 					'div',
 					{ className: 'recipe-image' },
-					el(MediaUpload, {
+					el( MediaUpload, {
 						onSelect: onSelectImage,
 						allowedTypes: 'image',
 						value: attributes.mediaID,
-						render: function (obj) {
+						render: function ( obj ) {
 							return el(
 								components.Button,
 								{
@@ -93,15 +95,15 @@
 										: 'button button-large',
 									onClick: obj.open,
 								},
-								!attributes.mediaID
-									? __('Upload Image', 'gutenberg-examples')
-									: el('img', { src: attributes.mediaURL })
+								! attributes.mediaID
+									? __( 'Upload Image', 'gutenberg-examples' )
+									: el( 'img', { src: attributes.mediaURL } )
 							);
 						},
-					})
+					} )
 				),
-				el('h3', {}, i18n.__('Ingredients', 'gutenberg-examples')),
-				el(RichText, {
+				el( 'h3', {}, i18n.__( 'Ingredients', 'gutenberg-examples' ) ),
+				el( RichText, {
 					tagName: 'ul',
 					multiline: 'li',
 					placeholder: i18n.__(
@@ -109,57 +111,57 @@
 						'gutenberg-examples'
 					),
 					value: attributes.ingredients,
-					onChange: function (value) {
-						props.setAttributes({ ingredients: value });
+					onChange: function ( value ) {
+						props.setAttributes( { ingredients: value } );
 					},
 					className: 'ingredients',
-				}),
-				el('h3', {}, i18n.__('Instructions', 'gutenberg-examples')),
-				el(RichText, {
+				} ),
+				el( 'h3', {}, i18n.__( 'Instructions', 'gutenberg-examples' ) ),
+				el( RichText, {
 					tagName: 'div',
 					placeholder: i18n.__(
 						'Write instructions…',
 						'gutenberg-examples'
 					),
 					value: attributes.instructions,
-					onChange: function (value) {
-						props.setAttributes({ instructions: value });
+					onChange: function ( value ) {
+						props.setAttributes( { instructions: value } );
 					},
-				})
+				} )
 			);
 		},
-		save: function (props) {
+		save: function ( props ) {
 			var attributes = props.attributes;
 
 			return el(
 				'div',
-				useBlockProps.save({ className: props.className }),
-				el(RichText.Content, {
+				useBlockProps.save( { className: props.className } ),
+				el( RichText.Content, {
 					tagName: 'h2',
 					value: attributes.title,
-				}),
+				} ),
 				attributes.mediaURL &&
 					el(
 						'div',
 						{ className: 'recipe-image' },
-						el('img', { src: attributes.mediaURL })
+						el( 'img', { src: attributes.mediaURL } )
 					),
-				el('h3', {}, i18n.__('Ingredients', 'gutenberg-examples')),
-				el(RichText.Content, {
+				el( 'h3', {}, i18n.__( 'Ingredients', 'gutenberg-examples' ) ),
+				el( RichText.Content, {
 					tagName: 'ul',
 					className: 'ingredients',
 					value: attributes.ingredients,
-				}),
-				el('h3', {}, i18n.__('Instructions', 'gutenberg-examples')),
-				el(RichText.Content, {
+				} ),
+				el( 'h3', {}, i18n.__( 'Instructions', 'gutenberg-examples' ) ),
+				el( RichText.Content, {
 					tagName: 'div',
 					className: 'steps',
 					value: attributes.instructions,
-				})
+				} )
 			);
 		},
-	});
-})(
+	} );
+} )(
 	window.wp.blocks,
 	window.wp.editor,
 	window.wp.i18n,

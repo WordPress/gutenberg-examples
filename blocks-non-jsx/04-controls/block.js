@@ -3,7 +3,7 @@
  *
  * Adding extra controls: built-in alignment toolbar.
  */
-(function (blocks, editor, i18n, element, blockEditor) {
+( function ( blocks, editor, i18n, element, blockEditor ) {
 	var el = element.createElement;
 	var __ = i18n.__;
 	var RichText = editor.RichText;
@@ -11,8 +11,8 @@
 	var BlockControls = editor.BlockControls;
 	var useBlockProps = blockEditor.useBlockProps;
 
-	blocks.registerBlockType('gutenberg-examples/example-04-controls', {
-		title: __('Example: Controls', 'gutenberg-examples'),
+	blocks.registerBlockType( 'gutenberg-examples/example-04-controls', {
+		title: __( 'Example: Controls', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
 		category: 'layout',
 
@@ -30,63 +30,63 @@
 
 		example: {
 			attributes: {
-				content: __('Hello world', 'gutenberg-examples'),
+				content: __( 'Hello world', 'gutenberg-examples' ),
 				alignment: 'right',
 			},
 		},
 
-		edit: function (props) {
+		edit: function ( props ) {
 			var content = props.attributes.content;
 			var alignment = props.attributes.alignment;
 
-			function onChangeContent(newContent) {
-				props.setAttributes({ content: newContent });
+			function onChangeContent( newContent ) {
+				props.setAttributes( { content: newContent } );
 			}
 
-			function onChangeAlignment(newAlignment) {
-				props.setAttributes({
+			function onChangeAlignment( newAlignment ) {
+				props.setAttributes( {
 					alignment:
 						newAlignment === undefined ? 'none' : newAlignment,
-				});
+				} );
 			}
 
 			return [
 				el(
 					BlockControls,
 					{ key: 'controls' },
-					el(AlignmentToolbar, {
+					el( AlignmentToolbar, {
 						value: alignment,
 						onChange: onChangeAlignment,
-					})
+					} )
 				),
 				el(
 					RichText,
-					useBlockProps({
+					useBlockProps( {
 						key: 'richtext',
 						tagName: 'p',
 						style: { textAlign: alignment },
 						className: props.className,
 						onChange: onChangeContent,
 						value: content,
-					})
+					} )
 				),
 			];
 		},
 
-		save: function (props) {
+		save: function ( props ) {
 			return el(
 				RichText.Content,
-				useBlockProps.save({
+				useBlockProps.save( {
 					tagName: 'p',
 					className:
 						'gutenberg-examples-align-' +
 						props.attributes.alignment,
 					value: props.attributes.content,
-				})
+				} )
 			);
 		},
-	});
-})(
+	} );
+} )(
 	window.wp.blocks,
 	window.wp.editor,
 	window.wp.i18n,

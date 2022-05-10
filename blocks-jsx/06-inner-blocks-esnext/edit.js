@@ -6,7 +6,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 const Edit = () => {
 	const blockProps = useBlockProps();
 	return (
-		<div {...blockProps}>
+		<div { ...blockProps }>
 			<InnerBlocks />
 		</div>
 	);
