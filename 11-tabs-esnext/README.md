@@ -1,5 +1,4 @@
-# pbrocks-tabs-block
+# gutenberg-examples/example-11-tabs-esnext
 
-,
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+
+
