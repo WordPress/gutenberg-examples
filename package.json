@@ -16,14 +16,14 @@
 		"url": "https://github.com/WordPress/gutenberg-examples/issues"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^4.4.0",
-		"@wordpress/scripts": "^22.3.0",
+		"@wordpress/env": "^4.6.0",
+		"@wordpress/scripts": "^23.0.0",
 		"copy-webpack-plugin": "^10.2.4"
 	},
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
-		"start": "wp-scripts start --webpack-copy-php",
-		"build": "wp-scripts build --webpack-copy-php",
+		"start": "wp-scripts start --webpack-copy-php --webpack-src-dir=blocks-jsx",
+		"build": "wp-scripts build --webpack-copy-php --webpack-src-dir=blocks-jsx",
 		"lint:js": "wp-scripts lint-js",
 		"lint:style": "wp-scripts lint-style",
 		"format:js": "wp-scripts format",
