@@ -3,8 +3,9 @@ const fs = require('fs');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // The directory where the non-block examples live.
-const otherFolder = 'non-block-examples';
+const nonBlockExamplesDir = 'non-block-examples';
 
+// This is the default set from the scripts package.
 const copyWebPackPattens = process.env.WP_COPY_PHP_FILES_TO_DIST
 	? '**/{block.json,*.php}'
 	: '**/block.json';
@@ -13,18 +14,23 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		...defaultConfig.entry,
-		...fs.readdirSync(`./${otherFolder}`).reduce((acc, path) => {
-			acc[`${otherFolder}-${path}`] = `./${otherFolder}/${path}`;
+		...fs.readdirSync(`./${nonBlockExamplesDir}`).reduce((acc, path) => {
+			acc[
+				`${nonBlockExamplesDir}-${path}`
+			] = `./${nonBlockExamplesDir}/${path}`;
 			return acc;
 		}, {}),
 	},
 	output: {
 		...defaultConfig.output,
 		filename: (pathData) => {
-			if (!pathData.chunk.name.match(otherFolder)) {
+			if (!pathData.chunk.name.match(nonBlockExamplesDir)) {
 				return '[name].js';
 			}
-			const dirname = pathData.chunk.name.replace(`${otherFolder}-`, '');
+			const dirname = pathData.chunk.name.replace(
+				`${nonBlockExamplesDir}-`,
+				''
+			);
 			return `${dirname}/index.js`;
 		},
 	},
@@ -39,7 +45,7 @@ module.exports = {
 				},
 				{
 					from: '**/{block.json,*.php,*.css}',
-					context: otherFolder,
+					context: nonBlockExamplesDir,
 					noErrorOnMissing: true,
 				},
 			],
