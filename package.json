@@ -19,6 +19,7 @@
 		"@wordpress/env": "^4.6.0",
 		"@wordpress/scripts": "^23.0.0",
 		"copy-webpack-plugin": "^10.2.4",
+		"eslint-plugin-prettier": "^4.0.0",
 		"prettier": "npm:wp-prettier@2.2.1-beta-1"
 	},
 	"prettier": "@wordpress/prettier-config",
