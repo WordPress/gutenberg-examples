@@ -1,6 +1,6 @@
 name: Static Linting
 
-on: pull_request:
+on: [pull_request]
 
 jobs:
     linting:
@@ -17,12 +17,12 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - name: Install dependencies
-              run: 	npm ci
+              run: npm ci
             - name: Lint JavaScript files
-              run: 	npm run lint:js
+              run: npm run lint:js
             - name: Lint CSS files
-              run: 	npm run lint:css
+              run: npm run lint:css
             - name: Lint package.json files
-              run: 	npm run lint:pkg-json
+              run: npm run lint:pkg-json
               env:
                   CI: true
