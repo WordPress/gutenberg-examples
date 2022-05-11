@@ -16,17 +16,23 @@
 		"url": "https://github.com/WordPress/gutenberg-examples/issues"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^4.4.0",
-		"@wordpress/scripts": "^22.3.0",
-		"lerna": "^3.20.2"
+		"@wordpress/env": "^4.6.0",
+		"@wordpress/scripts": "^23.0.0",
+		"copy-webpack-plugin": "^10.2.4",
+		"prettier": "npm:wp-prettier@2.2.1-beta-1"
 	},
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
-		"build": "lerna run build",
-		"lint:js": "lerna run lint:js",
-		"lint:pkg-json": "wp-scripts lint-pkg-json ./package.json ./*-esnext/package.json",
-		"format:js": "wp-scripts format-js",
+		"start": "wp-scripts start --webpack-copy-php --webpack-src-dir=blocks-jsx --output-path=build/blocks-jsx",
+		"start:non-block": "wp-scripts start --output-path=build/non-block-examples --config=./non-block-examples.webpack.config.js",
+		"build": "wp-scripts build --webpack-copy-php --webpack-src-dir=blocks-jsx --output-path=build/blocks-jsx",
+		"build:non-block": "wp-scripts build --output-path=build/non-block-examples --config=./non-block-examples.webpack.config.js",
+		"build:all": "npm run build && npm run build:non-block",
+		"lint:js": "wp-scripts lint-js",
+		"lint:style": "wp-scripts lint-style",
+		"format:js": "wp-scripts format",
 		"lint:js:fix": "npm run lint:js -- --fix",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"test": "wp-scripts test-unit-js",
 		"env:start": "wp-env start",
 		"env:start:debug": "wp-env start --xdebug",
