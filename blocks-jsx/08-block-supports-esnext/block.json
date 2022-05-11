@@ -1,0 +1,31 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "gutenberg-examples/example-08-block-supports-esnext",
+	"title": "Example: Block Supports (ESNext)",
+	"textdomain": "gutenberg-examples",
+	"icon": "universal-access-alt",
+	"category": "layout",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		}
+	},
+	"example": {
+		"attributes": {
+			"content": "Hello world"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"supports": {
+		"color": {
+			"text": true,
+			"link": true,
+			"background": true
+		}
+	}
+}
