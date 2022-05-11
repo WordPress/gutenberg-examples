@@ -25,7 +25,9 @@
 	"scripts": {
 		"start": "wp-scripts start --webpack-copy-php --webpack-src-dir=blocks-jsx --output-path=build/blocks-jsx",
 		"start:non-block": "wp-scripts start --output-path=build/non-block-examples --config=./non-block-examples.webpack.config.js",
-		"build": "wp-scripts build --webpack-copy-php --webpack-src-dir=blocks-jsx",
+		"build": "wp-scripts build --webpack-copy-php --webpack-src-dir=blocks-jsx --output-path=build/blocks-jsx",
+		"build:non-block": "wp-scripts build --output-path=build/non-block-examples --config=./non-block-examples.webpack.config.js",
+		"build:all": "npm run build && npm run build:non-block",
 		"lint:js": "wp-scripts lint-js",
 		"lint:style": "wp-scripts lint-style",
 		"format:js": "wp-scripts format",
