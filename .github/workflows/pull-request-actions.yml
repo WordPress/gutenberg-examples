@@ -21,7 +21,7 @@ jobs:
             - name: Lint JavaScript files
               run: npm run lint:js
             - name: Lint CSS files
-              run: npm run lint:css
+              run: npm run lint:style
             - name: Lint package.json files
               run: npm run lint:pkg-json
               env:
