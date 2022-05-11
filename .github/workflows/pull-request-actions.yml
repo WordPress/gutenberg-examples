@@ -17,7 +17,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - name: Install dependencies
-              run: npm ci
+              run: npm install
             - name: Lint JavaScript files
               run: npm run lint:js
             - name: Lint CSS files
