@@ -3,7 +3,7 @@
  * editor-specific styles using the same selectors will take precedence.
  */
 .wp-block-gutenberg-examples-example-04-controls {
-	color: darkred;
+	color: #8b0000;
 	background: #fcc;
 	border: 2px solid #c99;
 	padding: 20px;
