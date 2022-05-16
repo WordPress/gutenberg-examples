@@ -2,7 +2,6 @@
 
 <p align="center"><img src="https://user-images.githubusercontent.com/1039236/47116000-fd775000-d27d-11e8-9c46-761a90cb30a2.gif" alt="Demo"></p>
 
-
 Examples for extending
 [Gutenberg](https://github.com/WordPress/gutenberg)
 with plugins which create blocks.
@@ -14,14 +13,14 @@ See also:
 
 Gutenberg Examples are distributed as WordPress plugin.
 
-1. [Download a pre-built zip archive of the latest release](https://github.com/WordPress/gutenberg-examples/releases).
-   > Do not download from the "Clone or download" GitHub button, as this includes the source material only. Read the [Development](#development) instructions below if you’re interested in building your own copy of the plugin.
-2. Navigate to the __Plugins > Add new__ screen in your WordPress administrative dashboard.
-3. Click __Add New__ at the top of the page.
-3. Click __Upload Plugin__ at the top of the page.
-4. Click __Choose File__, then find and __Upload__ the downloaded zip file.
-5. After the plugin finishes installing, click __Activate__.
-6. You’re done!
+1. [Download the gutenberg-examples.zip archive of the latest release](https://github.com/WordPress/gutenberg-examples/releases).
+    > Do not download from the "Clone or download" GitHub button, as this includes the source material only. Read the [Development](#development) instructions below if you’re interested in building your own copy of the plugin.
+2. Navigate to the **Plugins > Add new** screen in your WordPress administrative dashboard.
+3. Click **Add New** at the top of the page.
+4. Click **Upload Plugin** at the top of the page.
+5. Click **Choose File**, then find and **Upload** the downloaded zip file.
+6. After the plugin finishes installing, click **Activate**.
+7. You’re done!
 
 ## Development
 
@@ -53,24 +52,27 @@ To stop this local WordPress instance later run:
 npm run env:stop
 ```
 
-The block examples should be built and ready to use, however you can rebuild all of the ESNext examples by running `npm run build` from the project root.
-
-
-For each of the examples that include an esnext example the following commands are required to build the plugins:
-
 To install the node packages
+
 ```
 npm install
 ```
 
-To build the production version of the plugin
-```
-npm run build
-```
+This repository does not version the built files for any of the examples. You can build all of the examples by running `npm run build:all` in the project root.
 
-To build a development version run `npm start` to watch for changes and automatically rebuild as you develop.
-```
-npm start
-```
+## Local Development
+
+In this repository, there are block and non-block examples and each have their own build process.
+
+Block examples are stored in the `blocks-jsx` and `blocks-non-jsx` directories while and other non-block examples are stored in the `non-block-examples` directory.
+
+**Note: The blocks stored in `blocks-non-jsx` do not use JSX and therefore do not require a build process**
+
+-   `npm run start` - Builds development versions of the blocks and watches for changes to files to automatically rebuild as you develop.
+-   `npm run build` - Generates production files for the block examples.
+
+-   `npm run start:non-block` - Builds development versions of the non-block examples and watches for changes to files to automatically rebuild as you develop.
+-   `npm run build:non-block` - Generates production files for the non-block examples.
+-   `npm run build:all` - Generates production files for all examples
 
 <br/><br/><p align="center"><img src="https://s.w.org/style/images/codeispoetry.png?1" alt="Code is Poetry." /></p>
