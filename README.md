@@ -68,9 +68,8 @@ To build the production version of the plugin
 npm run build
 ```
 
-To build a development version, change to the local directory of the block you are working on, and run `npm start` to watch for changes and automatically rebuild as you develop.
+To build a development version run `npm start` to watch for changes and automatically rebuild as you develop.
 ```
-cd 01-basic-esnext/
 npm start
 ```
 
