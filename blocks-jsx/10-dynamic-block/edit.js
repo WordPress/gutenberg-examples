@@ -12,6 +12,7 @@
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -45,7 +46,9 @@ export default function Edit( { attributes: { message }, setAttributes } ) {
 					setAttributes( { message: newMessage } )
 				}
 			/>
-			<span> | { title }</span>
+			<span> | {
+				title ?? __( 'loading...', 'gutenberg-examples' )
+			}</span>
 		</p>
 	);
 }
