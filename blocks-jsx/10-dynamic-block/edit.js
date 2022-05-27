@@ -34,7 +34,7 @@ import './editor.scss';
  */
 export default function Edit( { attributes: { message }, setAttributes } ) {
 	const { title } = useSelect(
-		( select ) => select( 'core' ).getSite() ?? {},
+		( select ) => select( 'core' ).getSite() ?? {}
 	);
 
 	return (
@@ -46,9 +46,7 @@ export default function Edit( { attributes: { message }, setAttributes } ) {
 					setAttributes( { message: newMessage } )
 				}
 			/>
-			<span> | {
-				title ?? __( 'loading...', 'gutenberg-examples' )
-			}</span>
+			<span> | { title ?? __( 'loading…', 'gutenberg-examples' ) }</span>
 		</p>
 	);
 }
