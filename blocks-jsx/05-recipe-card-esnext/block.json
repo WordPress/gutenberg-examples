@@ -1,0 +1,87 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "gutenberg-examples/example-05-recipe-card-esnext",
+	"title": "Example: Recipe Card (ESNext)",
+	"icon": "index-card",
+	"category": "layout",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": "h2"
+		},
+		"mediaID": {
+			"type": "number"
+		},
+		"mediaURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		},
+		"ingredients": {
+			"type": "string",
+			"source": "html",
+			"selector": ".ingredients"
+		},
+		"instructions": {
+			"type": "string",
+			"source": "html",
+			"selector": ".steps"
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Chocolate Chip Cookies",
+			"mediaID": 1,
+			"mediaURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg",
+			"ingredients": [
+				{
+					"type": "li",
+					"props": {
+						"children": [
+							"flour"
+						]
+					}
+				},
+				{
+					"type": "li",
+					"props": {
+						"children": [
+							"sugar"
+						]
+					}
+				},
+				{
+					"type": "li",
+					"props": {
+						"children": [
+							"chocolate"
+						]
+					}
+				},
+				{
+					"type": "li",
+					"props": {
+						"children": [
+							"💖"
+						]
+					}
+				}
+			],
+			"instructions": [
+				{
+					"type": "p",
+					"props": {
+						"children": [
+							"Mix, Bake, Enjoy!"
+						]
+					}
+				}
+			]
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

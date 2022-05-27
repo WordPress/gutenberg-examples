@@ -1,0 +1,32 @@
+name: Static Linting
+
+on:
+    pull_request:
+    push:
+        branches:
+            - trunk
+
+jobs:
+    linting:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [14.x, 16.x]
+
+        steps:
+            - uses: actions/checkout@v3
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: Install dependencies
+              run: npm ci
+            - name: Lint JavaScript files
+              run: npm run lint:js
+            - name: Lint CSS files
+              run: npm run lint:style
+            - name: Lint package.json files
+              run: npm run lint:pkg-json
+              env:
+                  CI: true
