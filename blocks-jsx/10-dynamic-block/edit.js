@@ -11,6 +11,8 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/richtext/
  */
 import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { useSelect } from '@wordpress/data';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,14 +33,20 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes: { message }, setAttributes } ) {
+	const { title } = useSelect(
+		( select ) => select( 'core' ).getSite() ?? {}
+	);
+
 	return (
-		<RichText
-			{ ...useBlockProps() }
-			tagName="p"
-			value={ message }
-			onChange={ ( newMessage ) =>
-				setAttributes( { message: newMessage } )
-			}
-		/>
+		<p { ...useBlockProps() }>
+			<RichText
+				tagName="span"
+				value={ message }
+				onChange={ ( newMessage ) =>
+					setAttributes( { message: newMessage } )
+				}
+			/>
+			<span> | { title ?? __( 'loading…', 'gutenberg-examples' ) }</span>
+		</p>
 	);
 }

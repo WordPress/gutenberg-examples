@@ -19,7 +19,7 @@
 		 * @see https://developer.wordpress.org/reference/functions/wp_kses_post/
 		 * @see https://developer.wordpress.org/themes/theme-security/data-sanitization-escaping/#escaping-securing-output
 		 */
-		echo wp_kses_post( $attributes['message'] );
+		echo wp_kses_post( $attributes['message'] . ' | ' . get_bloginfo( 'name' ) );
 	}
 	?>
 </p>
