@@ -17,7 +17,8 @@
 	},
 	"devDependencies": {
 		"@wordpress/env": "^5.12.0",
-		"@wordpress/scripts": "^25.4.0"
+		"@wordpress/scripts": "^25.4.0",
+		"copy-webpack-plugin": "^11.0.0"
 	},
 	"prettier": "@wordpress/prettier-config",
 	"scripts": {
