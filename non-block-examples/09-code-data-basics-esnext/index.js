@@ -1,9 +1,15 @@
-import { SearchControl, Spinner, SnackbarList } from '@wordpress/components';
+import {
+	SearchControl,
+	Spinner,
+	SnackbarList,
+	Button,
+	Modal,
+	TextControl,
+} from '@wordpress/components';
 import { useEffect, useState, render } from '@wordpress/element';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { store as coreDataStore } from '@wordpress/core-data';
 import { store as noticesStore } from '@wordpress/notices';
-import { Button, Modal, TextControl } from '@wordpress/components';
 import { decodeEntities } from '@wordpress/html-entities';
 
 function Notifications() {
@@ -25,9 +31,8 @@ function Notifications() {
 }
 
 const DeletePageButton = ( { pageId } ) => {
-	const { createSuccessNotice, createErrorNotice } = useDispatch(
-		noticesStore
-	);
+	const { createSuccessNotice, createErrorNotice } =
+		useDispatch( noticesStore );
 	// useSelect returns a list of selectors if you pass the store handle
 	// instead of a callback:
 	const { getLastEntityDeleteError } = useSelect( coreDataStore );
@@ -117,7 +122,6 @@ function CreatePageButton() {
 
 function CreatePageForm( { onCancel, onSaveFinished } ) {
 	const [ title, setTitle ] = useState();
-	const handleChange = ( title ) => setTitle( title );
 	const { saveEntityRecord } = useDispatch( coreDataStore );
 	const handleSave = async () => {
 		const savedRecord = await saveEntityRecord( 'postType', 'page', {

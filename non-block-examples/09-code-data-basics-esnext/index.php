@@ -43,7 +43,7 @@ function load_custom_wp_admin_scripts( $hook )
     // Load the required WordPress packages.
 
     // Automatically load imported dependencies and assets version.
-    $asset_file = include plugin_dir_path(__FILE__) . 'build/index.asset.php';
+    $asset_file = include plugin_dir_path(__FILE__) . 'index.asset.php';
 
     // Enqueue CSS dependencies.
     foreach ( $asset_file['dependencies'] as $style ) {
@@ -53,7 +53,7 @@ function load_custom_wp_admin_scripts( $hook )
     // Load our app.js.
     wp_register_script(
         'my-first-gutenberg-app',
-        plugins_url('build/index.js', __FILE__),
+        plugins_url('index.js', __FILE__),
         $asset_file['dependencies'],
         $asset_file['version']
     );

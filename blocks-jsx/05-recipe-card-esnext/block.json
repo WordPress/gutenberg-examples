@@ -40,33 +40,25 @@
 				{
 					"type": "li",
 					"props": {
-						"children": [
-							"flour"
-						]
+						"children": [ "flour" ]
 					}
 				},
 				{
 					"type": "li",
 					"props": {
-						"children": [
-							"sugar"
-						]
+						"children": [ "sugar" ]
 					}
 				},
 				{
 					"type": "li",
 					"props": {
-						"children": [
-							"chocolate"
-						]
+						"children": [ "chocolate" ]
 					}
 				},
 				{
 					"type": "li",
 					"props": {
-						"children": [
-							"💖"
-						]
+						"children": [ "💖" ]
 					}
 				}
 			],
@@ -74,9 +66,7 @@
 				{
 					"type": "p",
 					"props": {
-						"children": [
-							"Mix, Bake, Enjoy!"
-						]
+						"children": [ "Mix, Bake, Enjoy!" ]
 					}
 				}
 			]
