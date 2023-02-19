@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "gutenberg-examples/example-11-tabs-esnext",
+	"version": "2.0.1",
+	"title": "Example: Tabs (ESNext)",
+	"category": "layout",
+	"example": {},
+	"icon": "universal-access-alt",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "gutenberg-examples",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

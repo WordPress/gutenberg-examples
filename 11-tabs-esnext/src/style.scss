@@ -1,0 +1,17 @@
+.tabs__group {
+	display: flex;
+	align-items: center;
+}
+
+.single__tab {
+	border: 1px solid black;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	padding: 0 10px;
+	opacity: 0.5;
+}
+
+.single__tab--active {
+	border-bottom: 0;
+	opacity: 1;
+}

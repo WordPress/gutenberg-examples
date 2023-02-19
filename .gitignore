@@ -9,6 +9,4 @@ vendor
 *.log
 /yarn.lock
 .vscode
-
-/vendor/
-build
+.wp-env.json
