@@ -11,23 +11,6 @@
 	var useBlockProps = blockEditor.useBlockProps;
 
 	blocks.registerBlockType( 'gutenberg-examples/example-03-editable', {
-		title: __( 'Example: Editable', 'gutenberg-examples' ),
-		icon: 'universal-access-alt',
-		category: 'layout',
-
-		attributes: {
-			content: {
-				type: 'array',
-				source: 'children',
-				selector: 'p',
-			},
-		},
-
-		example: {
-			attributes: {
-				content: __( 'Hello world' ),
-			},
-		},
 
 		edit: function ( props ) {
 			var content = props.attributes.content;

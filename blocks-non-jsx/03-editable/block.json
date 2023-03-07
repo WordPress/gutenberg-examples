@@ -5,6 +5,7 @@
 	"title": "Example: Editable",
 	"icon": "universal-access-alt",
 	"category": "layout",
+	"textdomain": "gutenberg-examples",
 	"attributes": {
 		"content": {
 			"type": "string",
