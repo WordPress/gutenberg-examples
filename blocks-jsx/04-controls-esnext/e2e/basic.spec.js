@@ -7,6 +7,8 @@ import {
 	createNewPost,
 } from '@wordpress/e2e-test-utils';
 
+// This test seems to need more time to run.
+jest.setTimeout( 100000 );
 /**
  * Internal dependencies
  */
