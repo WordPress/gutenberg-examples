@@ -1,0 +1,15 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "myguten/meta-block",
+	"version": "0.1.0",
+	"title": "meta-block",
+	"category": "text",
+	"icon": "smiley",
+	"description": "An example block viewing and saving post meta",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "myguten-meta-block",
+	"editorScript": "file:./index.js"
+}

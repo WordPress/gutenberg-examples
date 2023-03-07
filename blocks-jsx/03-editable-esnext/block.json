@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "gutenberg-examples/example-03-editable-esnext",
+	"title": "Example: Editable (ESNext)",
+	"textdomain": "gutenberg-examples",
+	"icon": "universal-access-alt",
+	"category": "layout",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		}
+	},
+	"example": {
+		"attributes": {
+			"content": "Hello world"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,7 +1,7 @@
 {
-    "name": "wordpress/gutenberg-examples",
-    "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+	"name": "wordpress/gutenberg-examples",
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
 		"squizlabs/php_codesniffer": "^3.6",
 		"wp-coding-standards/wpcs": "^2.3"
 	},
