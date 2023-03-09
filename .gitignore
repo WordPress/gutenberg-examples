@@ -11,4 +11,4 @@ vendor
 .vscode
 
 /vendor/
-build
+artifacts

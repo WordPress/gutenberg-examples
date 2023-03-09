@@ -16,8 +16,9 @@
 		"url": "https://github.com/WordPress/gutenberg-examples/issues"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^5.12.0",
-		"@wordpress/scripts": "^25.4.0",
+		"@wordpress/e2e-test-utils": "^9.5.0",
+		"@wordpress/env": "^5.13.0",
+		"@wordpress/scripts": "^25.5.1",
 		"copy-webpack-plugin": "^11.0.0"
 	},
 	"prettier": "@wordpress/prettier-config",
@@ -33,6 +34,7 @@
 		"lint:js:fix": "npm run lint:js -- --fix",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"test": "wp-scripts test-unit-js",
+		"test:e2e": "wp-scripts test-e2e",
 		"env:start": "wp-env start",
 		"env:start:debug": "wp-env start --xdebug",
 		"env:stop": "wp-env stop",

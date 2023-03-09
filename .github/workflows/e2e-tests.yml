@@ -1,0 +1,27 @@
+name: E2E Tests
+
+on:
+    pull_request:
+    push:
+        branches:
+            - trunk
+jobs:
+    e2e:
+      runs-on: ubuntu-latest
+      strategy:
+            matrix:
+                node-version: [16.x, 18.x]
+      steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build, start env, and run e2e tests
+        run: |
+          npm ci
+          npm run build:all
+          npm run env:start
+          npm run test:e2e
+        env:
+          CI: true
