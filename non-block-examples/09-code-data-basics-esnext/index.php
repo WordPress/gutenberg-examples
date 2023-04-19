@@ -43,7 +43,7 @@ function load_custom_wp_admin_scripts( $hook )
     // Load the required WordPress packages.
 
     // Automatically load imported dependencies and assets version.
-    $asset_file = include plugin_dir_path(__FILE__) . 'index.asset.php';
+    $asset_file = include plugin_dir_path(__FILE__) . 'build/index.asset.php';
 
     // Enqueue CSS dependencies.
     foreach ( $asset_file['dependencies'] as $style ) {
