@@ -5,7 +5,7 @@
 	var useBlockProps = blockEditor.useBlockProps;
 	blocks.registerBlockType( 'gutenberg-examples/example-06', {
 		title: __( 'Example: Inner Blocks', 'gutenberg-examples' ),
-		category: 'layout',
+		"category": 'non-jsx-examples',
 		edit: function () {
 			return el( 'div', useBlockProps(), el( InnerBlocks ) );
 		},

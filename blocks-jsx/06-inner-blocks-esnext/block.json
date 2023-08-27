@@ -3,7 +3,7 @@
 	"apiVersion": 2,
 	"name": "gutenberg-examples/example-06-esnext",
 	"title": "Example: Inner Blocks (ESNext)",
-	"category": "layout",
+	"category": "jsx-examples",
 	"icon": "universal-access-alt",
 	"textdomain": "gutenberg-examples",
 	"example": {},

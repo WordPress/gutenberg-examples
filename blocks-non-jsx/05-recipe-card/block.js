@@ -8,7 +8,7 @@
 	blocks.registerBlockType( 'gutenberg-examples/example-05-recipe-card', {
 		title: __( 'Example: Recipe Card', 'gutenberg-examples' ),
 		icon: 'index-card',
-		category: 'layout',
+		"category": 'non-jsx-examples',
 		attributes: {
 			title: {
 				type: 'array',

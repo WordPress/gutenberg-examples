@@ -3,7 +3,7 @@
 	"apiVersion": 2,
 	"title": "Example: Basic",
 	"name": "gutenberg-examples/example-01-basic",
-	"category": "layout",
+	"category": "non-jsx-examples",
 	"icon": "universal-access-alt",
 	"textdomain": "gutenberg-examples",
 	"example": {},

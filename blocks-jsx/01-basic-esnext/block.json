@@ -5,7 +5,7 @@
 	"title": "Example: Basic (ESNext)",
 	"textdomain": "gutenberg-examples",
 	"icon": "universal-access-alt",
-	"category": "layout",
+	"category": "jsx-examples",
 	"example": {},
 	"editorScript": "file:./index.js"
 }

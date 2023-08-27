@@ -14,7 +14,7 @@
 	blocks.registerBlockType( 'gutenberg-examples/example-04-controls', {
 		title: __( 'Example: Controls', 'gutenberg-examples' ),
 		icon: 'universal-access-alt',
-		category: 'layout',
+		"category": 'non-jsx-examples',
 
 		attributes: {
 			content: {

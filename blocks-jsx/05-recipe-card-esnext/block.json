@@ -4,7 +4,7 @@
 	"name": "gutenberg-examples/example-05-recipe-card-esnext",
 	"title": "Example: Recipe Card (ESNext)",
 	"icon": "index-card",
-	"category": "layout",
+	"category": "jsx-examples",
 	"attributes": {
 		"title": {
 			"type": "string",

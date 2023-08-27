@@ -5,7 +5,7 @@
 	"title": "Example: Block Supports (ESNext)",
 	"textdomain": "gutenberg-examples",
 	"icon": "universal-access-alt",
-	"category": "layout",
+	"category": "jsx-examples",
 	"attributes": {
 		"content": {
 			"type": "string",
