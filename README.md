@@ -66,13 +66,20 @@ In this repository, there are block and non-block examples and each have their o
 
 Block examples are stored in the `blocks-jsx` and `blocks-non-jsx` directories while and other non-block examples are stored in the `non-block-examples` directory.
 
-**Note: The blocks stored in `blocks-non-jsx` do not use JSX and therefore do not require a build process**
+> **Note**
+> The blocks stored in `blocks-non-jsx` do not use JSX and therefore do not require a build process
 
--   `npm run start` - Builds development versions of the blocks and watches for changes to files to automatically rebuild as you develop.
--   `npm run build` - Generates production files for the block examples.
+#### Build and watch
 
--   `npm run start:non-block` - Builds development versions of the non-block examples and watches for changes to files to automatically rebuild as you develop.
--   `npm run build:non-block` - Generates production files for the non-block examples.
--   `npm run build:all` - Generates production files for all examples
+-   **`npm run start`** - Builds development versions of ALL the examples that require a build process (`blocks-jsx` and `non-block-examples`) and watches for changes to files to automatically rebuild as you develop.
+-   `npm run start:block` - Builds development versions of the examples at `blocks-jsx` folder and watches for changes to files to automatically rebuild as you develop.
+-   `npm run start:non-block` - Builds development versions of the examples at `non-block-examples` folder and watches for changes to files to automatically rebuild as you develop.
+
+
+#### Build
+
+-   **`npm run build`** - Generates production files for ALL the examples that require a build process (`blocks-jsx` and `non-block-examples`).
+-   `npm run build:block` - Generates production files for the examples at `blocks-jsx` folder.
+-   `npm run build:non-block` - Generates production files for the examples at `non-block-examples` folder.
 
 <br/><br/><p align="center"><img src="https://s.w.org/style/images/codeispoetry.png?1" alt="Code is Poetry." /></p>
