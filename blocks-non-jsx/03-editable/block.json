@@ -4,7 +4,7 @@
 	"name": "gutenberg-examples/example-03-editable",
 	"title": "Example: Editable",
 	"icon": "universal-access-alt",
-	"category": "layout",
+	"category": "non-jsx-examples",
 	"textdomain": "gutenberg-examples",
 	"attributes": {
 		"content": {

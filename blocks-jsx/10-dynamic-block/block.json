@@ -4,7 +4,7 @@
 	"name": "gutenberg-examples/dynamic-block",
 	"version": "0.1.0",
 	"title": "Example: Dynamic Block (ESNext)",
-	"category": "text",
+	"category": "jsx-examples",
 	"icon": "universal-access-alt",
 	"attributes": {
 		"message": {
