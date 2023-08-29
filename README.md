@@ -67,7 +67,7 @@ In this repository, there are block and non-block examples and each have their o
 Block examples are stored in the `blocks-jsx` and `blocks-non-jsx` directories while and other non-block examples are stored in the `non-block-examples` directory.
 
 > **Note**
-> The blocks stored in `blocks-non-jsx` do not use JSX and therefore do not require a build process**
+> The blocks stored in `blocks-non-jsx` do not use JSX and therefore do not require a build process
 
 #### Build and watch
 
