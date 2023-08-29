@@ -20,7 +20,7 @@ jobs:
       - name: npm install, build, start env, and run e2e tests
         run: |
           npm ci
-          npm run build:all
+          npm run build
           npm run env:start
           npm run test:e2e
         env:
