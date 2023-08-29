@@ -4,7 +4,7 @@
  *
  * @param array    $attributes     The array of attributes for this block.
  * @param string   $content        Rendered block output. ie. <InnerBlocks.Content />.
- * @param WP_Block $block_instance The instance of the WP_Block class that represents the block being rendered.
+ * @param WP_Block $block          The instance of the WP_Block class that represents the block being rendered.
  *
  * @package gutenberg-examples
  */
