@@ -4,7 +4,7 @@
 	"name": "myguten/meta-block",
 	"version": "0.1.0",
 	"title": "meta-block",
-	"category": "text",
+	"category": "jsx-examples",
 	"icon": "smiley",
 	"description": "An example block viewing and saving post meta",
 	"supports": {

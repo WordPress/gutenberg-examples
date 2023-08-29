@@ -11,6 +11,22 @@
 
 defined( 'ABSPATH' ) || exit;
 
+function gutenberg_examples_block_categories( $categories ) {
+    return array_merge(
+        $categories,
+        [
+            [
+                'slug'  => 'jsx-examples',
+                'title' => 'Examples - JSX'
+            ],
+            [
+                'slug'  => 'non-jsx-examples',
+                'title' => 'Examples - Non JSX'
+            ],
+        ]
+    );
+}
+add_action( 'block_categories', 'gutenberg_examples_block_categories', 10, 2 );
 
 require plugin_dir_path( __FILE__ ) . 'blocks-non-jsx/01-basic/index.php';
 require plugin_dir_path( __FILE__ ) . 'build/blocks-jsx/01-basic-esnext/index.php';
