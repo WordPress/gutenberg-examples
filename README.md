@@ -1,5 +1,7 @@
 # Gutenberg Examples
 
+![![image](https://github.com/WordPress/gutenberg-examples/assets/422576/6dc23f79-b971-427d-af6b-f39db99955fd)](https://github.com/WordPress/block-development-examples)
+
 <p align="center"><img src="https://user-images.githubusercontent.com/1039236/47116000-fd775000-d27d-11e8-9c46-761a90cb30a2.gif" alt="Demo"></p>
 
 Examples for extending
