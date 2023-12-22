@@ -1,8 +1,13 @@
 # Gutenberg Examples
 
-![![image](https://github.com/WordPress/gutenberg-examples/assets/422576/6dc23f79-b971-427d-af6b-f39db99955fd)](https://github.com/WordPress/block-development-examples)
+<a href="https://github.com/WordPress/block-development-examples"><img src="https://user-images.githubusercontent.com/422576/292488399-6dc23f79-b971-427d-af6b-f39db99955fd.png" alt="Demo"></a>
 
-<p align="center"><img src="https://user-images.githubusercontent.com/1039236/47116000-fd775000-d27d-11e8-9c46-761a90cb30a2.gif" alt="Demo"></p>
+<!-- <p align="center"><img src="https://user-images.githubusercontent.com/1039236/47116000-fd775000-d27d-11e8-9c46-761a90cb30a2.gif" alt="Demo"></p> -->
+
+> **Warning**
+> The repo https://github.com/WordPress/gutenberg-examples/ is no longer maintained. Please check **https://github.com/WordPress/block-development-examples** for examples of block development. Additionally, you can also check https://github.com/WordPress/block-theme-examples for examples of theme development.
+
+<!--
 
 Examples for extending
 [Gutenberg](https://github.com/WordPress/gutenberg)
@@ -85,3 +90,4 @@ Block examples are stored in the `blocks-jsx` and `blocks-non-jsx` directories w
 -   `npm run build:non-block` - Generates production files for the examples at `non-block-examples` folder.
 
 <br/><br/><p align="center"><img src="https://s.w.org/style/images/codeispoetry.png?1" alt="Code is Poetry." /></p>
+-->
