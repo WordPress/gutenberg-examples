@@ -46,3 +46,5 @@ require plugin_dir_path( __FILE__ ) . 'build/blocks-jsx/10-dynamic-block/index.p
 require plugin_dir_path( __FILE__ ) . 'build/non-block-examples/format-api/index.php';
 require plugin_dir_path( __FILE__ ) . 'blocks-non-jsx/plugin-sidebar/plugin-sidebar.php';
 require plugin_dir_path( __FILE__ ) . 'build/blocks-jsx/meta-block/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/non-block-examples/custom-slot/index.php';
+require plugin_dir_path( __FILE__ ) . 'build/non-block-examples/custom-fill/index.php';
